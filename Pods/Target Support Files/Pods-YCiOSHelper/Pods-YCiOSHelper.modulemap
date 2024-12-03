@@ -1,0 +1,6 @@
+framework module Pods_YCiOSHelper {
+  umbrella header "Pods-YCiOSHelper-umbrella.h"
+
+  export *
+  module * { export * }
+}

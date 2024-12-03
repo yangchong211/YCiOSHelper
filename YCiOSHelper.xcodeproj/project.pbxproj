@@ -1,0 +1,622 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4B5623B8535F2EBBEFF7611E /* Pods_YCiOSHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E28BACF07D9E05E76AB8E9A /* Pods_YCiOSHelper.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC8712212CF71446009B89E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8712022CF71444009B89E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC8712092CF71444009B89E9;
+			remoteInfo = YCiOSHelper;
+		};
+		EC87122B2CF71446009B89E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC8712022CF71444009B89E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC8712092CF71444009B89E9;
+			remoteInfo = YCiOSHelper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6E28BACF07D9E05E76AB8E9A /* Pods_YCiOSHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YCiOSHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B67AFCB6AD9BBCCB41C6B4A9 /* Pods-YCiOSHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YCiOSHelper.release.xcconfig"; path = "Target Support Files/Pods-YCiOSHelper/Pods-YCiOSHelper.release.xcconfig"; sourceTree = "<group>"; };
+		EC44EFD2FFAF5D18FB44B06C /* Pods-YCiOSHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YCiOSHelper.debug.xcconfig"; path = "Target Support Files/Pods-YCiOSHelper/Pods-YCiOSHelper.debug.xcconfig"; sourceTree = "<group>"; };
+		EC87120A2CF71444009B89E9 /* YCiOSHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YCiOSHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC8712202CF71446009B89E9 /* YCiOSHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YCiOSHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC87122A2CF71446009B89E9 /* YCiOSHelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YCiOSHelperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		EC8712322CF71446009B89E9 /* Exceptions for "YCiOSHelper" folder in "YCiOSHelper" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = EC8712092CF71444009B89E9 /* YCiOSHelper */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		EC87120C2CF71444009B89E9 /* YCiOSHelper */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				EC8712322CF71446009B89E9 /* Exceptions for "YCiOSHelper" folder in "YCiOSHelper" target */,
+			);
+			path = YCiOSHelper;
+			sourceTree = "<group>";
+		};
+		EC8712232CF71446009B89E9 /* YCiOSHelperTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			path = YCiOSHelperTests;
+			sourceTree = "<group>";
+		};
+		EC87122D2CF71446009B89E9 /* YCiOSHelperUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			path = YCiOSHelperUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC8712072CF71444009B89E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B5623B8535F2EBBEFF7611E /* Pods_YCiOSHelper.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC87121D2CF71446009B89E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC8712272CF71446009B89E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7314DCC4DEB367A3A0A9B345 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EC44EFD2FFAF5D18FB44B06C /* Pods-YCiOSHelper.debug.xcconfig */,
+				B67AFCB6AD9BBCCB41C6B4A9 /* Pods-YCiOSHelper.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EC8712012CF71444009B89E9 = {
+			isa = PBXGroup;
+			children = (
+				EC87120C2CF71444009B89E9 /* YCiOSHelper */,
+				EC8712232CF71446009B89E9 /* YCiOSHelperTests */,
+				EC87122D2CF71446009B89E9 /* YCiOSHelperUITests */,
+				EC87120B2CF71444009B89E9 /* Products */,
+				7314DCC4DEB367A3A0A9B345 /* Pods */,
+				FC993D3390F6A6C3F51BF24B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EC87120B2CF71444009B89E9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC87120A2CF71444009B89E9 /* YCiOSHelper.app */,
+				EC8712202CF71446009B89E9 /* YCiOSHelperTests.xctest */,
+				EC87122A2CF71446009B89E9 /* YCiOSHelperUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FC993D3390F6A6C3F51BF24B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6E28BACF07D9E05E76AB8E9A /* Pods_YCiOSHelper.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC8712092CF71444009B89E9 /* YCiOSHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC8712332CF71446009B89E9 /* Build configuration list for PBXNativeTarget "YCiOSHelper" */;
+			buildPhases = (
+				765044BE2B613507E104F51A /* [CP] Check Pods Manifest.lock */,
+				EC8712062CF71444009B89E9 /* Sources */,
+				EC8712072CF71444009B89E9 /* Frameworks */,
+				EC8712082CF71444009B89E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				EC87120C2CF71444009B89E9 /* YCiOSHelper */,
+			);
+			name = YCiOSHelper;
+			productName = YCiOSHelper;
+			productReference = EC87120A2CF71444009B89E9 /* YCiOSHelper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EC87121F2CF71446009B89E9 /* YCiOSHelperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC8712382CF71446009B89E9 /* Build configuration list for PBXNativeTarget "YCiOSHelperTests" */;
+			buildPhases = (
+				EC87121C2CF71446009B89E9 /* Sources */,
+				EC87121D2CF71446009B89E9 /* Frameworks */,
+				EC87121E2CF71446009B89E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC8712222CF71446009B89E9 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				EC8712232CF71446009B89E9 /* YCiOSHelperTests */,
+			);
+			name = YCiOSHelperTests;
+			productName = YCiOSHelperTests;
+			productReference = EC8712202CF71446009B89E9 /* YCiOSHelperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EC8712292CF71446009B89E9 /* YCiOSHelperUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC87123B2CF71446009B89E9 /* Build configuration list for PBXNativeTarget "YCiOSHelperUITests" */;
+			buildPhases = (
+				EC8712262CF71446009B89E9 /* Sources */,
+				EC8712272CF71446009B89E9 /* Frameworks */,
+				EC8712282CF71446009B89E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC87122C2CF71446009B89E9 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				EC87122D2CF71446009B89E9 /* YCiOSHelperUITests */,
+			);
+			name = YCiOSHelperUITests;
+			productName = YCiOSHelperUITests;
+			productReference = EC87122A2CF71446009B89E9 /* YCiOSHelperUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC8712022CF71444009B89E9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1610;
+				LastUpgradeCheck = 1610;
+				TargetAttributes = {
+					EC8712092CF71444009B89E9 = {
+						CreatedOnToolsVersion = 16.1;
+					};
+					EC87121F2CF71446009B89E9 = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = EC8712092CF71444009B89E9;
+					};
+					EC8712292CF71446009B89E9 = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = EC8712092CF71444009B89E9;
+					};
+				};
+			};
+			buildConfigurationList = EC8712052CF71444009B89E9 /* Build configuration list for PBXProject "YCiOSHelper" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EC8712012CF71444009B89E9;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = EC87120B2CF71444009B89E9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC8712092CF71444009B89E9 /* YCiOSHelper */,
+				EC87121F2CF71446009B89E9 /* YCiOSHelperTests */,
+				EC8712292CF71446009B89E9 /* YCiOSHelperUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC8712082CF71444009B89E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC87121E2CF71446009B89E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC8712282CF71446009B89E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		765044BE2B613507E104F51A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YCiOSHelper-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC8712062CF71444009B89E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC87121C2CF71446009B89E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC8712262CF71446009B89E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC8712222CF71446009B89E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC8712092CF71444009B89E9 /* YCiOSHelper */;
+			targetProxy = EC8712212CF71446009B89E9 /* PBXContainerItemProxy */;
+		};
+		EC87122C2CF71446009B89E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC8712092CF71444009B89E9 /* YCiOSHelper */;
+			targetProxy = EC87122B2CF71446009B89E9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		EC8712342CF71446009B89E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC44EFD2FFAF5D18FB44B06C /* Pods-YCiOSHelper.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = YCiOSHelper/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yc.YCiOSHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EC8712352CF71446009B89E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B67AFCB6AD9BBCCB41C6B4A9 /* Pods-YCiOSHelper.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = YCiOSHelper/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yc.YCiOSHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EC8712362CF71446009B89E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EC8712372CF71446009B89E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EC8712392CF71446009B89E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yc.YCiOSHelperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YCiOSHelper.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/YCiOSHelper";
+			};
+			name = Debug;
+		};
+		EC87123A2CF71446009B89E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yc.YCiOSHelperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YCiOSHelper.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/YCiOSHelper";
+			};
+			name = Release;
+		};
+		EC87123C2CF71446009B89E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yc.YCiOSHelperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = YCiOSHelper;
+			};
+			name = Debug;
+		};
+		EC87123D2CF71446009B89E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yc.YCiOSHelperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = YCiOSHelper;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC8712052CF71444009B89E9 /* Build configuration list for PBXProject "YCiOSHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC8712362CF71446009B89E9 /* Debug */,
+				EC8712372CF71446009B89E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC8712332CF71446009B89E9 /* Build configuration list for PBXNativeTarget "YCiOSHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC8712342CF71446009B89E9 /* Debug */,
+				EC8712352CF71446009B89E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC8712382CF71446009B89E9 /* Build configuration list for PBXNativeTarget "YCiOSHelperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC8712392CF71446009B89E9 /* Debug */,
+				EC87123A2CF71446009B89E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC87123B2CF71446009B89E9 /* Build configuration list for PBXNativeTarget "YCiOSHelperUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC87123C2CF71446009B89E9 /* Debug */,
+				EC87123D2CF71446009B89E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EC8712022CF71444009B89E9 /* Project object */;
+}
