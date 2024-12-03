@@ -1,5 +1,0 @@
----
-watermark: false
----
-
-# disabled watermark

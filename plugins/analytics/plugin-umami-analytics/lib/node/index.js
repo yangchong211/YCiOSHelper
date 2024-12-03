@@ -1,1 +1,0 @@
-export * from './umamiAnalyticsPlugin.js';

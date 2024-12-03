@@ -1,9 +1,0 @@
-:root {
-  --back-to-top-z-index: 5;
-  --back-to-top-icon: url("back-to-top.svg");
-  --back-to-top-bg-color: #fff;
-  --back-to-top-color: #3eaf7c;
-  --back-to-top-icon-color: currentcolor;
-  --back-to-top-color-hover: #71cda3;
-  --back-to-top-shadow: rgb(0 0 0 / 20%);
-}
