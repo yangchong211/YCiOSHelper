@@ -1,0 +1,6 @@
+framework module PrintBeautifulLog {
+  umbrella header "PrintBeautifulLog-umbrella.h"
+
+  export *
+  module * { export * }
+}
