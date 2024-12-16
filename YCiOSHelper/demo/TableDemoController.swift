@@ -30,6 +30,7 @@ class TableDemoController: UIViewController , UITableViewDelegate , UITableViewD
         tableView.separatorInset = UIEdgeInsets.init(top: 0, left: 50, bottom: 0, right: 50);//设置 TableView 每一行 Cell 之间分割线位置(分别是: 上, 左, 下, 右)
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine;//设置 TableView 每一行 Cell 之间的分割线样式(默认是 SingleLine 样式)
         tableView.setEditing(true, animated: true);//设置 TableView 的编辑模式是否开启, 并且是否使用动画效果
+        tableView.allowsSelection = true;        //是否可以支持选中
         self.view.addSubview(tableView);//添加到 self.view 上
     }
     
@@ -92,5 +93,15 @@ class TableDemoController: UIViewController , UITableViewDelegate , UITableViewD
 
     // 11.该方法是用来设置 TableView 是否可以拖拽到其他行数, 只要写了该方法, 默认打开
     func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+    }
+    
+    // 12.cell开始显示了
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        print("tableView开始显示 \(indexPath)")
+    }
+    
+    // 13.cell不被显示了
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        print("tableView开始销毁 \(indexPath)")
     }
 }

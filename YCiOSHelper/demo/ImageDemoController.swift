@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class ImageDemoController: UIViewController ,UIActionSheetDelegate{
     
@@ -25,7 +26,7 @@ class ImageDemoController: UIViewController ,UIActionSheetDelegate{
         imageView = UIImageView();
         //imageView = UIImageView(image:UIImage(named:"1.png"));  //初始化时可以设置图片
         //imageView = UIImageView(image: UIImage(named:"1.png"), highlightedImage:UIImage(named:"2.png")) //初始化时可以设置普通的图片和高亮的图片
-        imageView.frame = CGRect(x: 100, y: 100, width: 200, height: 200);  //设置它的位置
+        //imageView.frame = CGRect(x: 100, y: 100, width: 200, height: 200);  //设置它的位置
         //由于UIImage不能单独的拿出来展示，它必须依赖于某个一个继承于UIView的一个View，比如UIImageView或者UIButton, 这些都是可以的.
         imageView.image = UIImage(named: "1.png")   //设置UIImage的图片名, 以及展示的样式
         imageView.isUserInteractionEnabled = true;
@@ -47,11 +48,18 @@ class ImageDemoController: UIViewController ,UIActionSheetDelegate{
         //        let  data  = try! Data (contentsOf:url!)//网上获取数据流
         //        let newImage = UIImage (data:data)
         //        imageView.image = newImage
+        
+        imageView.snp.makeConstraints { make in
+            make.width.equalTo(100)
+            make.height.equalTo(100)
+            make.left.equalTo(self.view.snp_leftMargin).offset(20)
+            make.top.equalTo(self.view.snp_topMargin).offset(20)
+        }
     }
     
     
     private func changeImage() {
-        imageChangeView.frame = CGRect(x: 100, y: 300, width: 200, height: 200)
+        //imageChangeView.frame = CGRect(x: 100, y: 300, width: 200, height: 200)
         imageChangeView.backgroundColor = UIColor.blue
         
         //设置动画
@@ -67,6 +75,12 @@ class ImageDemoController: UIViewController ,UIActionSheetDelegate{
         self.view.addSubview(imageChangeView)
         //开始动画
         imageChangeView.startAnimating()
+        imageChangeView.snp.makeConstraints { make in
+            make.width.equalTo(100)
+            make.height.equalTo(100)
+            make.top.equalTo(self.imageView.snp_bottomMargin).offset(20)
+            make.left.equalTo(self.imageView.snp_left)
+        }
     }
     
     @objc func imageTapped() {

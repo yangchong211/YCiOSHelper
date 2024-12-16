@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import SnapKit
+import WxPalmSdk
 
 
 //学习文本控件
@@ -16,6 +18,7 @@ class TextDemoController: UIViewController,UITextFieldDelegate ,UIAlertViewDeleg
     private var button : UIButton = UIButton();
     private var label: UILabel = UILabel();
     private var textField : UITextField = UITextField();
+    private var textSdk : UITextView = UITextView();
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,35 +28,46 @@ class TextDemoController: UIViewController,UITextFieldDelegate ,UIAlertViewDeleg
         buttonView();
         labelView();
         textFieldView();
+        textViewSdk();
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        //添加swith位置
-        //CGRect表示一个矩形，用于指定坐标，以及控件宽高
-        //横向为X周
-        switchUI.frame = CGRect(x: 100, y: view.safeAreaInsets.top + 400, width: 40, height: 40);
     }
     
     //文本控件
     func textView() {
-        text = UITextView(frame: CGRect(x: 0, y: view.safeAreaInsets.top + 200, width: 200, height: 100))
-        text.text = "这个是一个文本控件";
-        //text.backgroundColor = UIColor.red;
+        text = UITextView()
+        text.text = "这个是一个文本控件";        //设置文本内容
+        //text.backgroundColor = UIColor.red;   //设置控件背景颜色
         text.font = UIFont.systemFont(ofSize: 16)   //设置文本字体
-        text.textColor = UIColor.black
-        text.textAlignment = .center
+        text.textColor = UIColor.black  //设置字体颜色
+        text.textAlignment = .center    //设置文本居中
+        text.isSelectable = true    //设置 UITextView 是否可以点击
         text.isEditable = false // 设置为true可编辑，false不可编辑
         text.isScrollEnabled = true // 设置为true可滚动，false不可滚动
-        text.layer.borderWidth = 1.0
-        text.layer.borderColor = UIColor.gray.cgColor
-        text.layer.cornerRadius = 5.0
+        text.layer.borderWidth = 1.0    //设置边框宽度
+        text.layer.borderColor = UIColor.gray.cgColor   //边框颜色
+        text.layer.cornerRadius = 5.0   //边框的圆角半径
+        text.dataDetectorTypes = UIDataDetectorTypes.all    //设置 UITextView 的超文本样式
+        text.textContainerInset = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)  //设置 UITextView 的文本容器边界
         self.view.addSubview(text)
+        text.snp.makeConstraints { make in
+            make.width.equalTo(200)
+            make.height.equalTo(30)
+            make.left.equalToSuperview().offset(30)
+            make.top.equalTo(self.view).offset(100)
+        }
     }
     
     func switchView() {
+        switchUI.isOn = true;   //设置开关状态
         //添加一个switch
         self.view.addSubview(switchUI);
+        switchUI.snp.makeConstraints { make in
+            make.top.equalTo(self.text.snp_bottomMargin).offset(20)
+            make.left.equalTo(self.text.snp_left)
+        }
     }
     
     //按钮控件
@@ -61,14 +75,16 @@ class TextDemoController: UIViewController,UITextFieldDelegate ,UIAlertViewDeleg
         button = UIButton(type: .system) // 创建一个system类型的UIButton
         button.setTitle("Click Me", for: .normal) // 设置按钮的标题
         button.setTitleColor(UIColor.black, for: .normal)
-        button.frame = CGRect(x: 100, y: 120, width: 100, height: 50) // 设置按钮的位置和大小
-        button.backgroundColor = UIColor.white // 设置按钮的背景颜色为蓝色
-        button.setTitleColor(.white, for: .normal) // 设置按钮标题的颜色为白色
+        //button.backgroundColor = UIColor.white // 设置按钮的背景颜色为蓝色
         button.layer.cornerRadius = 10
         button.layer.borderWidth = 1.0
         button.layer.borderColor = UIColor.gray.cgColor
         button.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside) // 添加按钮点击事件处理
         self.view.addSubview(button) // 将按钮添加到当前视图中
+        button.snp.makeConstraints { make in
+            make.top.equalTo(self.switchUI.snp_bottomMargin).offset(20)
+            make.left.equalTo(self.switchUI.snp_left)
+        }
     }
     
     @objc func buttonClicked() {
@@ -76,11 +92,13 @@ class TextDemoController: UIViewController,UITextFieldDelegate ,UIAlertViewDeleg
         //移除按钮点击事件
         //button.removeTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
         myAlertView();
+        
+        //let controller = PalmViewController()
+        //navigationController?.pushViewController(controller, animated: true)
     }
     
     func labelView() {
         //学习标签
-        label.frame = CGRect(x: 120, y: 320, width: 200, height: 30)
         label.text = "这个是一个普通标签";   //添加UILabel的text文字
         label.textColor = UIColor.black;    //设置UILabel的text文字颜色
         label.backgroundColor = UIColor.brown;  //设置UILabel的背景颜色
@@ -90,6 +108,10 @@ class TextDemoController: UIViewController,UITextFieldDelegate ,UIAlertViewDeleg
         label.isHighlighted = true;   //设置UILabel的高亮状态为true, 默认是false
         label.lineBreakMode = NSLineBreakMode.byWordWrapping;   //设置UIlabel的显示样式
         self.view.addSubview(label);
+        label.snp.makeConstraints { make in
+            make.top.equalTo(self.button.snp_bottomMargin).offset(20)
+            make.left.equalTo(self.button.snp_left)
+        }
     }
     
     
@@ -106,6 +128,45 @@ class TextDemoController: UIViewController,UITextFieldDelegate ,UIAlertViewDeleg
         textField.clearsOnBeginEditing = true;//再次编辑时对旧内容进行自动清除, 默认是false
         textField.adjustsFontSizeToFitWidth = false;//根据TextField的大小自动缩放字体大小, 默认是false
         self.view.addSubview(textField);
+        textField.snp.makeConstraints { make in
+            make.top.equalTo(self.label.snp_bottomMargin).offset(20)
+            make.left.equalTo(self.label.snp_left)
+        }
+    }
+    
+    private func textViewSdk() {
+        textSdk = UITextView()
+        textSdk.text = "调用framework";        //设置文本内容
+        textSdk.font = UIFont.systemFont(ofSize: 16)   //设置文本字体
+        textSdk.textColor = UIColor.black  //设置字体颜色
+        textSdk.textAlignment = .center    //设置文本居中
+        textSdk.layer.borderWidth = 1.0    //设置边框宽度
+        textSdk.layer.borderColor = UIColor.gray.cgColor   //边框颜色
+        textSdk.layer.cornerRadius = 5.0   //边框的圆角半径
+        textSdk.dataDetectorTypes = UIDataDetectorTypes.all    //设置 UITextView 的超文本样式
+        textSdk.textContainerInset = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)  //设置 UITextView 的文本容器边界
+        self.view.addSubview(textSdk)
+        textSdk.snp.makeConstraints { make in
+            make.width.equalTo(200)
+            make.height.equalTo(30)
+            make.left.equalTo(self.textField.snp_left)
+            make.top.equalTo(self.textField.snp_bottomMargin).offset(10)
+        }
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(clickSdk))
+        textSdk.addGestureRecognizer(gesture)
+    }
+    
+    @objc func clickSdk() {
+        var identifier = PalmManager.getDeviceIdentifier()
+        print("获取设备唯一标识 \(identifier)");
+        var version = PalmManager.getDeviceVersion()
+        print("获取设备版本 \(version)");
+        var size = PalmHelper.getResolution()
+        print("获取设备分辨率 \(size)");
+        
+        //跳转刷掌sdk的控制器页面
+        let palmController = PalmViewController()
+        navigationController?.pushViewController(palmController, animated: true)
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {

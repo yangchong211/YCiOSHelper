@@ -11,7 +11,7 @@
         <!--控制器学习案例-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewDemoController" customModule="WxiOSPalmDa" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewDemoController" customModule="YCiOSHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -182,7 +182,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="UI综合页面学习" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ST0-FG-tqY">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="UI综合SnapKit布局学习" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ST0-FG-tqY">
                                                     <rect key="frame" x="20" y="0.0" width="353" height="43.666667938232422"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
@@ -202,7 +202,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="网络请求案例学习" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OJw-Db-ouG">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="网络请求和多线程案例学习" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OJw-Db-ouG">
                                                     <rect key="frame" x="20" y="0.0" width="353" height="43.666667938232422"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
@@ -259,7 +259,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="网上综合案例学习" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4XN-Gd-SJC">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="网上综合案例学习，主要是学习UI" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4XN-Gd-SJC">
                                                     <rect key="frame" x="20" y="0.0" width="353" height="43.666667938232422"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
@@ -268,9 +268,32 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="sEi-HQ-VBc" kind="show" id="08y-WR-xUf"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="j7X-5F-wFo" style="IBUITableViewCellStyleDefault" id="EI4-I1-UMR">
+                                        <rect key="frame" x="0.0" y="574.00001525878906" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EI4-I1-UMR" id="UJW-3H-dGy">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="网上综合案例玩Android项目，UI+业务" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="j7X-5F-wFo">
+                                                    <rect key="frame" x="20" y="0.0" width="353" height="43.666667938232422"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="dMu-7l-thR" kind="show" id="xxL-wn-mkj"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="zK7-jg-tAg" style="IBUITableViewCellStyleDefault" id="FCO-yq-NKY">
-                                        <rect key="frame" x="0.0" y="574.00001525878906" width="393" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="617.66668319702148" width="393" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FCO-yq-NKY" id="7mf-4T-Lxe">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
@@ -319,7 +342,7 @@
         <!--文本控件案例-->
         <scene sceneID="NQ6-T0-kMC">
             <objects>
-                <viewController id="YWM-RB-3KZ" customClass="TextDemoController" customModule="WxiOSPalmDa" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YWM-RB-3KZ" customClass="TextDemoController" customModule="YCiOSHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VyT-0u-8xH">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -335,7 +358,7 @@
         <!--图片控件学习-->
         <scene sceneID="jJJ-vE-w3t">
             <objects>
-                <viewController id="xKX-hz-E3a" customClass="ImageDemoController" customModule="WxiOSPalmDa" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xKX-hz-E3a" customClass="ImageDemoController" customModule="YCiOSHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4NK-Sn-DJC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -351,7 +374,7 @@
         <!--ScrollView滚动控件-->
         <scene sceneID="aG1-f3-o2o">
             <objects>
-                <viewController id="6I2-PE-KKM" customClass="ScrollDemoController" customModule="WxiOSPalmDa" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6I2-PE-KKM" customClass="ScrollDemoController" customModule="YCiOSHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bmA-tJ-YSE">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -367,7 +390,7 @@
         <!--TableView案例-->
         <scene sceneID="szW-Qn-KVK">
             <objects>
-                <viewController id="Nzb-Dc-Vyz" customClass="TableDemoController" customModule="WxiOSPalmDa" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Nzb-Dc-Vyz" customClass="TableDemoController" customModule="YCiOSHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v8G-6I-gwx">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -383,7 +406,7 @@
         <!--CollectionView案例-->
         <scene sceneID="AY3-cU-AU8">
             <objects>
-                <viewController id="517-OM-0m0" customClass="CollectionDemoController" customModule="WxiOSPalmDa" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="517-OM-0m0" customClass="CollectionDemoController" customModule="YCiOSHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O4r-hX-BcW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -399,7 +422,7 @@
         <!--UI综合视图案例学习-->
         <scene sceneID="vsG-EH-4Nf">
             <objects>
-                <viewController id="hGr-eS-n0K" customClass="UIkitDemoController" customModule="WxiOSPalmDa" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hGr-eS-n0K" customClass="UIkitDemoController" customModule="YCiOSHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="geg-hV-Dhc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -415,7 +438,7 @@
         <!--WebView案例-->
         <scene sceneID="rfl-9B-tSr">
             <objects>
-                <viewController id="Fpi-aG-rfi" customClass="WebDemoController" customModule="WxiOSPalmDa" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Fpi-aG-rfi" customClass="WebDemoController" customModule="YCiOSHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TlC-iL-N1l">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -431,7 +454,7 @@
         <!--网络请求案例-->
         <scene sceneID="eWH-BG-JDS">
             <objects>
-                <viewController id="1PX-qr-PVP" customClass="HttpDemoController" customModule="WxiOSPalmDa" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1PX-qr-PVP" customClass="HttpDemoController" customModule="YCiOSHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TXB-PT-jKc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -444,21 +467,53 @@
             </objects>
             <point key="canvasLocation" x="3763" y="465"/>
         </scene>
-        <!--Db Demo Controller-->
+        <!--数据存储案例-->
         <scene sceneID="IQB-OM-T7v">
             <objects>
-                <viewController id="Yzu-4p-0sG" customClass="DbDemoController" customModule="WxiOSPalmDa" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Yzu-4p-0sG" customClass="DbDemoController" customModule="YCiOSHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ysO-7b-CVJ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="hea-zY-hpa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="aEU-dc-g3D"/>
+                    <navigationItem key="navigationItem" title="数据存储案例" id="aEU-dc-g3D"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5AP-IR-m02" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4694" y="-951"/>
+        </scene>
+        <!--抖音案例学习-->
+        <scene sceneID="ZuG-n8-vSp">
+            <objects>
+                <viewController id="sEi-HQ-VBc" customClass="TabBarController" customModule="YCiOSHelper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EtG-xa-UlJ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="z1r-3p-wn9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="抖音案例学习" id="fdt-Pt-8UH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aMs-DN-36r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4694" y="-211"/>
+        </scene>
+        <!--玩Android项目案例-->
+        <scene sceneID="wQu-eY-yBZ">
+            <objects>
+                <viewController id="dMu-7l-thR" customClass="IndexVController" customModule="YCiOSHelper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nJK-3h-tVE">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="egl-je-kk7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="玩Android项目案例" id="yX7-ND-kNo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qwQ-WG-sU2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4694" y="465"/>
         </scene>
     </scenes>
     <resources>

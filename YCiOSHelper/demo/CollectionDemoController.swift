@@ -31,7 +31,6 @@ class CollectionDemoController: UIViewController ,UICollectionViewDelegate , UIC
         collectionView.backgroundColor = UIColor.white;
         collectionView.delegate = self;
         collectionView.dataSource = self;
-
         collectionView.register(MyViewCell.self, forCellWithReuseIdentifier: MyViewCell.reuseIden)
         view.addSubview(collectionView);
     }
@@ -50,28 +49,8 @@ class CollectionDemoController: UIViewController ,UICollectionViewDelegate , UIC
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyViewCell.reuseIden, for: indexPath)
-        cell.backgroundColor = UIColor.randomColor;
+        cell.backgroundColor = UIColor.randomYcColor;
         return cell;
     }
 }
-
-//拓展类
-extension UIColor {
-    class var randomColor : UIColor {
-        get{
-            let red = CGFloat(arc4random()%256)/255.0;
-            let green = CGFloat(arc4random()%256)/255.0;
-            let blue = CGFloat(arc4random()%256)/255.0;
-            return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
-        }
-    }
-}
-
-
-extension Int {
-    var add: Int {
-        return self + 100;
-    }
-}
-
 
