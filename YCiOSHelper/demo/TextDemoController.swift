@@ -7,8 +7,6 @@
 
 import UIKit
 import SnapKit
-import WxPalmSdk
-
 
 //学习文本控件
 class TextDemoController: UIViewController,UITextFieldDelegate ,UIAlertViewDelegate{
@@ -157,16 +155,16 @@ class TextDemoController: UIViewController,UITextFieldDelegate ,UIAlertViewDeleg
     }
     
     @objc func clickSdk() {
-        var identifier = PalmManager.getDeviceIdentifier()
-        print("获取设备唯一标识 \(identifier)");
-        var version = PalmManager.getDeviceVersion()
-        print("获取设备版本 \(version)");
-        var size = PalmHelper.getResolution()
-        print("获取设备分辨率 \(size)");
-        
-        //跳转刷掌sdk的控制器页面
-        let palmController = PalmViewController()
-        navigationController?.pushViewController(palmController, animated: true)
+//        var identifier = PalmManager.getDeviceIdentifier()
+//        print("获取设备唯一标识 \(identifier)");
+//        var version = PalmManager.getDeviceVersion()
+//        print("获取设备版本 \(version)");
+//        var size = PalmHelper.getResolution()
+//        print("获取设备分辨率 \(size)");
+//        
+//        //跳转刷掌sdk的控制器页面
+//        let palmController = PalmViewController()
+//        navigationController?.pushViewController(palmController, animated: true)
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {

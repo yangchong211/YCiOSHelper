@@ -7,7 +7,6 @@
 
 import UIKit
 import SnapKit
-import WxPalmSdk
 //使用snapkit布局哭
 
 class UIkitDemoController: UIViewController {
