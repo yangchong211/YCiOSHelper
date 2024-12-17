@@ -11,7 +11,7 @@ class IndexVController: UITabBarController {
     
     //文字tab
     private func initTabBar() {
-        let home = HomeVController()
+        let home = HomeController()
         let project = ProjectVController()
         let wechat = WechatVController()
         let structure = StructrureVController()
@@ -52,7 +52,7 @@ class IndexVController: UITabBarController {
     
     //文字+图标
     private func initTab() {
-        let home = HomeVController()
+        let home = HomeController()
         let project = ProjectVController()
         let wechat = WechatVController()
         let structure = StructrureVController()

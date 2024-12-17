@@ -12,6 +12,11 @@ import MBProgressHUD
 private let minHUDWidth: CGFloat = 0.0
 
 extension UIViewController {
+    
+    func error(error: String?) {
+        showHUDWithError(error: error)
+    }
+    
     @discardableResult
     func showWaitHUD() -> MBProgressHUD {
         return showWaitHUD(title: "加载中…")

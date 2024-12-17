@@ -20,8 +20,4 @@ class BaseCVontroller: UIViewController{
         attr.isHidden = true
     })
     
-    func error(error: String?) {
-//        view.makeToast(error)
-        showHUDWithError(error: error)
-    }
 }
