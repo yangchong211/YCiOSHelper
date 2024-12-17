@@ -2,7 +2,7 @@
 //  UserTabVController.swift
 //  FunIOS
 //
-//  Created by redli on 2021/8/9.
+//  Created by 杨充 on 2021/8/9.
 //
 
 import Foundation
@@ -18,7 +18,7 @@ struct MenuItem {
 }
 
 
-class UserVController: BaseCVontroller {
+class UserController: UIViewController {
     
     private let profileUrl = "https://sf3-ttcdn-tos.pstatp.com/img/user-avatar/4639e530a32e1b721605e21908c63b4b~300x300.image"
     
@@ -79,10 +79,10 @@ class UserVController: BaseCVontroller {
     
     private let data = [
         MenuItem(type: 1, icon: "ic_collection", title: "我的收藏"),
-//        MenuItem(type: 2, icon: "ic_share", title: "分享"),
+        MenuItem(type: 2, icon: "ic_share", title: "分享"),
         MenuItem(type: 3, icon: "ic_integral", title: "我的积分"),
         MenuItem(type: 4, icon: "ic_ranking", title: "排行榜"),
-        //        MenuItem(type: 5, icon: "ic_browsing", title: "浏览历史")
+        MenuItem(type: 5, icon: "ic_browsing", title: "浏览历史")
     ]
     
     private lazy var alertController = {
@@ -94,7 +94,7 @@ class UserVController: BaseCVontroller {
     }
     
     override func viewDidLoad() {
-        
+        super.viewDidLoad()
         let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         
         let okAction = UIAlertAction(title: "退出", style: .default) { action in
@@ -221,7 +221,8 @@ class UserVController: BaseCVontroller {
     }
 }
 
-extension UserVController: UITableViewDataSource, UITableViewDelegate {
+extension UserController: UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
@@ -238,9 +239,7 @@ extension UserVController: UITableViewDataSource, UITableViewDelegate {
             self.view.makeToast("请点击头像登录")
             return
         }
-        
         let item = self.data[indexPath.row]
-        
         var controller: UIViewController?
         switch item.type {
         case 1:
