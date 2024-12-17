@@ -2,13 +2,14 @@
 //  StructureCell.swift
 //  FunIOS
 //
-//  Created by redli on 2021/7/25.
+//  Created by 杨充 on 2021/7/25.
 //
 
 import UIKit
 import SnapKitExtend
 import TagListView
 
+//导航cell
 public protocol TagViewDelegate : NSObjectProtocol{
     
     //体系Tag点击事件

@@ -9,7 +9,7 @@ import UIKit
 import JXSegmentedView
 
 
-class StructureListVController: BaseCVontroller {
+class StructureListVController: UIViewController {
     
     //type = 1 体系， type = 2 导航
     private var type = 1

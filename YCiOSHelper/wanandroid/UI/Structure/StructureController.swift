@@ -2,14 +2,15 @@
 //  StructureVController.swift
 //  FunIOS
 //
-//  Created by redli on 2021/7/21.
+//  Created by 杨充 on 2021/7/21.
 //
 
 import UIKit
 import JXSegmentedView
 import SnapKitExtend
 
-class StructrureVController: UIViewController {
+//导航
+class StructrureController: UIViewController {
     
     private let titles = ["体系", "导航"]
     
@@ -78,7 +79,7 @@ class StructrureVController: UIViewController {
     
 }
 
-extension StructrureVController: JXSegmentedListContainerViewDataSource {
+extension StructrureController: JXSegmentedListContainerViewDataSource {
     func numberOfLists(in listContainerView: JXSegmentedListContainerView) -> Int {
         return viewControllers.count
     }
