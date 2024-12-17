@@ -31,9 +31,9 @@ class HomeController: UIViewController {
         attr.contentMode = .scaleToFill
         attr.isHidden = true
     })
-    
+    //文章list
     private var articleList = Array<ArticleItemModel>()
-    
+    //轮播图list
     private var bannerLists = Array<BannerModel>()
     
     //DispatchGroup 是一个用于管理多个异步任务的工具。它可以让你等待一组任务完成后再执行其他操作。
@@ -153,6 +153,7 @@ class HomeController: UIViewController {
                 self.bannerView.titles = value?.map{ $0.title} ?? []
             }, error: error(error:))
             
+            
             //enter() 和 leave() 方法可以嵌套使用，以处理更复杂的任务结构。
             self.dispatchGroup.enter()
             //获取置顶文章列表
@@ -161,6 +162,7 @@ class HomeController: UIViewController {
                 self.dispatchGroup.leave()
             }, error: error(error:))
         }
+        
         
         self.dispatchGroup.enter()
         //获取文章列表
@@ -198,6 +200,7 @@ extension HomeController: UITableViewDataSource, UITableViewDelegate, CollectDel
     
     //数据
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //这个是table有多少个cell
         return articleList.count
     }
     
@@ -208,6 +211,9 @@ extension HomeController: UITableViewDataSource, UITableViewDelegate, CollectDel
     
     //每行加载样式
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //tableView.dequeueReusableCell 是 UITableView 的一个方法，用于获取可重用的 UITableViewCell 实例。
+        //在使用 UITableView 显示大量数据时，为了提高性能和内存利用率，UITableView 会使用可重用的 UITableViewCell 实例来显示不同的行。
+        //当滚动 UITableView 时，超出屏幕范围的 UITableViewCell 会被回收并放入可重用队列中，然后可以通过 dequeueReusableCell(withIdentifier:for:) 方法来获取可重用的实例。
         let tableViewCell = tableView.dequeueReusableCell(for: indexPath, cellType: ArticleCell.self)
         tableViewCell.collectDelegate = self
         tableViewCell.model = articleList[indexPath.row]

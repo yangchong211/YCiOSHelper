@@ -46,7 +46,11 @@ class TableDemoController: UIViewController , UITableViewDelegate , UITableViewD
     
     // 3.该方法是用来设置 TableView 每一行 Cell 的详细内容
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell();
+        //tableView.dequeueReusableCell 是 UITableView 的一个方法，用于获取可重用的 UITableViewCell 实例。
+        //在使用 UITableView 显示大量数据时，为了提高性能和内存利用率，UITableView 会使用可重用的 UITableViewCell 实例来显示不同的行。
+        //当滚动 UITableView 时，超出屏幕范围的 UITableViewCell 会被回收并放入可重用队列中，然后可以通过 dequeueReusableCell(withIdentifier:for:) 方法来获取可重用的实例。
+        let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCustomCell.reuseIdenfitifer, for: indexPath)
+        //let cell = UITableViewCell();
         cell.textLabel?.text = "我是cell"; //设置 UITableViewCell 的标题Label
         cell.detailTextLabel?.text = "Cell"; //设置 UITableViewCell 的简介Label
         cell.imageView?.image = UIImage(named: "1.png"); //设置 UITableViewCell 的 imageView 图片
@@ -104,4 +108,9 @@ class TableDemoController: UIViewController , UITableViewDelegate , UITableViewD
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         print("tableView开始销毁 \(indexPath)")
     }
+}
+
+class TableViewCustomCell : UITableViewCell {
+    //定义了一个 UITableViewCell 的重用标识符 cellIdentifier
+    static let reuseIdenfitifer = "TableViewCustomCell"
 }
