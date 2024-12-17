@@ -16,7 +16,7 @@ class ProjectController: UIViewController {
     
     private let segmentedDataSource = JXSegmentedTitleDataSource()
     
-    private lazy var  divLine = UIView().then({ (attr) in
+    private lazy var divLine = UIView().then({ (attr) in
         attr.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
     })
     
@@ -38,6 +38,7 @@ class ProjectController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.white
         //获取项目分类
         Api.fetchProjectSegmented(success: { (value:Array<StructureModel>?) in
             //遍历数组后，创建tab指示器和控制器Controller

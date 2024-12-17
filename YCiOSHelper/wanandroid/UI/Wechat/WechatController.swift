@@ -2,14 +2,15 @@
 //  WechatAccountVController.swift
 //  FunIOS
 //
-//  Created by redli on 2021/7/21.
+//  Created by 杨充 on 2021/7/21.
 //
 
 import UIKit
 import SnapKitExtend
 import JXSegmentedView
 
-class WechatVController: BaseCVontroller {
+//公众号
+class WechatController: BaseCVontroller {
     
     private let segmentedView = JXSegmentedView()
     
@@ -29,7 +30,7 @@ class WechatVController: BaseCVontroller {
     //指示器内容
     private var tabTitles : [String] = []
     
-    private var viewControllers: [WechatArticlesVController] = []
+    private var viewControllers: [WechatArticlesController] = []
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
@@ -39,7 +40,7 @@ class WechatVController: BaseCVontroller {
         Api.fetchWechatSegmented(success: { (value:Array<StructureModel>?) in
             value?.forEach({ (item: StructureModel) in
                 self.tabTitles.append(item.name)
-                self.viewControllers.append(WechatArticlesVController(cid: item.id))
+                self.viewControllers.append(WechatArticlesController(cid: item.id))
             })
             self.loadUI()
         }, error: error(error:))
@@ -66,7 +67,7 @@ class WechatVController: BaseCVontroller {
     }
 }
 
-extension WechatVController: JXSegmentedListContainerViewDataSource {
+extension WechatController: JXSegmentedListContainerViewDataSource {
     func numberOfLists(in listContainerView: JXSegmentedListContainerView) -> Int {
         return viewControllers.count
     }

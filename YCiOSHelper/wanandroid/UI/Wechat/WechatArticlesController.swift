@@ -2,13 +2,13 @@
 //  WechatArticlesVController.swift
 //  FunIOS
 //
-//  Created by redli on 2021/7/25.
+//  Created by 杨充 on 2021/7/25.
 //
 
 import UIKit
 import JXSegmentedView
 
-class WechatArticlesVController: BaseCVontroller {
+class WechatArticlesController: BaseCVontroller {
     
     // 当前页面
     var page = 0
@@ -26,8 +26,6 @@ class WechatArticlesVController: BaseCVontroller {
         attr.register(cellType: WechatCell.self)
         //        attr.rowHeight = 150
     })
-    
-    
     
     convenience init(cid: Int) {
         self.init()
@@ -103,7 +101,7 @@ class WechatArticlesVController: BaseCVontroller {
     }
 }
 
-extension WechatArticlesVController: JXSegmentedListContainerViewListDelegate, UITableViewDataSource, UITableViewDelegate, CollectDelegate {
+extension WechatArticlesController: JXSegmentedListContainerViewListDelegate, UITableViewDataSource, UITableViewDelegate, CollectDelegate {
     func listView() -> UIView {
         view
     }

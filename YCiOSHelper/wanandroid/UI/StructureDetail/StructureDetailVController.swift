@@ -32,7 +32,7 @@ class StructureDetailVController: UIViewController {
     //指示器内容
     private var tabTitles : [String] = []
     
-    private var viewControllers: [WechatArticlesVController] = []
+    private var viewControllers: [WechatArticlesController] = []
     
     convenience init(parentModel model: StructureModel, childClickIndex clickIndex: Int) {
         self.init()
@@ -51,7 +51,7 @@ class StructureDetailVController: UIViewController {
         self.navigationItem.title = model?.name
         self.model?.children.forEach({ (value: StructureModel) in
             self.tabTitles.append(value.name)
-            self.viewControllers.append(WechatArticlesVController(cid: value.id))
+            self.viewControllers.append(WechatArticlesController(cid: value.id))
         })
         self.segmentedDataSource.titles = self.tabTitles
         self.segmentedView.dataSource = self.segmentedDataSource

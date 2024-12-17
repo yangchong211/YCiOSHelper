@@ -13,7 +13,7 @@ class IndexVController: UITabBarController {
     private func initTabBar() {
         let home = HomeController()
         let project = ProjectController()
-        let wechat = WechatVController()
+        let wechat = WechatController()
         let structure = StructrureVController()
         let user = UserVController()
         addChildViewController(childViewController: home, title: "主页");
@@ -54,7 +54,7 @@ class IndexVController: UITabBarController {
     private func initTab() {
         let home = HomeController()
         let project = ProjectController()
-        let wechat = WechatVController()
+        let wechat = WechatController()
         let structure = StructrureVController()
         let user = UserVController()
         home.tabBarItem = UITabBarItem(title: "主页", image: UIImage(named: "home_tabbar_night"), selectedImage: UIImage(named: "home_tabbar_press"))

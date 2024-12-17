@@ -2,7 +2,7 @@
 //  WechatCell.swift
 //  FunIOS
 //
-//  Created by redli on 2021/7/25.
+//  Created by 杨充 on 2021/7/25.
 //
 
 import UIKit
