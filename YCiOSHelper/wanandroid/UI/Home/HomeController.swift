@@ -2,7 +2,7 @@
 //  MainVController.swift
 //  FunIOS
 //
-//  Created by redli on 2021/7/21.
+//  Created by 杨充 on 2021/7/21.
 //
 
 import UIKit
@@ -26,12 +26,20 @@ class HomeController: UIViewController {
         attr.isHidden = true
     })
     
+    private var backButton = UIButton().then({attr in
+        attr.setImage(UIImage(named: "back"), for: .normal)
+        attr.contentMode = .scaleToFill
+        attr.isHidden = true
+    })
+    
     private var articleList = Array<ArticleItemModel>()
     
     private var bannerLists = Array<BannerModel>()
     
+    //DispatchGroup 是一个用于管理多个异步任务的工具。它可以让你等待一组任务完成后再执行其他操作。
     private lazy var dispatchGroup = { return DispatchGroup.init() }()
     
+    //这个是容器
     private lazy var controllerTableView: HomeControllerTableView = HomeControllerTableView(frame: .zero, style: .plain).then({ (attr) in
         attr.backgroundColor = UIColor.white
         attr.delegate = self
@@ -42,6 +50,7 @@ class HomeController: UIViewController {
         attr.register(ArticleCell.self, forCellReuseIdentifier: "ArticleCell")
     })
     
+    //轮播图
     private lazy var bannerView = LLCycleScrollView().then({ (attr) in
         attr.backgroundColor = UIColor.yellow
         attr.autoScrollTimeInterval = 5
@@ -53,6 +62,7 @@ class HomeController: UIViewController {
         attr.lldidSelectItemAtIndex = self.didSelectBanner(index:)
     })
     
+    //轮播图选中
     private func didSelectBanner(index: NSInteger) {
         let bannerModel = self.bannerLists[index]
         let webVController = WebVController(title: bannerModel.title, url: bannerModel.url)
@@ -64,7 +74,7 @@ class HomeController: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-//        self.navigationController?.navigationBar.isHidden = false
+        //self.navigationController?.navigationBar.isHidden = false
     }
     
     override func viewDidLoad() {
@@ -110,25 +120,24 @@ class HomeController: UIViewController {
         self.controllerTableView.scrollToRow(at: indexPath, at: .bottom, animated: floatAnimal)
     }
     
-    
+    //设置刷新
     private func setRefresh() {
         let refreshHeader = RefreshHeader{ [weak self] in
             self?.page = 0
+            //开始获取数据
             self?.getData(false)
         }
-        
         refreshHeader.isAutomaticallyChangeAlpha = true
         refreshHeader.lastUpdatedTimeLabel?.isHidden = true
         controllerTableView.mj_header = refreshHeader
         refreshHeader.beginRefreshing()
-        
         controllerTableView.mj_footer =  RefreshFooter{ [weak self] in
             self?.getData(true)
         }
         controllerTableView.mj_footer?.isAutomaticallyChangeAlpha = true
     }
     
-    
+    //开始获取数据
     private func getData(_ loadMore: Bool = false) {
         if !loadMore {
             page = 0
@@ -137,13 +146,16 @@ class HomeController: UIViewController {
         }
         
         if !loadMore {
+            //开始获取轮播图数据
             Api.fetchBanners(success: {(value:Array<BannerModel>?) in
                 self.bannerLists = value ?? []
                 self.bannerView.imagePaths = value?.map{$0.imagePath} ?? []
                 self.bannerView.titles = value?.map{ $0.title} ?? []
             }, error: error(error:))
             
+            //enter() 和 leave() 方法可以嵌套使用，以处理更复杂的任务结构。
             self.dispatchGroup.enter()
+            //获取置顶文章列表
             Api.fetchTopArticles(success: {(value: Array<ArticleItemModel>?) in
                 self.articleList = value ?? []
                 self.dispatchGroup.leave()
@@ -151,6 +163,7 @@ class HomeController: UIViewController {
         }
         
         self.dispatchGroup.enter()
+        //获取文章列表
         Api.fetchArticles(page: page, success: { (value: ArticleModel?) in
             //结束刷新
             if self.controllerTableView.mj_header!.isRefreshing  { self.controllerTableView.mj_header?.endRefreshing()
@@ -158,7 +171,6 @@ class HomeController: UIViewController {
             
             if self.controllerTableView.mj_footer!.isRefreshing { self.controllerTableView.mj_footer?.endRefreshing()
             }
-            
             //是否加载更多
             if loadMore {
                 if value?.datas.count ?? 0 <= 0 {
@@ -174,6 +186,7 @@ class HomeController: UIViewController {
             self.dispatchGroup.leave()
         }, error: error(error:))
         
+        // 等待 DispatchGroup 中的任务完成
         self.dispatchGroup.notify(queue: DispatchQueue.main) {
             self.controllerTableView.reloadData()
         }
@@ -226,6 +239,7 @@ extension HomeController: UITableViewDataSource, UITableViewDelegate, CollectDel
         }, error: error(error:))
     }
     
+    //悬浮按钮的状态
     func floatStatus(forHide hide: Bool, withAnimal animal: Bool) {
         floatButton.isHidden = hide
         floatAnimal = animal
