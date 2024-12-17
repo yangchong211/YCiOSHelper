@@ -145,7 +145,7 @@ class HttpUtils {
                 }
                 
                 //打印返回json内容
-                print(response.value ?? "")
+                print("打印返回json内容 ---> \(response.value ?? "")" )
             }
     }
 }

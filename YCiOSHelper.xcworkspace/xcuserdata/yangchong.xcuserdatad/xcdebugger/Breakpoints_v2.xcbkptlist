@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "4A7D6D3E-5CD8-4780-B65E-7653AAE34F4E"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EFC76555-BB81-4581-8002-A2E092CA0948"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YCiOSHelper/wanandroid/Cell-&#x5217;&#x8868;item&#x6837;&#x5f0f;/ProjectCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "ProjectCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "EFC76555-BB81-4581-8002-A2E092CA0948 - 2b3adc69a1b17f64"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YCiOSHelper.ProjectCell.__allocating_init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; YCiOSHelper.ProjectCell"
+                  moduleName = "YCiOSHelper.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yc/git/YCiOSHelper/YCiOSHelper/wanandroid/Cell-%E5%88%97%E8%A1%A8item%E6%A0%B7%E5%BC%8F/ProjectCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0">
+               </Location>
+               <Location
+                  uuid = "EFC76555-BB81-4581-8002-A2E092CA0948 - 79ff8e0d4a77dd0f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YCiOSHelper.ProjectCell.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;YCiOSHelper.ProjectCell&gt;"
+                  moduleName = "YCiOSHelper.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yc/git/YCiOSHelper/YCiOSHelper/wanandroid/Cell-%E5%88%97%E8%A1%A8item%E6%A0%B7%E5%BC%8F/ProjectCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0">
+               </Location>
+               <Location
+                  uuid = "EFC76555-BB81-4581-8002-A2E092CA0948 - dc2ab18f177c5ba7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YCiOSHelper.ProjectCell.__ivar_destroyer"
+                  moduleName = "YCiOSHelper.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yc/git/YCiOSHelper/YCiOSHelper/wanandroid/Cell-%E5%88%97%E8%A1%A8item%E6%A0%B7%E5%BC%8F/ProjectCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11">
+               </Location>
+               <Location
+                  uuid = "EFC76555-BB81-4581-8002-A2E092CA0948 - fae3a8118c91ccc8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YCiOSHelper.ProjectCell.__deallocating_deinit"
+                  moduleName = "YCiOSHelper.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yc/git/YCiOSHelper/YCiOSHelper/wanandroid/Cell-%E5%88%97%E8%A1%A8item%E6%A0%B7%E5%BC%8F/ProjectCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0">
+               </Location>
+               <Location
+                  uuid = "EFC76555-BB81-4581-8002-A2E092CA0948 - 368b79922c361e25"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YCiOSHelper.ProjectCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; YCiOSHelper.ProjectCell"
+                  moduleName = "YCiOSHelper.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yc/git/YCiOSHelper/YCiOSHelper/wanandroid/Cell-%E5%88%97%E8%A1%A8item%E6%A0%B7%E5%BC%8F/ProjectCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75">
+               </Location>
+               <Location
+                  uuid = "EFC76555-BB81-4581-8002-A2E092CA0948 - ef3dd19419492605"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YCiOSHelper.ProjectCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;YCiOSHelper.ProjectCell&gt;"
+                  moduleName = "YCiOSHelper.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yc/git/YCiOSHelper/YCiOSHelper/wanandroid/Cell-%E5%88%97%E8%A1%A8item%E6%A0%B7%E5%BC%8F/ProjectCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

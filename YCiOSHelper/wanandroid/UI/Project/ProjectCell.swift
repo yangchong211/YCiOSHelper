@@ -2,7 +2,7 @@
 //  ProjectCell.swift
 //  FunIOS
 //
-//  Created by redli on 2021/7/25.
+//  Created by 杨充 on 2021/7/25.
 //
 
 import UIKit
@@ -10,7 +10,7 @@ import Kingfisher
 
 class ProjectCell: BaseTableViewCell {
     
-    private lazy var  labelAuthor = UILabel().then({ (attr) in
+    private lazy var labelAuthor = UILabel().then({ (attr) in
         attr.text = "author"
         attr.font = UIFont.systemFont(ofSize: 12)
         attr.numberOfLines = 0 //相当于不限制行数
@@ -19,7 +19,7 @@ class ProjectCell: BaseTableViewCell {
         attr.backgroundColor = UIColor.white
     })
     
-    private lazy var  labelTime = UILabel().then({ (attr) in
+    private lazy var labelTime = UILabel().then({ (attr) in
         attr.text = "Time"
         attr.textColor = .gray
         attr.font = UIFont.systemFont(ofSize: 12)
@@ -28,7 +28,6 @@ class ProjectCell: BaseTableViewCell {
         attr.sizeToFit()
         attr.backgroundColor = UIColor.white
     })
-    
     
     private lazy var labelTitle: UILabel = UILabel().then {(attr) in
         attr.text = "Titile"
@@ -83,13 +82,9 @@ class ProjectCell: BaseTableViewCell {
                 imageContainer.kf.setImage(with: URL(string: model!.envelopePic), placeholder: UIImage(named: "normal_placeholder_h"))
                 labelSuperChapterName.text = model?.superChapterName
                 labelChapterName.text = " · \(model?.chapterName ?? "")"
-                
                 isCollect = model?.collect ?? false
-                
                 refreshCollect(isCollect: isCollect)
-                
                 imgCollect.tag = model?.id ?? 0
-                
                 return
             }
         }

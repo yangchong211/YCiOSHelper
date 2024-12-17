@@ -215,7 +215,9 @@ extension HomeController: UITableViewDataSource, UITableViewDelegate, CollectDel
         //在使用 UITableView 显示大量数据时，为了提高性能和内存利用率，UITableView 会使用可重用的 UITableViewCell 实例来显示不同的行。
         //当滚动 UITableView 时，超出屏幕范围的 UITableViewCell 会被回收并放入可重用队列中，然后可以通过 dequeueReusableCell(withIdentifier:for:) 方法来获取可重用的实例。
         let tableViewCell = tableView.dequeueReusableCell(for: indexPath, cellType: ArticleCell.self)
+        //收藏协议实现
         tableViewCell.collectDelegate = self
+        //赋值
         tableViewCell.model = articleList[indexPath.row]
         return tableViewCell
     }

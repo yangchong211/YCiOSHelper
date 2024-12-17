@@ -2,14 +2,14 @@
 //  ProjectArticlesVController.swift
 //  FunIOS
 //
-//  Created by redli on 2021/7/25.
+//  Created by 杨充 on 2021/7/25.
 //
 
 import UIKit
 import JXSegmentedView
 
-class ProjectArticlesVController: BaseCVontroller {
-    
+//项目中控制器
+class ProjectArticlesController: UIViewController {
     
     // 当前页面
     var page = 0
@@ -17,60 +17,52 @@ class ProjectArticlesVController: BaseCVontroller {
     var cid : Int = 0
     //实体类数组
     private var articleList = [ArticleItemModel]()
-    
-    private lazy var tableView: UITableView = UITableView(frame: .zero, style: .plain).then({ (attr) in
+    //创建tableView
+    private lazy var tableView: UITableView = UITableView(frame: .zero, style: .plain)
+        .then({ (attr) in
         attr.backgroundColor = UIColor.white
         attr.delegate = self
         attr.dataSource = self
         attr.alwaysBounceVertical = true
-//        attr.separatorStyle = .none
+        //        attr.separatorStyle = .none
         attr.register(cellType: ProjectCell.self)
-//        attr.rowHeight = 150
+        //        attr.rowHeight = 150
     })
     
-    
-    
+    //构造函数
+    //以使用 convenience init 来定义一个便利初始化方法，它通常用于提供一种更方便的方式来初始化对象。
     convenience init(cid: Int) {
         self.init()
         self.cid = cid
     }
-    
     
     override func viewDidLoad() {
         self.view.addSubview(tableView)
         tableView.snp.makeConstraints {  (maker) in
             maker.edges.equalToSuperview()
         }
-        
         tableView.register(ArticleCell.self, forCellReuseIdentifier: "ArticleCell")
-        
-        
-        if #available(iOS 11.0, *) {
+                if #available(iOS 11.0, *) {
             UIScrollView.appearance().contentInsetAdjustmentBehavior = .never
         } else {
             automaticallyAdjustsScrollViewInsets = false
         }
-        
         setRefresh()
     }
     
     private func setRefresh() {
-        
         let refreshHeader = RefreshHeader{ [weak self] in
             self?.page = 0
             self?.getData(false)
         }
-        
         refreshHeader.isAutomaticallyChangeAlpha = true
         refreshHeader.lastUpdatedTimeLabel?.isHidden = true
         tableView.mj_header = refreshHeader
         refreshHeader.beginRefreshing()
-        
         tableView.mj_footer =  RefreshFooter{ [weak self] in
             self?.getData(true)
         }
         tableView.mj_footer?.isAutomaticallyChangeAlpha = true
-        
     }
     
     
@@ -80,15 +72,15 @@ class ProjectArticlesVController: BaseCVontroller {
         } else {
             page += 1
         }
-        
         Api.fetchProjectArticles(page: page, cid: cid, success: { (value: ArticleModel?) in
             //结束刷新
-            if self.tableView.mj_header!.isRefreshing  { self.tableView.mj_header?.endRefreshing()
+            if self.tableView.mj_header!.isRefreshing  {
+                self.tableView.mj_header?.endRefreshing()
             }
             
-            if self.tableView.mj_footer!.isRefreshing { self.tableView.mj_footer?.endRefreshing()
+            if self.tableView.mj_footer!.isRefreshing {
+                self.tableView.mj_footer?.endRefreshing()
             }
-            
             //是否加载更多
             if loadMore {
                 if value?.datas.count ?? 0 <= 0 {
@@ -102,12 +94,15 @@ class ProjectArticlesVController: BaseCVontroller {
                 self.articleList = value?.datas ?? []
             }
             
+            //tableView.reloadData() 是一个用于重新加载 UITableView 数据的方法。
+            //当你调用这个方法时，UITableView 会重新加载并显示最新的数据。
             self.tableView.reloadData()
         }, error: error(error:))
     }
 }
 
-extension ProjectArticlesVController: JXSegmentedListContainerViewListDelegate, UITableViewDataSource, UITableViewDelegate, CollectDelegate {
+extension ProjectArticlesController: JXSegmentedListContainerViewListDelegate, UITableViewDataSource, UITableViewDelegate, CollectDelegate {
+    
     func listView() -> UIView {
         view
     }
@@ -119,8 +114,13 @@ extension ProjectArticlesVController: JXSegmentedListContainerViewListDelegate, 
     
     //每行加载样式
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //tableView.dequeueReusableCell 是 UITableView 的一个方法，用于获取可重用的 UITableViewCell 实例。
+        //在使用 UITableView 显示大量数据时，为了提高性能和内存利用率，UITableView 会使用可重用的 UITableViewCell 实例来显示不同的行。
+        //当滚动 UITableView 时，超出屏幕范围的 UITableViewCell 会被回收并放入可重用队列中，然后可以通过 dequeueReusableCell(withIdentifier:for:) 方法来获取可重用的实例。
         let tableViewCell = tableView.dequeueReusableCell(for: indexPath, cellType: ProjectCell.self)
+        //收藏协议实现
         tableViewCell.collectDelegate = self
+        //赋值
         tableViewCell.model = articleList[indexPath.row]
         return tableViewCell
     }

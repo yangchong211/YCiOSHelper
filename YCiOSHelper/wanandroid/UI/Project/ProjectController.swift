@@ -2,16 +2,16 @@
 //  ProjectVController.swift
 //  FunIOS
 //
-//  Created by redli on 2021/7/21.
+//  Created by 杨充 on 2021/7/21.
 //
 
 import UIKit
 import SnapKitExtend
 import JXSegmentedView
 
-class ProjectVController: BaseCVontroller {
+//项目
+class ProjectController: UIViewController {
 
-    
     private let segmentedView = JXSegmentedView()
     
     private let segmentedDataSource = JXSegmentedTitleDataSource()
@@ -29,19 +29,23 @@ class ProjectVController: BaseCVontroller {
     
     //指示器内容
     private var tabTitles : [String] = []
-    
-    private var viewControllers: [ProjectArticlesVController] = []
+    //控制器数组
+    private var viewControllers: [ProjectArticlesController] = []
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        //获取项目分类
         Api.fetchProjectSegmented(success: { (value:Array<StructureModel>?) in
+            //遍历数组后，创建tab指示器和控制器Controller
             value?.forEach({ (item: StructureModel) in
                 self.tabTitles.append(item.name)
-                self.viewControllers.append(ProjectArticlesVController(cid: item.id))
+                self.viewControllers.append(ProjectArticlesController(cid: item.id))
             })
+            //加载UI
             self.loadUI()
         }, error: error(error:))
     }
@@ -60,18 +64,20 @@ class ProjectVController: BaseCVontroller {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         segmentedView.frame = CGRect(x: 0, y: statusBarHeight, width: screenWidth, height: 50)
-        
         divLine.frame = CGRect(x: 0, y: statusBarHeight + 50, width: screenWidth, height: 1)
-        
         listContainerView.frame = CGRect(x: 0, y: statusBarHeight + 50 + 1, width: screenWidth, height: screenHeight - statusBarHeight - 50 - 1)
     }
 }
 
-extension ProjectVController: JXSegmentedListContainerViewDataSource {
+//拓展类
+extension ProjectController: JXSegmentedListContainerViewDataSource {
+    
+    //设置控制器的个数
     func numberOfLists(in listContainerView: JXSegmentedListContainerView) -> Int {
         return viewControllers.count
     }
     
+    //设置目标控制器
     func listContainerView(_ listContainerView: JXSegmentedListContainerView, initListAt index: Int) -> JXSegmentedListContainerViewListDelegate {
         return viewControllers[index]
     }
