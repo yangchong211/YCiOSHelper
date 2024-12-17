@@ -509,7 +509,9 @@
                         <viewLayoutGuide key="safeArea" id="egl-je-kk7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="玩Android项目案例" id="yX7-ND-kNo"/>
+                    <navigationItem key="navigationItem" title="玩Android项目案例" id="yX7-ND-kNo">
+                        <barButtonItem key="backBarButtonItem" title="返回" id="Z4D-nj-ffg"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qwQ-WG-sU2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
