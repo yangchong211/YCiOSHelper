@@ -170,7 +170,7 @@ class UserController: UIViewController {
     }
     
     @objc func onUserClick() {
-        navigationController?.pushViewController(LoginVController(), animated: true)
+        navigationController?.pushViewController(MyLoginController(), animated: true)
     }
     
     @objc func onLogoutClick() {
