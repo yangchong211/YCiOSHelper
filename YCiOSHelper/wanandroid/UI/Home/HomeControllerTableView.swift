@@ -22,7 +22,15 @@ class HomeControllerTableView: UITableView {
     
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
+        //addObserver(_:forKeyPath:options:context:) 方法来观察 UITableView 的属性或键路径的变化。
+        //将当前视图控制器（self）作为观察者添加到 UITableView 上，观察其 contentOffset 属性的变化。
         self.addObserver(self, forKeyPath: "contentOffset", options: .new, context: nil)
+    }
+    
+    deinit {
+        //在视图控制器被释放时
+        //使用 removeObserver(_:forKeyPath:) 方法将观察者从 UITableView 上移除，以避免潜在的内存泄漏。
+        self.removeObserver(self, forKeyPath: "contentOffset")
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
