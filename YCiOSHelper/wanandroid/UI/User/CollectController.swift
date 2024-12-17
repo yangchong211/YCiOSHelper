@@ -1,14 +1,15 @@
 //
-//  CollectVController.swift
+//  CollectController.swift
 //  FunIOS
 //
-//  Created by redli on 2021/8/10.
+//  Created by 杨充 on 2021/8/10.
 //
 
 import Foundation
 import UIKit
 
-class CollectVController: BaseCVontroller {
+//我的收藏
+class CollectController: UIViewController {
     
     // 当前页面
     var page = 0
@@ -94,7 +95,7 @@ class CollectVController: BaseCVontroller {
     
 }
 
-extension CollectVController: UITableViewDelegate, UITableViewDataSource {
+extension CollectController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        return data.count
     }

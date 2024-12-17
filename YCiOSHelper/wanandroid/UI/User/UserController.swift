@@ -243,7 +243,7 @@ extension UserController: UITableViewDataSource, UITableViewDelegate {
         var controller: UIViewController?
         switch item.type {
         case 1:
-            controller = CollectVController()
+            controller = CollectController()
             break;
         case 2:
             

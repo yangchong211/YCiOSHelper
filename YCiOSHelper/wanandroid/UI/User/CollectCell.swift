@@ -2,13 +2,14 @@
 //  CollectCell.swift
 //  FunIOS
 //
-//  Created by redli on 2021/8/10.
+//  Created by 杨充 on 2021/8/10.
 //
 
 import Foundation
 import UIKit
 
 class CollectCell: BaseTableViewCell {
+    
     private lazy var  labelAuthor = UILabel().then({ (attr) in
         attr.text = "author"
         attr.font = UIFont.systemFont(ofSize: 15)
@@ -87,7 +88,6 @@ class CollectCell: BaseTableViewCell {
             }
         }
     }
-    
     
     override func configUI() {
         contentView.addSubview(labelAuthor)
