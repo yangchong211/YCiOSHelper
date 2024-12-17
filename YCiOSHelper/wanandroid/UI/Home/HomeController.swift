@@ -65,7 +65,7 @@ class HomeController: UIViewController {
     //轮播图选中
     private func didSelectBanner(index: NSInteger) {
         let bannerModel = self.bannerLists[index]
-        let webVController = WebVController(title: bannerModel.title, url: bannerModel.url)
+        let webVController = WebController(title: bannerModel.title, url: bannerModel.url)
         navigationController?.pushViewController(webVController, animated: true)
     }
     
@@ -222,9 +222,15 @@ extension HomeController: UITableViewDataSource, UITableViewDelegate, CollectDel
     
     //item点击事件
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //IndexPath 是一个用于表示 UITableView 中行和节的索引的结构体。它由两个属性组成：section 和 row。
+        //section 属性表示 UITableView 中的节（section）的索引，从 0 开始计数。
+        //row 属性表示指定节中的行（row）的索引，也从 0 开始计数。
         let model = self.articleList[indexPath.row]
-        let webVController = WebVController(title: model.title, url: model.link)
+        let webVController = WebController(title: model.title, url: model.link)
         navigationController?.pushViewController(webVController, animated: true)
+        
+        //tableView(_:didSelectRowAt:) 是 UITableView 的委托方法之一，用于响应用户在 UITableView 中选中某一行的事件。
+        //当用户点击 UITableView 中的某一行时，系统会调用 tableView(_:didSelectRowAt:) 方法，并传递选中行的 IndexPath 参数。
     }
     
     //收藏文章

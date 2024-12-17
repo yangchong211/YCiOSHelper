@@ -124,7 +124,7 @@ extension WechatArticlesVController: JXSegmentedListContainerViewListDelegate, U
     //item点击事件
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = self.articleList[indexPath.row]
-        let webVController = WebVController(title: model.title, url: model.link)
+        let webVController = WebController(title: model.title, url: model.link)
         navigationController?.pushViewController(webVController, animated: true)
     }
     

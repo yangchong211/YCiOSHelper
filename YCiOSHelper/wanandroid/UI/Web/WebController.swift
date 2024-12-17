@@ -2,13 +2,15 @@
 //  WebVController.swift
 //  FunIOS
 //
-//  Created by redli on 2021/7/25.
+//  Created by 杨充 on 2021/7/25.
 //
 
 import UIKit
 import WebKit
 
-class WebVController: UIViewController {
+//H5页面
+class WebController: UIViewController , WKNavigationDelegate{
+    
     var url : String?
     
     convenience init(title: String? , url: String?) {
@@ -18,9 +20,6 @@ class WebVController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        let barButton = UIBarButtonItem()
-//        barButton.title = ""
-//        self.navigationItem.backBarButtonItem = barButton
         self.navigationController?.navigationBar.isHidden = false
     }
     
@@ -29,11 +28,16 @@ class WebVController: UIViewController {
         self.navigationItem.title = title ?? "网页"
         //添加webview
         let webView =  WKWebView.init(frame: view.frame)
-        
+        //加载url
         if url != nil {
             webView.load(URLRequest.init(url:URL.init(string: url!)!))
         }
-        
+        webView.navigationDelegate = self
         self.view.addSubview(webView)
+    }
+    
+    // WKNavigationDelegate 方法
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        print("网页加载完成")
     }
 }

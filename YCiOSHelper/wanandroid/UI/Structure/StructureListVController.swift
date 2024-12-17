@@ -95,7 +95,7 @@ extension StructureListVController: UITableViewDelegate, UITableViewDataSource, 
     
     func tagNavigationClick(parentModel model: NavigationModel, childClickIndex clickIndex: Int) {
         let item = model.articles[clickIndex]
-        let webVController = WebVController(title: item.title, url: item.link)
+        let webVController = WebController(title: item.title, url: item.link)
         navigationController?.pushViewController(webVController, animated: true)
     }
     

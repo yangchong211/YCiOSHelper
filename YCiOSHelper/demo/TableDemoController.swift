@@ -8,7 +8,7 @@
 import UIKit
 
 class TableDemoController: UIViewController , UITableViewDelegate , UITableViewDataSource {
-  
+    
     
     private var tableView : UITableView = UITableView();
     
@@ -72,41 +72,55 @@ class TableDemoController: UIViewController , UITableViewDelegate , UITableViewD
     }
     
     // 6.该方法是用来设置 TableView 每一行 Cell 的高度, 一旦这里设置了, 那么在自定义里的 rowHeight 属性就会被覆盖
-     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-         return 100
-     }
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 100
+    }
     
     // 7.该方法是用来响应 TableVIewCell 被点击的事件
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("我被点击了");
     }
-
+    
     // 8.该方法是用来设置 TableView 每一行 Cell 的编辑模式, 如果不设置, 默认都是删除
     func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell.EditingStyle {
         return UITableViewCell.EditingStyle.insert
     }
-
+    
     // 9.该方法是用来设置 Tabelview 的左滑快捷按钮, 只要写了该方法, 默认打开
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCell.EditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCell.EditingStyle, forRowAtIndexPath indexPath: IndexPath) {
     }
-
+    
     // 10.该方法是用来设置 TabelView 左滑快捷按钮的详细内容以及操作
     func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String! {
         return "删除"
     }
-
+    
     // 11.该方法是用来设置 TableView 是否可以拖拽到其他行数, 只要写了该方法, 默认打开
     func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
     }
     
     // 12.cell开始显示了
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        //IndexPath 是一个用于表示 UITableView 中行和节的索引的结构体。它由两个属性组成：section 和 row。
+        //section 属性表示 UITableView 中的节（section）的索引，从 0 开始计数。
+        //row 属性表示指定节中的行（row）的索引，也从 0 开始计数。
+        let section = indexPath.section
+        let row = indexPath.row
+        // 处理选中的行
+        print("tableView开始显示 \(section) 节的第 \(row) 行")
+        
         print("tableView开始显示 \(indexPath)")
     }
     
     // 13.cell不被显示了
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         print("tableView开始销毁 \(indexPath)")
+    }
+    
+    //14.item点击事件
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //tableView(_:didSelectRowAt:) 是 UITableView 的委托方法之一，用于响应用户在 UITableView 中选中某一行的事件。
+        //当用户点击 UITableView 中的某一行时，系统会调用 tableView(_:didSelectRowAt:) 方法，并传递选中行的 IndexPath 参数。
     }
 }
 

@@ -21,14 +21,11 @@ target 'YCiOSHelper' do
   
   # 玩android项目
   pod 'PrintBeautifulLog'
-  pod 'Alamofire'  #网络, '~> 4.7'
   pod 'MJRefresh' #刷新
   pod 'LLCycleScrollView' #轮播
   #  pod 'EmptyDataSet-Swift'
   pod 'HandyJSON'
-  pod 'Kingfisher' #图片
   pod 'Then' #语法糖
-  #pod 'SnapKit', '~> 4.2.0'
   pod 'SnapKitExtend' #自动布局扩展
   pod 'SVProgressHUD'
   pod 'MBProgressHUD'

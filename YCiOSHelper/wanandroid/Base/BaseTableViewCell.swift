@@ -2,7 +2,7 @@
 //  BaseTableViewCell.swift
 //  FunIOS
 //
-//  Created by redli on 2021/7/22.
+//  Created by 杨充 on 2021/7/22.
 //
 
 import UIKit
@@ -14,6 +14,7 @@ import Reusable
 /**
  收藏功能提到basecell 。这个项目每个列表都有收藏功能。可加可不加
  */
+
 
 class BaseTableViewCell: UITableViewCell, Reusable {
     
@@ -32,10 +33,12 @@ class BaseTableViewCell: UITableViewCell, Reusable {
         configUI()
     }
     
+    //配置UI
     open func configUI() {
         
     }
     
+    //刷新收藏
     func refreshCollect(isCollect collect: Bool) {
         if collect {
             imgCollect.setImage(UIImage(named: "ic_collect"), for: .normal)
@@ -45,6 +48,7 @@ class BaseTableViewCell: UITableViewCell, Reusable {
         self.isCollect = collect
     }
     
+    //收藏，通过协议进行回调通知
     @objc func collect(btn: UIButton) {
         if self.isCollect {
             collectDelegate?.uncollectAirticle(cid: btn.tag, tabCell: self)

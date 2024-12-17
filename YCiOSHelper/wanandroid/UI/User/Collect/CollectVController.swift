@@ -107,7 +107,7 @@ extension CollectVController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = self.data[indexPath.row]
-        let webVController = WebVController(title: model.title, url: model.link)
+        let webVController = WebController(title: model.title, url: model.link)
         navigationController?.pushViewController(webVController, animated: true)
     }
 }

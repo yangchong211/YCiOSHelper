@@ -2,13 +2,13 @@
 //  ArticleCell.swift
 //  FunIOS
 //
-//  Created by redli on 2021/7/22.
+//  Created by 杨充 on 2021/7/22.
 //
 
 import UIKit
 import SnapKitExtend
 
-public protocol CollectDelegate : NSObjectProtocol{
+public protocol CollectDelegate : NSObjectProtocol {
     
     //收藏 文章
     func collectAirticle(cid id: Int, tabCell tabviewCell: UITableViewCell) -> Void
@@ -20,6 +20,7 @@ public protocol CollectDelegate : NSObjectProtocol{
 
 class ArticleCell: BaseTableViewCell {
     
+    //作者
     private lazy var  labelAuthor = UILabel().then({ (attr) in
         attr.text = "author"
         attr.font = UIFont.systemFont(ofSize: 12)
@@ -29,6 +30,7 @@ class ArticleCell: BaseTableViewCell {
         attr.backgroundColor = UIColor.white
     })
     
+    //时间
     private lazy var  labelTime = UILabel().then({ (attr) in
         attr.text = "Time"
         attr.textColor = .gray
@@ -39,7 +41,7 @@ class ArticleCell: BaseTableViewCell {
         attr.backgroundColor = UIColor.white
     })
     
-    
+    //标签title
     private lazy var labelTitle: UILabel = UILabel().then {(attr) in
         attr.text = "Titile"
         attr.textColor = .black
@@ -50,7 +52,7 @@ class ArticleCell: BaseTableViewCell {
         attr.backgroundColor = UIColor.white
     }
     
-    
+    //标签name
     private lazy var labelChapterName = UILabel().then({(attr) in
         attr.text = "ChapterName"
         attr.textColor = .gray
@@ -61,6 +63,7 @@ class ArticleCell: BaseTableViewCell {
         attr.backgroundColor = UIColor.white
     })
     
+    //
     private lazy var  labelSuperChapterName = UILabel().then({(attr) in
         attr.text = "SuperChapterName"
         attr.textColor = .gray
@@ -71,6 +74,7 @@ class ArticleCell: BaseTableViewCell {
         attr.backgroundColor = UIColor.white
     })
     
+    //model数据
     var model: ArticleItemModel?{
         didSet {
             guard model == nil else {
@@ -79,28 +83,35 @@ class ArticleCell: BaseTableViewCell {
                 labelTitle.text = model?.title
                 labelSuperChapterName.text = model?.superChapterName
                 labelChapterName.text = " · \(model?.chapterName ?? "")"
-
                 isCollect = model?.collect ?? false
-                
                 refreshCollect(isCollect: isCollect)
-                
                 imgCollect.tag = model?.id ?? 0
                 return
             }
         }
     }
     
+    //配置UI布局
     override func configUI() {
         contentView.addSubview(labelAuthor)
         labelAuthor.snp.makeConstraints {maker in
-            maker.leading.equalToSuperview().offset(10)
+            //maker.leftMargin.equalTo(self.contentView).offset(10) //这个不行
+            //maker.left.equalTo(self.contentView).offset(10) //1，可以
+            //在 maker.leading.equalToSuperview().offset(10) 中，使用 maker.leading 来设置视图的 leading 约束。
+            //equalToSuperview() 表示将 leading 约束与父视图的 leading 边缘对齐，
+            //而 offset(10) 表示在 leading 约束上增加一个偏移量为 10。
+            maker.leading.equalToSuperview().offset(10)   //2，也可以
             maker.top.equalToSuperview().offset(10)
         }
 
         contentView.addSubview(labelTime)
         labelTime.snp.makeConstraints({maker in
-            maker.trailing.equalToSuperview().offset(-10)
+            maker.right.equalTo(self.contentView).offset(-10)   //1，可以
+            //maker.trailing.equalToSuperview().offset(-10)     //2，也可以
+            //使用 maker.top 来设置视图的顶部约束。equalToSuperview() 表示将顶部约束与父视图的顶部边缘对齐，而 offset(10) 表示在顶部约束上增加一个偏移量为 10。
             maker.top.equalToSuperview().offset(10)
+            //使用 maker.topMargin 来设置视图的顶部边距约束。equalToSuperview() 表示将顶部边距约束与父视图的顶部边缘对齐，而 offset(10) 表示在顶部边距约束上增加一个偏移量为 10。
+            //maker.topMargin.equalToSuperview().offset(10)
         })
 
         contentView.addSubview(labelTitle)
