@@ -1,8 +1,7 @@
 //
 //  BaseResponse.swift
-//  FunIOS
 //
-//  Created by redli on 2021/7/21.
+//  Created by 杨充 on 2021/7/21.
 //
 
 import Foundation

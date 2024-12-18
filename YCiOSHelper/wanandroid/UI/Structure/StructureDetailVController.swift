@@ -1,8 +1,8 @@
 //
-//  StructureDetailVController.swift
+//  StructureDetailController.swift
 //  FunIOS
 //
-//  Created by redli on 2021/7/28.
+//  Created by 杨充 on 2021/7/28.
 //
 
 import UIKit
@@ -18,7 +18,7 @@ class StructureDetailVController: UIViewController {
     
     private let segmentedDataSource = JXSegmentedTitleDataSource()
     
-    private lazy var  divLine = UIView().then({ (attr) in
+    private lazy var divLine = UIView().then({ (attr) in
         attr.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
     })
     

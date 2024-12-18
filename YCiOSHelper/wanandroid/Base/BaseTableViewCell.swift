@@ -1,6 +1,5 @@
 //
 //  BaseTableViewCell.swift
-//  FunIOS
 //
 //  Created by 杨充 on 2021/7/22.
 //

@@ -1,6 +1,5 @@
 //
 //  UserTabVController.swift
-//  FunIOS
 //
 //  Created by 杨充 on 2021/8/9.
 //
@@ -249,10 +248,10 @@ extension UserController: UITableViewDataSource, UITableViewDelegate {
             
             break;
         case 3:
-            controller = IntegralVController()
+            controller = IntegralController()
             break;
         case 4:
-            controller = RankingVController()
+            controller = RankingController()
             break;
         default:
             controller = UIViewController()

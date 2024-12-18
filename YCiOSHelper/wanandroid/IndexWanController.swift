@@ -1,7 +1,7 @@
 
 import UIKit
 
-class IndexVController: UITabBarController {
+class IndexController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

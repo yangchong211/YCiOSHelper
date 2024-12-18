@@ -1,6 +1,5 @@
 //
 //  CollectCell.swift
-//  FunIOS
 //
 //  Created by 杨充 on 2021/8/10.
 //

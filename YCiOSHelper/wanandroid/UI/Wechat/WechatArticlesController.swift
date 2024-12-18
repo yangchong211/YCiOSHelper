@@ -8,7 +8,7 @@
 import UIKit
 import JXSegmentedView
 
-class WechatArticlesController: BaseCVontroller {
+class WechatArticlesController: UIViewController {
     
     // 当前页面
     var page = 0

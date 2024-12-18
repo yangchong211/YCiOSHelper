@@ -1,6 +1,5 @@
 //
 //  UserCell.swift
-//  FunIOS
 //
 //  Created by redli on 2021/8/9.
 //

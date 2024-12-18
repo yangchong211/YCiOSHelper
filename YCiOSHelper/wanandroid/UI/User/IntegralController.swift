@@ -1,32 +1,31 @@
 //
-//  RankingVController.swift
-//  FunIOS
+//  IntegralController.swift
 //
-//  Created by redli on 2021/8/10.
+//  Created by 杨充 on 2021/8/10.
 //
 
 import Foundation
 import UIKit
 
-
-class RankingVController: BaseCVontroller {
-    // 当前页面
-    var page = 1
+//我的积分
+class IntegralController: UIViewController {
     
-    private var data = [UserCoinLevelModel]()
+    // 当前页面
+    var page = 0
+    
+    private var data = [IntegralItemModel]()
     
     private lazy var tableView: UITableView = UITableView(frame: .zero, style: .plain).then({ (attr) in
         attr.backgroundColor = UIColor.white
         attr.delegate = self
         attr.dataSource = self
         attr.alwaysBounceVertical = true
-        attr.rowHeight = 60
-        attr.register(cellType: RankingCell.self)
+        
     })
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = false
-        navigationItem.title = "排行榜"
+        navigationItem.title = "积分列表"
     }
     
     override func viewDidLoad() {
@@ -44,7 +43,7 @@ class RankingVController: BaseCVontroller {
     private func setRefresh() {
         
         let refreshHeader = RefreshHeader{ [weak self] in
-            self?.page = 1
+            self?.page = 0
             self?.getData(false)
         }
         
@@ -66,7 +65,7 @@ class RankingVController: BaseCVontroller {
             page += 1
         }
         
-        Api.fetchRanking(page: page, success: { (value: RankingModel?) in
+        Api.fetchMyIntegral(page: page, success: { (value: IntegralModel?) in
             //结束刷新
             if self.tableView.mj_header!.isRefreshing  { self.tableView.mj_header?.endRefreshing()
             }
@@ -90,17 +89,22 @@ class RankingVController: BaseCVontroller {
             self.tableView.reloadData()
         }, error: error(error:))
     }
+    
 }
 
-extension RankingVController: UITableViewDataSource, UITableViewDelegate {
+
+extension IntegralController: UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: RankingCell.self)
-        cell.model = self.data[indexPath.row]
-        cell.index = indexPath.row + 1
-        return cell
+        let tabelCell = UITableViewCell.init(style: .subtitle, reuseIdentifier: "integral_cell")
+        tabelCell.textLabel?.text = self.data[indexPath.row].reason
+        tabelCell.detailTextLabel?.text = self.data[indexPath.row
+        ].desc
+        tabelCell.selectedBackgroundView = UIView()
+       return tabelCell
     }
 }

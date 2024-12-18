@@ -10,7 +10,7 @@ import SnapKitExtend
 import JXSegmentedView
 
 //公众号
-class WechatController: BaseCVontroller {
+class WechatController: UIViewController {
     
     private let segmentedView = JXSegmentedView()
     

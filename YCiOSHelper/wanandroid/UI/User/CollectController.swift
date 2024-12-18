@@ -1,6 +1,5 @@
 //
 //  CollectController.swift
-//  FunIOS
 //
 //  Created by 杨充 on 2021/8/10.
 //
@@ -111,4 +110,5 @@ extension CollectController: UITableViewDelegate, UITableViewDataSource {
         let webVController = WebController(title: model.title, url: model.link)
         navigationController?.pushViewController(webVController, animated: true)
     }
+    
 }

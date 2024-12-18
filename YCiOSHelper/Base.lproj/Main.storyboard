@@ -502,7 +502,7 @@
         <!--玩Android项目案例-->
         <scene sceneID="wQu-eY-yBZ">
             <objects>
-                <viewController id="dMu-7l-thR" customClass="IndexVController" customModule="YCiOSHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dMu-7l-thR" customClass="IndexController" customModule="YCiOSHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nJK-3h-tVE">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
