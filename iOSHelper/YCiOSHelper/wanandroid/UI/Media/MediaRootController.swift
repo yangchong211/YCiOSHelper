@@ -21,6 +21,7 @@ class MediaRootController: UIViewController , MediaContainerControllerDelegate ,
         containerVc = MediaContainerController();
         containerVc.delegate = self;
         addChildView(childViewController: containerVc) { subview in
+            //makeConstraints 方法来设置子视图的约束条件。
             subview.snp.makeConstraints { make in
                 make.leading.trailing.top.equalTo(self.view);
                 make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottomMargin);
