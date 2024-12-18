@@ -5,20 +5,20 @@ class IndexController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initTabBar()
-        //initTab()
+        //initTabBar()
+        initTab()
     }
     
     //文字tab
     private func initTabBar() {
         let home = HomeController()
         let project = ProjectController()
-        let wechat = WechatController()
+        let wechat = MediaRootController()
         let structure = StructrureController()
         let user = UserController()
         addChildViewController(childViewController: home, title: "主页");
         addChildViewController(childViewController: project, title: "项目");
-        addChildViewController(childViewController: wechat, title: "公众号");
+        addChildViewController(childViewController: wechat, title: "多媒体");
         addChildViewController(childViewController: structure, title: "体系");
         addChildViewController(childViewController: user, title: "我的");
     }
@@ -34,6 +34,8 @@ class IndexController: UITabBarController {
         navigationCortroller.setNavigationBarHidden(true, animated: false)
         //拿到导航控制器的tabBar
         let tabBarItem = navigationCortroller.tabBarItem;
+        let tabBarHeight = self.tabBar.frame.size.height;
+        print("导航控制器的tabBar的高度是：\(tabBarHeight)");
         //设置标题，图片，选中图片
         tabBarItem?.title = title;
         //对标题判断
@@ -54,12 +56,15 @@ class IndexController: UITabBarController {
     private func initTab() {
         let home = HomeController()
         let project = ProjectController()
-        let wechat = WechatController()
+        //let wechat = WechatController()
+        let wechat = MediaRootController()
         let structure = StructrureController()
         let user = UserController()
+        let tabBarHeight = self.tabBar.frame.size.height;
+        print("导航控制器的tabBar的高度是：\(tabBarHeight)");
         home.tabBarItem = UITabBarItem(title: "主页", image: UIImage(named: "home_tabbar_night"), selectedImage: UIImage(named: "home_tabbar_press"))
         project.tabBarItem = UITabBarItem(title: "项目", image: UIImage(named: "project_tabbar_night"), selectedImage: UIImage(named: "project_tabbar_press"))
-        wechat.tabBarItem = UITabBarItem(title: "公众号", image: UIImage(named: "wechat_tabbar_night"), selectedImage: UIImage(named: "wechat_tabbar_press"))
+        wechat.tabBarItem = UITabBarItem(title: "多媒体", image: UIImage(named: "wechat_tabbar_night"), selectedImage: UIImage(named: "wechat_tabbar_press"))
         structure.tabBarItem = UITabBarItem(title: "体系", image: UIImage(named: "structure_tabbar_night"), selectedImage: UIImage(named: "structure_tabbar_press"))
         user.tabBarItem = UITabBarItem(title: "我的", image: UIImage(named: "mine_tabbar_night"), selectedImage: UIImage(named: "mine_tabbar_press"))
         self.viewControllers = [home, project, wechat, structure, user]

@@ -22,7 +22,7 @@ class ProjectController: UIViewController {
     
     //配置指示器
     private let indicator = JXSegmentedIndicatorLineView()
-    
+    //list容器
     private lazy var listContainerView:JXSegmentedListContainerView = {
         return JXSegmentedListContainerView(dataSource: self)
     }()
@@ -60,13 +60,23 @@ class ProjectController: UIViewController {
         self.segmentedView.indicators = [self.indicator]
         self.segmentedView.listContainer = self.listContainerView
         self.view.addSubview(self.listContainerView)
+        
+        listContainerView.snp.makeConstraints { make in
+            make.width.equalTo(screenWidth)
+            make.height.equalTo(screenHeight)
+            make.top.equalTo(divLine.snp_top).offset(0)
+            make.bottom.equalToSuperview().offset(-(49+40))
+        }
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        //指示器
         segmentedView.frame = CGRect(x: 0, y: statusBarHeight, width: screenWidth, height: 50)
+        //分割线
         divLine.frame = CGRect(x: 0, y: statusBarHeight + 50, width: screenWidth, height: 1)
-        listContainerView.frame = CGRect(x: 0, y: statusBarHeight + 50 + 1, width: screenWidth, height: screenHeight - statusBarHeight - 50 - 1)
+        //下面容器位置
+        //listContainerView.frame = CGRect(x: 0, y: statusBarHeight + 50 + 1, width: screenWidth, height: screenHeight - statusBarHeight - 50 - 1)
     }
 }
 

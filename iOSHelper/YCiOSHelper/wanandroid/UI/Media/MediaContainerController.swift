@@ -9,20 +9,20 @@ import UIKit
 import SnapKit
 
 //定义一个协议
-protocol HomeContainerControllerDelegate : NSObjectProtocol {
+protocol MediaContainerControllerDelegate : NSObjectProtocol {
     
-    func homeContainerController(controller: HomeContainerController , viewControllerAtindexPath: IndexPath) -> UIViewController
+    func homeContainerController(controller: MediaContainerController , viewControllerAtindexPath: IndexPath) -> UIViewController
     
-    func numberOfViewControllers(in containerViewContrller: HomeContainerController) -> Int
+    func numberOfViewControllers(in containerViewContrller: MediaContainerController) -> Int
     
-    func homeContainerController(controller: HomeContainerController , didScroll scrollView: UIScrollView);
+    func homeContainerController(controller: MediaContainerController , didScroll scrollView: UIScrollView);
 }
 
 //容器控制器
-class HomeContainerController: UIViewController ,UICollectionViewDelegate ,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class MediaContainerController: UIViewController ,UICollectionViewDelegate ,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     //weak关键字避免循环引用
-    public weak var delegate: HomeContainerControllerDelegate?
+    public weak var delegate: MediaContainerControllerDelegate?
     //声明view
     private var collectionView : UICollectionView!
     //声明layout
@@ -47,7 +47,7 @@ class HomeContainerController: UIViewController ,UICollectionViewDelegate ,UICol
         collectionView.delegate = self;
         collectionView.dataSource = self;
         //注册cell
-        collectionView.register(HomeContainerCollectionViewCell.self, forCellWithReuseIdentifier: HomeContainerCollectionViewCell.reuseldentifier)
+        collectionView.register(MediaContainerCollectionViewCell.self, forCellWithReuseIdentifier: MediaContainerCollectionViewCell.reuseldentifier)
         //设置可以分页
         collectionView.isPagingEnabled = true;
         collectionView.showsHorizontalScrollIndicator = false;
@@ -90,7 +90,7 @@ class HomeContainerController: UIViewController ,UICollectionViewDelegate ,UICol
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         print("将要显示HomeContainerCollectionViewCell");
         //将要显示cell
-        guard let cell = cell as? HomeContainerCollectionViewCell else {
+        guard let cell = cell as? MediaContainerCollectionViewCell else {
             return
         }
         cell.viewContrller?.beginAppearanceTransition(true, animated: false)
@@ -100,7 +100,7 @@ class HomeContainerController: UIViewController ,UICollectionViewDelegate ,UICol
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         //将要销毁cell
         print("将要销毁HomeContainerCollectionViewCell");
-        guard let cell = cell as? HomeContainerCollectionViewCell else {
+        guard let cell = cell as? MediaContainerCollectionViewCell else {
             return
         }
         cell.viewContrller?.beginAppearanceTransition(false, animated: false)
@@ -115,7 +115,7 @@ class HomeContainerController: UIViewController ,UICollectionViewDelegate ,UICol
     // MARK: UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         //初始化cell
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeContainerCollectionViewCell.reuseldentifier, for: indexPath) as! HomeContainerCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MediaContainerCollectionViewCell.reuseldentifier, for: indexPath) as! MediaContainerCollectionViewCell
         if let viewContrller = delegate?.homeContainerController(controller: self, viewControllerAtindexPath: indexPath) {
             //设置新的vc
             cell.config(with: viewContrller)
@@ -125,7 +125,7 @@ class HomeContainerController: UIViewController ,UICollectionViewDelegate ,UICol
     }
 }
 
-class HomeContainerCollectionViewCell: UICollectionViewCell {
+class MediaContainerCollectionViewCell: UICollectionViewCell {
     
     //添加一个常量
     static let reuseldentifier = "HomeContainerCollectionViewCell";

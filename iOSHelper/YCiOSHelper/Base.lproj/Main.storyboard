@@ -252,28 +252,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="4XN-Gd-SJC" style="IBUITableViewCellStyleDefault" id="1Tq-Kd-tEZ">
-                                        <rect key="frame" x="0.0" y="530.33334732055664" width="393" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1Tq-Kd-tEZ" id="WEF-JW-qBb">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="网上综合案例学习，主要是学习UI" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4XN-Gd-SJC">
-                                                    <rect key="frame" x="20" y="0.0" width="353" height="43.666667938232422"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="sEi-HQ-VBc" kind="show" id="08y-WR-xUf"/>
-                                        </connections>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="j7X-5F-wFo" style="IBUITableViewCellStyleDefault" id="EI4-I1-UMR">
-                                        <rect key="frame" x="0.0" y="574.00001525878906" width="393" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="530.33334732055664" width="393" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EI4-I1-UMR" id="UJW-3H-dGy">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
@@ -293,7 +273,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="zK7-jg-tAg" style="IBUITableViewCellStyleDefault" id="FCO-yq-NKY">
-                                        <rect key="frame" x="0.0" y="617.66668319702148" width="393" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="574.00001525878906" width="393" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FCO-yq-NKY" id="7mf-4T-Lxe">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
@@ -482,22 +462,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5AP-IR-m02" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4694" y="-951"/>
-        </scene>
-        <!--抖音案例学习-->
-        <scene sceneID="ZuG-n8-vSp">
-            <objects>
-                <viewController id="sEi-HQ-VBc" customClass="TabBarController" customModule="YCiOSHelper" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="EtG-xa-UlJ">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="z1r-3p-wn9"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="抖音案例学习" id="fdt-Pt-8UH"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aMs-DN-36r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4694" y="-211"/>
         </scene>
         <!--玩Android项目案例-->
         <scene sceneID="wQu-eY-yBZ">

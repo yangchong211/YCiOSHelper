@@ -27,10 +27,11 @@ class HomeController: UIViewController {
     })
     
     private var backButton = UIButton().then({attr in
-        attr.setImage(UIImage(named: "back"), for: .normal)
+        attr.setImage(UIImage(named: "ic_close"), for: .normal)
         attr.contentMode = .scaleToFill
-        attr.isHidden = true
+        attr.isHidden = false
     })
+    
     //文章list
     private var articleList = Array<ArticleItemModel>()
     //轮播图list
@@ -88,6 +89,7 @@ class HomeController: UIViewController {
         }
         //添加banner轮播图
         controllerTableView.tableHeaderView = bannerView
+        
         //添加悬浮btn按钮
         self.view.addSubview(floatButton)
         floatButton.snp.makeConstraints { maker in
@@ -95,6 +97,15 @@ class HomeController: UIViewController {
             maker.right.equalToSuperview().offset(-30)
         }
         floatButton.addTarget(self, action: #selector(topOffset), for: .touchUpInside)
+        
+        //添加返回键
+        self.view.addSubview(backButton)
+        backButton.snp.makeConstraints { maker in
+            maker.width.height.equalTo(40)
+            maker.top.equalToSuperview().offset(80)
+            maker.left.equalToSuperview().offset(20)
+        }
+        backButton.addTarget(self, action: #selector(backClose), for: .touchUpInside)
         
         if #available(iOS 11.0, *) {
             //是一个用于设置全局 UIScrollView 的 contentInsetAdjustmentBehavior 属性的方法。
@@ -118,6 +129,11 @@ class HomeController: UIViewController {
         //at 参数用于指定滚动到行的位置，可以是 .top、.middle 或 .bottom。
         //animated 参数用于指定是否使用动画效果进行滚动。
         self.controllerTableView.scrollToRow(at: indexPath, at: .bottom, animated: floatAnimal)
+    }
+    
+    //返回到根控制器
+    @objc func backClose() {
+        navigationController?.popToRootViewController(animated: true)
     }
     
     //设置刷新

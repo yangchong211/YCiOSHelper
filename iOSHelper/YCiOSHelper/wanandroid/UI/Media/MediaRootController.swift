@@ -8,17 +8,17 @@
 import UIKit
 import SnapKit
 
-class HomeRootController: UIViewController , HomeContainerControllerDelegate , HomeTabViewDelegate {
+class MediaRootController: UIViewController , MediaContainerControllerDelegate , HomeTabViewDelegate {
     
     //声明我们的容器
-    private var containerVc : HomeContainerController!
-    private var tabView : HomeTabView!
+    private var containerVc : MediaContainerController!
+    private var tabView : MediaTabView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //container vc
-        containerVc = HomeContainerController();
+        containerVc = MediaContainerController();
         containerVc.delegate = self;
         addChildView(childViewController: containerVc) { subview in
             subview.snp.makeConstraints { make in
@@ -28,7 +28,7 @@ class HomeRootController: UIViewController , HomeContainerControllerDelegate , H
         }
         
         //TabView，需要添加到当前视图上，并且设置布局
-        tabView = HomeTabView(items: [.init(index: 0, title: "推荐"),
+        tabView = MediaTabView(items: [.init(index: 0, title: "推荐"),
                                       .init(index: 1, title: "关注")] ,
                               delegate: self)
         view.addSubview(tabView)
@@ -40,18 +40,18 @@ class HomeRootController: UIViewController , HomeContainerControllerDelegate , H
         }
     }
 
-    func homeContainerController(controller: HomeContainerController , viewControllerAtindexPath: IndexPath) -> UIViewController {
+    func homeContainerController(controller: MediaContainerController , viewControllerAtindexPath: IndexPath) -> UIViewController {
         //let vc = UIViewController();
         //vc.view.backgroundColor = UIColor.randomYcColor;
-        let vc = HomeTableViewController();
+        let vc = MediaTableViewController();
         return vc;
     }
     
-    func numberOfViewControllers(in containerViewContrller: HomeContainerController) -> Int {
+    func numberOfViewControllers(in containerViewContrller: MediaContainerController) -> Int {
         return 2;
     }
     
-    func homeContainerController(controller: HomeContainerController, didScroll scrollView: UIScrollView) {
+    func homeContainerController(controller: MediaContainerController, didScroll scrollView: UIScrollView) {
         let pageWidth = scrollView.frame.width;
         let contentOffsetX = scrollView.contentOffset.x;
         print("设置切换控制器1   \(pageWidth)")
@@ -65,7 +65,7 @@ class HomeRootController: UIViewController , HomeContainerControllerDelegate , H
     }
     
     
-    func didselect(item: HomeTabView.Item,in tabView: HomeTabView) {
+    func didselect(item: MediaTabView.Item,in tabView: MediaTabView) {
         containerVc.setPageIndex(index: item.index, animated: true)
     }
 

@@ -1,8 +1,7 @@
 //
 //  RefreshView.swift
-//  FunIOS
 //
-//  Created by redli on 2021/7/23.
+//  Created by 杨充 on 2021/7/23.
 //
 
 import MJRefresh

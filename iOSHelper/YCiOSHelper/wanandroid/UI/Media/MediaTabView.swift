@@ -9,11 +9,11 @@ import Foundation
 import UIKit
 
 protocol HomeTabViewDelegate : NSObjectProtocol {
-    func didselect(item: HomeTabView.Item,in tabView: HomeTabView);
+    func didselect(item: MediaTabView.Item,in tabView: MediaTabView);
 }
 
 //自定义tab布局view
-class HomeTabView : UIView {
+class MediaTabView : UIView {
     
     struct Item {
         var index: Int

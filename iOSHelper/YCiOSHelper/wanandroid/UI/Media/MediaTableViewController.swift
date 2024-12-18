@@ -14,7 +14,7 @@ import Lottie
 
 //视频流的tabview控制器，仿抖音上下滑动
 
-class HomeTableViewController : UIViewController , UITableViewDelegate , UITableViewDataSource{
+class MediaTableViewController : UIViewController , UITableViewDelegate , UITableViewDataSource{
     
     private var tableView : UITableView = UITableView(frame: .zero, style: .plain)
     
@@ -156,13 +156,13 @@ class HomeViewController : UIViewController {
         PlayerView(player: self.player);
     }()
     
-    private lazy var avatarButton: HomeAvatarView = {
-        return HomeAvatarView(user: self.homeModel.author ??
+    private lazy var avatarButton: MediaAvatarView = {
+        return MediaAvatarView(user: self.homeModel.author ??
                               HomeModel.Author(id: "0", name: "未知"))
     }()
 
-    private lazy var likeButton: HomeLikeButton =  {
-        let button = HomeLikeButton(frame: .zero)
+    private lazy var likeButton: MediaLikeButton =  {
+        let button = MediaLikeButton(frame: .zero)
         return button
     }()
 

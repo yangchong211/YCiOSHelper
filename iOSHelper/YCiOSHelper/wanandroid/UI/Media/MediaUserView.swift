@@ -12,7 +12,7 @@ import Kingfisher
 import Lottie
 
 //关注按钮
-class HomeAvatarView : UIView {
+class MediaAvatarView : UIView {
     
     private lazy var imageView : UIImageView = {
         let imageView = UIImageView();
@@ -81,7 +81,7 @@ class HomeAvatarView : UIView {
 
 
 //点赞按钮
-class HomeLikeButton: UIView {
+class MediaLikeButton: UIView {
     
     private let likeAnimationView : LottieAnimationView = LottieAnimationView(name: "icon_home_like_new")
     private let disLikeAnimationView : LottieAnimationView = LottieAnimationView(name: "icon_home_dislike_new")
