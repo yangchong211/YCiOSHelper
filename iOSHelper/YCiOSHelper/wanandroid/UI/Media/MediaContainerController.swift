@@ -27,11 +27,14 @@ class MediaContainerController: UIViewController ,UICollectionViewDelegate ,UICo
     private var collectionView : UICollectionView!
     //声明layout
     private var collectionViewLayout: UICollectionViewFlowLayout!
+    //?这意味着 optionalValue 可以存储一个整数值，或者存储 nil，表示值的不存在。
+    private var optionalValue: Int?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //需要使用 ? 来访问其中的值。这是因为可选类型可能为 nil
+        var code = optionalValue?.hashValue
         //collection view layout
         //collectionVIewLayout = UICollectionViewLayout();
         collectionViewLayout = UICollectionViewFlowLayout();

@@ -63,10 +63,10 @@ class ImageDemoController: UIViewController ,UIActionSheetDelegate{
         imageChangeView.backgroundColor = UIColor.blue
         
         //设置动画
-        imageChangeView.animationImages = [UIImage(named:"1.png")!,
-                                           UIImage (named:"2.png")!,
-                                           UIImage (named:"3.png")!,
-                                           UIImage (named:"4.png")!]
+        imageChangeView.animationImages = [UIImage(named:"ic_close")!,
+                                           UIImage (named:"ic_close")!,
+                                           UIImage (named:"ic_close")!,
+                                           UIImage (named:"ic_close")!]
         
         //设置每间隔1秒 循环一次
         imageChangeView.animationDuration = 4

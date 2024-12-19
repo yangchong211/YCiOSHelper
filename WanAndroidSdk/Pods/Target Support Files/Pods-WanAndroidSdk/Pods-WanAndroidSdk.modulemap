@@ -1,0 +1,6 @@
+framework module Pods_WanAndroidSdk {
+  umbrella header "Pods-WanAndroidSdk-umbrella.h"
+
+  export *
+  module * { export * }
+}

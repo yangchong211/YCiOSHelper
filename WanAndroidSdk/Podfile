@@ -1,0 +1,19 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'WanAndroidSdk' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # lottie动画库：https://github.com/airbnb/lottie-ios
+  pod 'lottie-ios'
+  # 网络库：https://github.com/Alamofire/Alamofire
+  pod 'Alamofire', '~> 5.10.2'
+  # json解析库：https://github.com/SwiftyJSON/SwiftyJSON
+  pod 'SwiftyJSON','~> 5.0.2'
+  # 图片加载框架：https://github.com/onevcat/Kingfisher
+  pod 'Kingfisher', '~> 6.3.1'
+  # 布局流行库：https://github.com/SnapKit/SnapKit
+  pod 'SnapKit', '~> 5.0.0'
+
+end

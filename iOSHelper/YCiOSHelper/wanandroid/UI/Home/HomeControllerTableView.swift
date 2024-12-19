@@ -18,6 +18,10 @@ public protocol HomeTableDelegate: NSObjectProtocol {
 
 class HomeControllerTableView: UITableView {
     
+    //weak 是一个修饰符（modifier），用于声明一个弱引用（weak reference）。
+    //弱引用是一种特殊类型的引用，它不会增加被引用对象的引用计数。
+    //当被引用对象的引用计数为零时，弱引用会自动被设置为 nil，避免了循环引用（retain cycle）的问题。
+    //通过使用 weak 修饰符，我们可以避免循环引用的问题，确保在不再需要引用时，对象能够被正确地释放。
     weak open var homeTableDelegate: HomeTableDelegate?
     
     override init(frame: CGRect, style: UITableView.Style) {

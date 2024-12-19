@@ -1,0 +1,6 @@
+framework module EasySdk {
+  umbrella header "EasySdk.h"
+  export *
+
+  module * { export * }
+}

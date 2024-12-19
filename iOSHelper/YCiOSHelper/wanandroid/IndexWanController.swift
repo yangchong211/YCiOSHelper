@@ -1,13 +1,15 @@
 
 import UIKit
 
-class IndexController: UITabBarController {
+//open 是一个访问修饰符（access modifier），用于声明一个可以被其他模块访问和继承的类、属性、方法或初始化器。
+//open 修饰符的作用范围比较宽泛，它允许其他模块中的代码对被修饰的实体进行继承、重写和访问。
+//注意的是，open 修饰符的访问级别比 public 更高，因此被 open 修饰的实体可以被其他模块继承和访问，而被 public 修饰的实体只能被访问。
+open class IndexController: UITabBarController {
     
     //UITabBarController 是 iOS 开发中常用的视图控制器之一，用于创建具有选项卡（Tab）界面的应用程序。
     //UITabBarController 可以在底部或顶部显示一个选项卡栏，每个选项卡对应一个视图控制器。
     //用户可以通过点击选项卡来切换不同的视图控制器和内容。
-    
-    override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         //initTabBar()
         initTab()

@@ -1,0 +1,6 @@
+framework module Pods_EasySdk_EasySdkTests {
+  umbrella header "Pods-EasySdk-EasySdkTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

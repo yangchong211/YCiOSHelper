@@ -12,6 +12,7 @@ class MediaRootController: UIViewController , MediaContainerControllerDelegate ,
     
     //声明我们的容器
     private var containerVc : MediaContainerController!
+    //! 是一个后缀操作符，用于表示一个可选类型（Optional）的强制解包（force unwrapping）。
     private var tabView : MediaTabView!
 
     override func viewDidLoad() {
@@ -41,6 +42,7 @@ class MediaRootController: UIViewController , MediaContainerControllerDelegate ,
         }
     }
 
+    //MediaContainerControllerDelegate
     func homeContainerController(controller: MediaContainerController , viewControllerAtindexPath: IndexPath) -> UIViewController {
         //let vc = UIViewController();
         //vc.view.backgroundColor = UIColor.randomYcColor;
@@ -51,6 +53,7 @@ class MediaRootController: UIViewController , MediaContainerControllerDelegate ,
     func numberOfViewControllers(in containerViewContrller: MediaContainerController) -> Int {
         return 2;
     }
+    
     
     func homeContainerController(controller: MediaContainerController, didScroll scrollView: UIScrollView) {
         let pageWidth = scrollView.frame.width;
@@ -65,7 +68,7 @@ class MediaRootController: UIViewController , MediaContainerControllerDelegate ,
         tabView.updateSelectedIndex(with: progress)
     }
     
-    
+    //HomeTabViewDelegate
     func didselect(item: MediaTabView.Item,in tabView: MediaTabView) {
         containerVc.setPageIndex(index: item.index, animated: true)
     }

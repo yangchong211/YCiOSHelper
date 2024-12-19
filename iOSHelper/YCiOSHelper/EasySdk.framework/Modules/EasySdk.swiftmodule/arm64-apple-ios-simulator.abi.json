@@ -1,0 +1,1279 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "EasySdk",
+    "printedName": "EasySdk",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "EasySdk",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "EasySdk"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "BannerHoverView",
+        "printedName": "BannerHoverView",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "headerScrollView",
+            "printedName": "headerScrollView",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ImplicitlyUnwrappedOptional",
+                "printedName": "UIKit.UIScrollView?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIScrollView",
+                    "printedName": "UIKit.UIScrollView",
+                    "usr": "c:objc(cs)UIScrollView"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7EasySdk15BannerHoverViewC012headerScrollE0So08UIScrollE0CSgvp",
+            "mangledName": "$s7EasySdk15BannerHoverViewC012headerScrollE0So08UIScrollE0CSgvp",
+            "moduleName": "EasySdk",
+            "declAttributes": [
+              "HasInitialValue",
+              "Preconcurrency",
+              "Custom",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ImplicitlyUnwrappedOptional",
+                    "printedName": "UIKit.UIScrollView?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIScrollView",
+                        "printedName": "UIKit.UIScrollView",
+                        "usr": "c:objc(cs)UIScrollView"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7EasySdk15BannerHoverViewC012headerScrollE0So08UIScrollE0CSgvg",
+                "mangledName": "$s7EasySdk15BannerHoverViewC012headerScrollE0So08UIScrollE0CSgvg",
+                "moduleName": "EasySdk",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ImplicitlyUnwrappedOptional",
+                    "printedName": "UIKit.UIScrollView?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIScrollView",
+                        "printedName": "UIKit.UIScrollView",
+                        "usr": "c:objc(cs)UIScrollView"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7EasySdk15BannerHoverViewC012headerScrollE0So08UIScrollE0CSgvs",
+                "mangledName": "$s7EasySdk15BannerHoverViewC012headerScrollE0So08UIScrollE0CSgvs",
+                "moduleName": "EasySdk",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7EasySdk15BannerHoverViewC012headerScrollE0So08UIScrollE0CSgvM",
+                "mangledName": "$s7EasySdk15BannerHoverViewC012headerScrollE0So08UIScrollE0CSgvM",
+                "moduleName": "EasySdk",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "top",
+            "printedName": "top",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CGFloat",
+                "printedName": "CoreGraphics.CGFloat",
+                "usr": "s:14CoreFoundation7CGFloatV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7EasySdk15BannerHoverViewC3top14CoreFoundation7CGFloatVvp",
+            "mangledName": "$s7EasySdk15BannerHoverViewC3top12CoreGraphics7CGFloatVvp",
+            "moduleName": "EasySdk",
+            "declAttributes": [
+              "HasInitialValue",
+              "Preconcurrency",
+              "Custom",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGFloat",
+                    "printedName": "CoreGraphics.CGFloat",
+                    "usr": "s:14CoreFoundation7CGFloatV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7EasySdk15BannerHoverViewC3top14CoreFoundation7CGFloatVvg",
+                "mangledName": "$s7EasySdk15BannerHoverViewC3top12CoreGraphics7CGFloatVvg",
+                "moduleName": "EasySdk",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGFloat",
+                    "printedName": "CoreGraphics.CGFloat",
+                    "usr": "s:14CoreFoundation7CGFloatV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7EasySdk15BannerHoverViewC3top14CoreFoundation7CGFloatVvs",
+                "mangledName": "$s7EasySdk15BannerHoverViewC3top12CoreGraphics7CGFloatVvs",
+                "moduleName": "EasySdk",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7EasySdk15BannerHoverViewC3top14CoreFoundation7CGFloatVvM",
+                "mangledName": "$s7EasySdk15BannerHoverViewC3top12CoreGraphics7CGFloatVvM",
+                "moduleName": "EasySdk",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "bottom",
+            "printedName": "bottom",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CGFloat",
+                "printedName": "CoreGraphics.CGFloat",
+                "usr": "s:14CoreFoundation7CGFloatV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7EasySdk15BannerHoverViewC6bottom14CoreFoundation7CGFloatVvp",
+            "mangledName": "$s7EasySdk15BannerHoverViewC6bottom12CoreGraphics7CGFloatVvp",
+            "moduleName": "EasySdk",
+            "declAttributes": [
+              "HasInitialValue",
+              "Preconcurrency",
+              "Custom",
+              "HasStorage",
+              "SetterAccess",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGFloat",
+                    "printedName": "CoreGraphics.CGFloat",
+                    "usr": "s:14CoreFoundation7CGFloatV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7EasySdk15BannerHoverViewC6bottom14CoreFoundation7CGFloatVvg",
+                "mangledName": "$s7EasySdk15BannerHoverViewC6bottom12CoreGraphics7CGFloatVvg",
+                "moduleName": "EasySdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "isTop",
+            "printedName": "isTop",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7EasySdk15BannerHoverViewC5isTopSbvp",
+            "mangledName": "$s7EasySdk15BannerHoverViewC5isTopSbvp",
+            "moduleName": "EasySdk",
+            "declAttributes": [
+              "HasInitialValue",
+              "Preconcurrency",
+              "Custom",
+              "HasStorage",
+              "SetterAccess",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7EasySdk15BannerHoverViewC5isTopSbvg",
+                "mangledName": "$s7EasySdk15BannerHoverViewC5isTopSbvg",
+                "moduleName": "EasySdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "isBottom",
+            "printedName": "isBottom",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7EasySdk15BannerHoverViewC8isBottomSbvp",
+            "mangledName": "$s7EasySdk15BannerHoverViewC8isBottomSbvp",
+            "moduleName": "EasySdk",
+            "declAttributes": [
+              "HasInitialValue",
+              "Preconcurrency",
+              "Custom",
+              "HasStorage",
+              "SetterAccess",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7EasySdk15BannerHoverViewC8isBottomSbvg",
+                "mangledName": "$s7EasySdk15BannerHoverViewC8isBottomSbvg",
+                "moduleName": "EasySdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(frame:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "BannerHoverView",
+                "printedName": "EasySdk.BannerHoverView",
+                "usr": "c:@M@EasySdk@objc(cs)BannerHoverView"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CGRect",
+                "printedName": "CoreFoundation.CGRect",
+                "usr": "c:@S@CGRect"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@EasySdk@objc(cs)BannerHoverView(im)initWithFrame:",
+            "mangledName": "$s7EasySdk15BannerHoverViewC5frameACSo6CGRectV_tcfc",
+            "moduleName": "EasySdk",
+            "overriding": true,
+            "objc_name": "initWithFrame:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Preconcurrency",
+              "Custom",
+              "Override",
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(coder:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "EasySdk.BannerHoverView?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "BannerHoverView",
+                    "printedName": "EasySdk.BannerHoverView",
+                    "usr": "c:@M@EasySdk@objc(cs)BannerHoverView"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSCoder",
+                "printedName": "Foundation.NSCoder",
+                "usr": "c:objc(cs)NSCoder"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@EasySdk@objc(cs)BannerHoverView(im)initWithCoder:",
+            "mangledName": "$s7EasySdk15BannerHoverViewC5coderACSgSo7NSCoderC_tcfc",
+            "moduleName": "EasySdk",
+            "overriding": true,
+            "objc_name": "initWithCoder:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Preconcurrency",
+              "Custom",
+              "Required",
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "willMove",
+            "printedName": "willMove(toWindow:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIWindow?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIWindow",
+                    "printedName": "UIKit.UIWindow",
+                    "usr": "c:objc(cs)UIWindow"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@EasySdk@objc(cs)BannerHoverView(im)willMoveToWindow:",
+            "mangledName": "$s7EasySdk15BannerHoverViewC8willMove8toWindowySo8UIWindowCSg_tF",
+            "moduleName": "EasySdk",
+            "overriding": true,
+            "objc_name": "willMoveToWindow:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Preconcurrency",
+              "Custom",
+              "Override",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "observeValue",
+            "printedName": "observeValue(forKeyPath:of:change:context:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Any?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Foundation.NSKeyValueChangeKey : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Foundation.NSKeyValueChangeKey : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSKeyValueChangeKey",
+                        "printedName": "Foundation.NSKeyValueChangeKey",
+                        "usr": "c:@T@NSKeyValueChangeKey"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.UnsafeMutableRawPointer?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UnsafeMutableRawPointer",
+                    "printedName": "Swift.UnsafeMutableRawPointer",
+                    "usr": "s:Sv"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@EasySdk@objc(cs)BannerHoverView(im)observeValueForKeyPath:ofObject:change:context:",
+            "mangledName": "$s7EasySdk15BannerHoverViewC12observeValue10forKeyPath2of6change7contextySSSg_ypSgSDySo05NSKeyg6ChangeI0aypGSgSvSgtF",
+            "moduleName": "EasySdk",
+            "overriding": true,
+            "objc_name": "observeValueForKeyPath:ofObject:change:context:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Preconcurrency",
+              "Custom",
+              "Override",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setTopAction",
+            "printedName": "setTopAction(action:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(EasySdk.BannerHoverView) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "BannerHoverView",
+                    "printedName": "EasySdk.BannerHoverView",
+                    "usr": "c:@M@EasySdk@objc(cs)BannerHoverView"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7EasySdk15BannerHoverViewC12setTopAction6actionyyACc_tF",
+            "mangledName": "$s7EasySdk15BannerHoverViewC12setTopAction6actionyyACc_tF",
+            "moduleName": "EasySdk",
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setBottomAction",
+            "printedName": "setBottomAction(action:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(EasySdk.BannerHoverView) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "BannerHoverView",
+                    "printedName": "EasySdk.BannerHoverView",
+                    "usr": "c:@M@EasySdk@objc(cs)BannerHoverView"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7EasySdk15BannerHoverViewC15setBottomAction6actionyyACc_tF",
+            "mangledName": "$s7EasySdk15BannerHoverViewC15setBottomAction6actionyyACc_tF",
+            "moduleName": "EasySdk",
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setScrollAction",
+            "printedName": "setScrollAction(action:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(EasySdk.BannerHoverView, CoreGraphics.CGFloat) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(EasySdk.BannerHoverView, CoreGraphics.CGFloat)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "BannerHoverView",
+                        "printedName": "EasySdk.BannerHoverView",
+                        "usr": "c:@M@EasySdk@objc(cs)BannerHoverView"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CGFloat",
+                        "printedName": "CoreGraphics.CGFloat",
+                        "usr": "s:14CoreFoundation7CGFloatV"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7EasySdk15BannerHoverViewC15setScrollAction6actionyyAC_14CoreFoundation7CGFloatVtc_tF",
+            "mangledName": "$s7EasySdk15BannerHoverViewC15setScrollAction6actionyyAC_12CoreGraphics7CGFloatVtc_tF",
+            "moduleName": "EasySdk",
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@EasySdk@objc(cs)BannerHoverView",
+        "mangledName": "$s7EasySdk15BannerHoverViewC",
+        "moduleName": "EasySdk",
+        "isOpen": true,
+        "declAttributes": [
+          "Preconcurrency",
+          "Custom",
+          "AccessControl",
+          "RawDocComment",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)UIView",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "UIKit.UIView",
+          "UIKit.UIResponder",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "UITraitChangeObservable",
+            "printedName": "UITraitChangeObservable",
+            "usr": "s:5UIKit23UITraitChangeObservableP",
+            "mangledName": "$s5UIKit23UITraitChangeObservableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "__DefaultCustomPlaygroundQuickLookable",
+            "printedName": "__DefaultCustomPlaygroundQuickLookable",
+            "usr": "s:s38__DefaultCustomPlaygroundQuickLookableP",
+            "mangledName": "$ss38__DefaultCustomPlaygroundQuickLookableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "EasySdk",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "EasySdk"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "PalmHelper",
+        "printedName": "PalmHelper",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "getResolution",
+            "printedName": "getResolution()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CGSize",
+                "printedName": "CoreFoundation.CGSize",
+                "usr": "c:@S@CGSize"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7EasySdk10PalmHelperC13getResolutionSo6CGSizeVyFZ",
+            "mangledName": "$s7EasySdk10PalmHelperC13getResolutionSo6CGSizeVyFZ",
+            "moduleName": "EasySdk",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:7EasySdk10PalmHelperC",
+        "mangledName": "$s7EasySdk10PalmHelperC",
+        "moduleName": "EasySdk",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "EasySdk",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "EasySdk"
+      },
+      {
+        "kind": "Import",
+        "name": "AdSupport",
+        "printedName": "AdSupport",
+        "declKind": "Import",
+        "moduleName": "EasySdk"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "PalmManager",
+        "printedName": "PalmManager",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "getDeviceIdentifier",
+            "printedName": "getDeviceIdentifier()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7EasySdk11PalmManagerC19getDeviceIdentifierSSSgyFZ",
+            "mangledName": "$s7EasySdk11PalmManagerC19getDeviceIdentifierSSSgyFZ",
+            "moduleName": "EasySdk",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getDeviceVersion",
+            "printedName": "getDeviceVersion()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7EasySdk11PalmManagerC16getDeviceVersionSSyFZ",
+            "mangledName": "$s7EasySdk11PalmManagerC16getDeviceVersionSSyFZ",
+            "moduleName": "EasySdk",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:7EasySdk11PalmManagerC",
+        "mangledName": "$s7EasySdk11PalmManagerC",
+        "moduleName": "EasySdk",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "EasySdk",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "PalmViewController",
+        "printedName": "PalmViewController",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "viewDidLoad",
+            "printedName": "viewDidLoad()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@EasySdk@objc(cs)PalmViewController(im)viewDidLoad",
+            "mangledName": "$s7EasySdk18PalmViewControllerC11viewDidLoadyyF",
+            "moduleName": "EasySdk",
+            "overriding": true,
+            "objc_name": "viewDidLoad",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Preconcurrency",
+              "Custom",
+              "Override",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(nibName:bundle:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PalmViewController",
+                "printedName": "EasySdk.PalmViewController",
+                "usr": "c:@M@EasySdk@objc(cs)PalmViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.Bundle?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bundle",
+                    "printedName": "Foundation.Bundle",
+                    "usr": "c:objc(cs)NSBundle"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@EasySdk@objc(cs)PalmViewController(im)initWithNibName:bundle:",
+            "mangledName": "$s7EasySdk18PalmViewControllerC7nibName6bundleACSSSg_So8NSBundleCSgtcfc",
+            "moduleName": "EasySdk",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "initWithNibName:bundle:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Preconcurrency",
+              "Custom",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(coder:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "EasySdk.PalmViewController?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PalmViewController",
+                    "printedName": "EasySdk.PalmViewController",
+                    "usr": "c:@M@EasySdk@objc(cs)PalmViewController"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSCoder",
+                "printedName": "Foundation.NSCoder",
+                "usr": "c:objc(cs)NSCoder"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@EasySdk@objc(cs)PalmViewController(im)initWithCoder:",
+            "mangledName": "$s7EasySdk18PalmViewControllerC5coderACSgSo7NSCoderC_tcfc",
+            "moduleName": "EasySdk",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "initWithCoder:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Preconcurrency",
+              "Custom",
+              "Required"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@EasySdk@objc(cs)PalmViewController",
+        "mangledName": "$s7EasySdk18PalmViewControllerC",
+        "moduleName": "EasySdk",
+        "isOpen": true,
+        "declAttributes": [
+          "Preconcurrency",
+          "Custom",
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)UIViewController",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "UIKit.UIViewController",
+          "UIKit.UIResponder",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "UITraitChangeObservable",
+            "printedName": "UITraitChangeObservable",
+            "usr": "s:5UIKit23UITraitChangeObservableP",
+            "mangledName": "$s5UIKit23UITraitChangeObservableP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/yc\/git\/YCiOSHelper\/EasySdk\/EasySdk\/BannerHoverView.swift",
+      "kind": "FloatLiteral",
+      "offset": 246,
+      "length": 4,
+      "value": "1e-6"
+    },
+    {
+      "filePath": "\/Users\/yc\/git\/YCiOSHelper\/EasySdk\/EasySdk\/BannerHoverView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 333,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/yc\/git\/YCiOSHelper\/EasySdk\/EasySdk\/BannerHoverView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 385,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/yc\/git\/YCiOSHelper\/EasySdk\/EasySdk\/BannerHoverView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 433,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/yc\/git\/YCiOSHelper\/EasySdk\/EasySdk\/BannerHoverView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 488,
+      "length": 4,
+      "value": "true"
+    }
+  ]
+}

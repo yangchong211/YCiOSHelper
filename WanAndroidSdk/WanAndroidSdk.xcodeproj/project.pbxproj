@@ -6,7 +6,24 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		EC1486B82D1421B800FBF84E /* WanAggregate */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = EC1486B92D1421B800FBF84E /* Build configuration list for PBXAggregateTarget "WanAggregate" */;
+			buildPhases = (
+				EC1487032D1435B800FBF84E /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = WanAggregate;
+			packageProductDependencies = (
+			);
+			productName = WanAggregate;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
+		3D7F423A1BA5AE99FA6E319D /* Pods_WanAndroidSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5608B5F70DAF8617B4837229 /* Pods_WanAndroidSdk.framework */; };
 		EC14853D2D13C0BB00FBF84E /* WanAndroidSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1485322D13C0BA00FBF84E /* WanAndroidSdk.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5608B5F70DAF8617B4837229 /* Pods_WanAndroidSdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WanAndroidSdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78C945A058B43E6B62B8E795 /* Pods-WanAndroidSdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WanAndroidSdk.release.xcconfig"; path = "Target Support Files/Pods-WanAndroidSdk/Pods-WanAndroidSdk.release.xcconfig"; sourceTree = "<group>"; };
+		93D803B727227ECBD0551361 /* Pods-WanAndroidSdk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WanAndroidSdk.debug.xcconfig"; path = "Target Support Files/Pods-WanAndroidSdk/Pods-WanAndroidSdk.debug.xcconfig"; sourceTree = "<group>"; };
 		EC1485322D13C0BA00FBF84E /* WanAndroidSdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WanAndroidSdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC14853C2D13C0BB00FBF84E /* WanAndroidSdkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WanAndroidSdkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -56,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D7F423A1BA5AE99FA6E319D /* Pods_WanAndroidSdk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +91,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06CEB322826AC699C186D996 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				93D803B727227ECBD0551361 /* Pods-WanAndroidSdk.debug.xcconfig */,
+				78C945A058B43E6B62B8E795 /* Pods-WanAndroidSdk.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3B30ED00F47EED74FDA2ACA1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5608B5F70DAF8617B4837229 /* Pods_WanAndroidSdk.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EC1485282D13C0BA00FBF84E = {
 			isa = PBXGroup;
 			children = (
 				EC1485342D13C0BA00FBF84E /* WanAndroidSdk */,
 				EC1485402D13C0BB00FBF84E /* WanAndroidSdkTests */,
 				EC1485332D13C0BA00FBF84E /* Products */,
+				06CEB322826AC699C186D996 /* Pods */,
+				3B30ED00F47EED74FDA2ACA1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +145,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EC1485452D13C0BB00FBF84E /* Build configuration list for PBXNativeTarget "WanAndroidSdk" */;
 			buildPhases = (
+				47533BB9D0910F523E7C0674 /* [CP] Check Pods Manifest.lock */,
 				EC14852D2D13C0BA00FBF84E /* Headers */,
 				EC14852E2D13C0BA00FBF84E /* Sources */,
 				EC14852F2D13C0BA00FBF84E /* Frameworks */,
@@ -118,8 +159,6 @@
 				EC1485342D13C0BA00FBF84E /* WanAndroidSdk */,
 			);
 			name = WanAndroidSdk;
-			packageProductDependencies = (
-			);
 			productName = WanAndroidSdk;
 			productReference = EC1485322D13C0BA00FBF84E /* WanAndroidSdk.framework */;
 			productType = "com.apple.product-type.framework";
@@ -141,8 +180,6 @@
 				EC1485402D13C0BB00FBF84E /* WanAndroidSdkTests */,
 			);
 			name = WanAndroidSdkTests;
-			packageProductDependencies = (
-			);
 			productName = WanAndroidSdkTests;
 			productReference = EC14853C2D13C0BB00FBF84E /* WanAndroidSdkTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -163,6 +200,9 @@
 					EC14853B2D13C0BB00FBF84E = {
 						CreatedOnToolsVersion = 16.1;
 					};
+					EC1486B82D1421B800FBF84E = {
+						CreatedOnToolsVersion = 16.1;
+					};
 				};
 			};
 			buildConfigurationList = EC14852C2D13C0BA00FBF84E /* Build configuration list for PBXProject "WanAndroidSdk" */;
@@ -181,6 +221,7 @@
 			targets = (
 				EC1485312D13C0BA00FBF84E /* WanAndroidSdk */,
 				EC14853B2D13C0BB00FBF84E /* WanAndroidSdkTests */,
+				EC1486B82D1421B800FBF84E /* WanAggregate */,
 			);
 		};
 /* End PBXProject section */
@@ -201,6 +242,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		47533BB9D0910F523E7C0674 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WanAndroidSdk-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC1487032D1435B800FBF84E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n#!/bin/sh\n\n# 取得build的target名（get project name）\nFRAMEWORK_NAME=${PROJECT_NAME}\n\nUNIVERSAL_OUTPUT_FOLDER=\"${SRCROOT}/Products\"\n\nUNIVERSAL_PRODUCT_PATH=\"${UNIVERSAL_OUTPUT_FOLDER}/${FRAMEWORK_NAME}.framework\"\n\n#创建输出目录，并删除之前的framework文件\nif [ ! -d \"${UNIVERSAL_OUTPUT_FOLDER}\" ];then\n    mkdir -p \"${UNIVERSAL_OUTPUT_FOLDER}\"\nfi\n\nif [ -d \"${UNIVERSAL_PRODUCT_PATH}\" ];then\n    rm -rf \"${UNIVERSAL_PRODUCT_PATH}\"\nfi\n\n# 设置真机和模拟器生成的静态库路径 （set devcie framework and simulator framework path）  ${TARGET_NAME}\nDEVICE_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${FRAMEWORK_NAME}.framework\"\nSIMULATOR_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${FRAMEWORK_NAME}.framework\"\n\n#分别编译模拟器和真机的Framework\nxcodebuild -target \"${FRAMEWORK_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\nxcodebuild -target \"${FRAMEWORK_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphonesimulator BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\n#拷贝framework到univer目录\ncp -R \"${DEVICE_DIR}\" \"${UNIVERSAL_OUTPUT_FOLDER}\"\n\n#移除 iphonesimulator 里的 arm64\nlipo -remove arm64 \"${SIMULATOR_DIR}/${FRAMEWORK_NAME}\" -output \"${SIMULATOR_DIR}/${FRAMEWORK_NAME}\"\n\n#合并framework，输出最终的framework到build目录\nlipo -create -output \"${UNIVERSAL_OUTPUT_FOLDER}/${FRAMEWORK_NAME}.framework/${FRAMEWORK_NAME}\" \"${DEVICE_DIR}/${FRAMEWORK_NAME}\" \"${SIMULATOR_DIR}/${FRAMEWORK_NAME}\"\n\n#判断build文件夹是否存在，存在则删除\nif [ -d \"${SRCROOT}/build\" ]\nthen\nrm -rf \"${SRCROOT}/build\"\nfi\n\nrm -rf \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos\"\n\n#打开合并后的文件夹\nopen \"${UNIVERSAL_OUTPUT_FOLDER}\"\n\n\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EC14852E2D13C0BA00FBF84E /* Sources */ = {
@@ -230,15 +313,18 @@
 /* Begin XCBuildConfiguration section */
 		EC1485462D13C0BB00FBF84E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93D803B727227ECBD0551361 /* Pods-WanAndroidSdk.debug.xcconfig */;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
+				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -247,9 +333,12 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.yc.WanAndroidSdk;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -266,15 +355,19 @@
 		};
 		EC1485472D13C0BB00FBF84E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78C945A058B43E6B62B8E795 /* Pods-WanAndroidSdk.release.xcconfig */;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -283,9 +376,12 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.yc.WanAndroidSdk;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -455,6 +551,22 @@
 			};
 			name = Release;
 		};
+		EC1486BA2D1421B800FBF84E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EC1486BB2D1421B800FBF84E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -481,6 +593,15 @@
 			buildConfigurations = (
 				EC14854B2D13C0BB00FBF84E /* Debug */,
 				EC14854C2D13C0BB00FBF84E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC1486B92D1421B800FBF84E /* Build configuration list for PBXAggregateTarget "WanAggregate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC1486BA2D1421B800FBF84E /* Debug */,
+				EC1486BB2D1421B800FBF84E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
