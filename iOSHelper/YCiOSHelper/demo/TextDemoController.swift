@@ -74,9 +74,17 @@ class TextDemoController: UIViewController,UITextFieldDelegate ,UIAlertViewDeleg
         button.setTitle("Click Me", for: .normal) // 设置按钮的标题
         button.setTitleColor(UIColor.black, for: .normal)
         //button.backgroundColor = UIColor.white // 设置按钮的背景颜色为蓝色
+        button.contentMode = .scaleToFill
+        // 设置按钮内部图像的内容模式
+        button.imageView?.contentMode = .scaleToFill
+        // 设置按钮内部标题的内容模式
+        button.titleLabel?.contentMode = .scaleToFill
         button.layer.cornerRadius = 10
         button.layer.borderWidth = 1.0
         button.layer.borderColor = UIColor.gray.cgColor
+        //使用 addTarget 方法可以为控件（如 UIButton、UISwitch、UITextField 等）添加一个目标-动作（target-action）的事件处理。
+        //addTarget 方法是 UIControl 类的方法，用于为控件添加一个或多个事件处理方法。
+        //self 表示当前视图控制器（或其他遵循了相应协议的对象），buttonClicked 是一个被调用的方法，.touchUpInside 是事件类型，表示按钮在触摸结束时被点击。
         button.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside) // 添加按钮点击事件处理
         self.view.addSubview(button) // 将按钮添加到当前视图中
         button.snp.makeConstraints { make in

@@ -28,7 +28,7 @@ class ImageDemoController: UIViewController ,UIActionSheetDelegate{
         //imageView = UIImageView(image: UIImage(named:"1.png"), highlightedImage:UIImage(named:"2.png")) //初始化时可以设置普通的图片和高亮的图片
         //imageView.frame = CGRect(x: 100, y: 100, width: 200, height: 200);  //设置它的位置
         //由于UIImage不能单独的拿出来展示，它必须依赖于某个一个继承于UIView的一个View，比如UIImageView或者UIButton, 这些都是可以的.
-        imageView.image = UIImage(named: "1.png")   //设置UIImage的图片名, 以及展示的样式
+        imageView.image = UIImage(named: "icon_home_add.png")   //设置UIImage的图片名, 以及展示的样式
         imageView.isUserInteractionEnabled = true;
         imageView.contentMode = UIView.ContentMode.scaleAspectFit;  //设置图片显示的样式
         //添加事件

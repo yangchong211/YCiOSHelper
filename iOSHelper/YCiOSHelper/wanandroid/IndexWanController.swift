@@ -3,6 +3,10 @@ import UIKit
 
 class IndexController: UITabBarController {
     
+    //UITabBarController 是 iOS 开发中常用的视图控制器之一，用于创建具有选项卡（Tab）界面的应用程序。
+    //UITabBarController 可以在底部或顶部显示一个选项卡栏，每个选项卡对应一个视图控制器。
+    //用户可以通过点击选项卡来切换不同的视图控制器和内容。
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //initTabBar()
@@ -62,11 +66,13 @@ class IndexController: UITabBarController {
         let user = UserController()
         let tabBarHeight = self.tabBar.frame.size.height;
         print("导航控制器的tabBar的高度是：\(tabBarHeight)");
+        //设置了对应的选项卡标题和图标。
         home.tabBarItem = UITabBarItem(title: "主页", image: UIImage(named: "home_tabbar_night"), selectedImage: UIImage(named: "home_tabbar_press"))
         project.tabBarItem = UITabBarItem(title: "项目", image: UIImage(named: "project_tabbar_night"), selectedImage: UIImage(named: "project_tabbar_press"))
         wechat.tabBarItem = UITabBarItem(title: "多媒体", image: UIImage(named: "wechat_tabbar_night"), selectedImage: UIImage(named: "wechat_tabbar_press"))
         structure.tabBarItem = UITabBarItem(title: "体系", image: UIImage(named: "structure_tabbar_night"), selectedImage: UIImage(named: "structure_tabbar_press"))
         user.tabBarItem = UITabBarItem(title: "我的", image: UIImage(named: "mine_tabbar_night"), selectedImage: UIImage(named: "mine_tabbar_press"))
+        //将这些视图控制器添加到 tabBarController 的 viewControllers 属性中。
         self.viewControllers = [home, project, wechat, structure, user]
     }
 

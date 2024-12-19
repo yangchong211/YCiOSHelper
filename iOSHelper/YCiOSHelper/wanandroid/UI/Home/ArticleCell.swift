@@ -8,6 +8,8 @@
 import UIKit
 import SnapKitExtend
 
+//NSObjectProtocol 是一个协议（protocol），它定义了 Objective-C 中的 NSObject 类的基本行为和功能。
+//在 Swift 中，NSObjectProtocol 协议也可以被遵循（conform）。
 public protocol CollectDelegate : NSObjectProtocol {
     
     //收藏 文章
@@ -16,7 +18,6 @@ public protocol CollectDelegate : NSObjectProtocol {
     //取消收藏 文章
     func uncollectAirticle(cid id: Int, tabCell tabviewCell: UITableViewCell) -> Void
 }
-
 
 class ArticleCell: BaseTableViewCell {
     
@@ -144,6 +145,10 @@ class ArticleCell: BaseTableViewCell {
             maker.bottom.equalToSuperview().offset(-5)
         }
         
+        //添加点击事件
+        //使用 addTarget 方法可以为控件（如 UIButton、UISwitch、UITextField 等）添加一个目标-动作（target-action）的事件处理。
+        //addTarget 方法是 UIControl 类的方法，用于为控件添加一个或多个事件处理方法。
+        //self 表示当前视图控制器（或其他遵循了相应协议的对象），collect 是一个被调用的方法，.touchUpInside 是事件类型，表示按钮在触摸结束时被点击。
         imgCollect.addTarget(self, action: #selector(self.collect(btn:)), for: .touchUpInside)
     }
 }

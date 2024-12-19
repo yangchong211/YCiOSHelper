@@ -16,29 +16,40 @@ import HandyJSON
 //首页
 class HomeController: UIViewController {
     
+    //var 关键字用于声明可变的变量，也就是可以在声明后修改其值。使用 var 声明的变量可以在其生命周期内被重新赋值。
     var page = 0
     
     private var floatAnimal = false
     
-    private var floatButton = UIButton().then({attr in
-        attr.setImage(UIImage(named: "ic_top"), for: .normal)
-        attr.contentMode = .scaleToFill
-        attr.isHidden = true
-    })
+    private lazy var floatButton : UIButton = {
+        //let 关键字用于声明不可变的常量，也就是一旦赋值后就不能再修改其值。
+        //使用 let 声明的常量在其生命周期内保持不变。
+        let button = UIButton();
+        button.setImage(UIImage(named: "ic_top"), for: .normal)
+        button.contentMode = .scaleToFill
+        button.isHidden = true
+        return button;
+    }()
     
-    private var backButton = UIButton().then({attr in
-        attr.setImage(UIImage(named: "ic_close"), for: .normal)
-        attr.contentMode = .scaleToFill
-        attr.isHidden = false
-    })
+    //lazy 是一个属性修饰符，用于延迟初始化属性。使用 lazy 修饰的属性只有在首次访问时才会被初始化，而不是在对象创建时立即初始化。
+    //延迟初始化可以提高性能和内存效率，特别是对于那些初始化开销较大的属性或需要依赖其他属性的属性。
+    //需要注意的是，使用 lazy 修饰的属性必须是可变的（使用 var 关键字），因为它的值在初始化后可能会发生变化。
+    private lazy var backButton : UIButton = {
+        let button = UIButton();
+        button.setImage(UIImage(named: "ic_close"), for: .normal)
+        button.contentMode = .scaleToFill
+        button.isHidden = false
+        return button;
+    }()
     
     //文章list
     private var articleList = Array<ArticleItemModel>()
     //轮播图list
     private var bannerLists = Array<BannerModel>()
-    
     //DispatchGroup 是一个用于管理多个异步任务的工具。它可以让你等待一组任务完成后再执行其他操作。
-    private lazy var dispatchGroup = { return DispatchGroup.init() }()
+    private lazy var dispatchGroup = {
+        return DispatchGroup.init()
+    }()
     
     //这个是容器
     private lazy var controllerTableView: HomeControllerTableView = HomeControllerTableView(frame: .zero, style: .plain).then({ (attr) in
@@ -67,6 +78,7 @@ class HomeController: UIViewController {
     private func didSelectBanner(index: NSInteger) {
         let bannerModel = self.bannerLists[index]
         let webVController = WebController(title: bannerModel.title, url: bannerModel.url)
+        //使用 pushViewController 方法可以将一个新的视图控制器推入导航堆栈中，从而实现视图控制器之间的导航。
         navigationController?.pushViewController(webVController, animated: true)
     }
     
@@ -80,6 +92,7 @@ class HomeController: UIViewController {
     
     override func viewDidLoad() {
         //添加tableView，这个是容器View
+        //使用 addSubview 方法可以将一个视图添加为另一个视图的子视图。
         self.view.addSubview(controllerTableView)
         controllerTableView.snp.makeConstraints { maker in
             maker.top.equalToSuperview().offset(statusBarHeight)
@@ -133,6 +146,7 @@ class HomeController: UIViewController {
     
     //返回到根控制器
     @objc func backClose() {
+        //使用 popToRootViewController 方法将导航堆栈中的所有视图控制器都移除，并返回到导航堆栈的根视图控制器。
         navigationController?.popToRootViewController(animated: true)
     }
     
