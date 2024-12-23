@@ -7,6 +7,7 @@
 import Foundation
 import HandyJSON
 
+//这个是base类
 class BaseResponse<T>: HandyJSON {
     
     var errorCode : Int?    //服务返回码

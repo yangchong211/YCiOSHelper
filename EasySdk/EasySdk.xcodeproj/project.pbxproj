@@ -41,13 +41,33 @@
 			);
 			target = EC1488312D143C0B00FBF84E /* EasySdk */;
 		};
+		ECC1C5932D1901A600449BD0 /* Exceptions for "EasySdk" folder in "EasySdkTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				easyres.bundle,
+			);
+			target = EC14883B2D143C0B00FBF84E /* EasySdkTests */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		ECC1C59A2D19066600449BD0 /* Exceptions for "EasySdk" folder in "Compile Sources" phase from "EasySdk" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = EC14882E2D143C0B00FBF84E /* Sources */;
+			membershipExceptions = (
+				easyres.bundle,
+				easysdk.bundle,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		EC1488342D143C0B00FBF84E /* EasySdk */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				EC1488442D143C0B00FBF84E /* Exceptions for "EasySdk" folder in "EasySdk" target */,
+				ECC1C59A2D19066600449BD0 /* Exceptions for "EasySdk" folder in "Compile Sources" phase from "EasySdk" target */,
+				ECC1C5932D1901A600449BD0 /* Exceptions for "EasySdk" folder in "EasySdkTests" target */,
 			);
 			path = EasySdk;
 			sourceTree = "<group>";

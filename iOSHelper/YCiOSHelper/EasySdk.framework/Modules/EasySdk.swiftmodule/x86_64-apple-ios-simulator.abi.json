@@ -1008,36 +1008,58 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "EasySdk"
+      },
+      {
         "kind": "TypeDecl",
         "name": "PalmViewController",
         "printedName": "PalmViewController",
         "children": [
           {
-            "kind": "Function",
-            "name": "viewDidLoad",
-            "printedName": "viewDidLoad()",
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(coder:)",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
+                "name": "Optional",
+                "printedName": "EasySdk.PalmViewController?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PalmViewController",
+                    "printedName": "EasySdk.PalmViewController",
+                    "usr": "c:@M@EasySdk@objc(cs)PalmViewController"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSCoder",
+                "printedName": "Foundation.NSCoder",
+                "usr": "c:objc(cs)NSCoder"
               }
             ],
-            "declKind": "Func",
-            "usr": "c:@M@EasySdk@objc(cs)PalmViewController(im)viewDidLoad",
-            "mangledName": "$s7EasySdk18PalmViewControllerC11viewDidLoadyyF",
+            "declKind": "Constructor",
+            "usr": "c:@M@EasySdk@objc(cs)PalmViewController(im)initWithCoder:",
+            "mangledName": "$s7EasySdk18PalmViewControllerC5coderACSgSo7NSCoderC_tcfc",
             "moduleName": "EasySdk",
             "overriding": true,
-            "objc_name": "viewDidLoad",
+            "objc_name": "initWithCoder:",
             "declAttributes": [
               "Dynamic",
               "ObjC",
               "Preconcurrency",
               "Custom",
-              "Override",
+              "Required",
               "AccessControl"
             ],
-            "funcSelfKind": "NonMutating"
+            "init_kind": "Designated"
           },
           {
             "kind": "Constructor",
@@ -1084,58 +1106,43 @@
             "mangledName": "$s7EasySdk18PalmViewControllerC7nibName6bundleACSSSg_So8NSBundleCSgtcfc",
             "moduleName": "EasySdk",
             "overriding": true,
-            "implicit": true,
             "objc_name": "initWithNibName:bundle:",
             "declAttributes": [
               "Dynamic",
               "ObjC",
               "Preconcurrency",
               "Custom",
-              "Override"
+              "Override",
+              "AccessControl"
             ],
             "init_kind": "Designated"
           },
           {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init(coder:)",
+            "kind": "Function",
+            "name": "viewDidLoad",
+            "printedName": "viewDidLoad()",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "EasySdk.PalmViewController?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "PalmViewController",
-                    "printedName": "EasySdk.PalmViewController",
-                    "usr": "c:@M@EasySdk@objc(cs)PalmViewController"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "NSCoder",
-                "printedName": "Foundation.NSCoder",
-                "usr": "c:objc(cs)NSCoder"
+                "name": "Void",
+                "printedName": "()"
               }
             ],
-            "declKind": "Constructor",
-            "usr": "c:@M@EasySdk@objc(cs)PalmViewController(im)initWithCoder:",
-            "mangledName": "$s7EasySdk18PalmViewControllerC5coderACSgSo7NSCoderC_tcfc",
+            "declKind": "Func",
+            "usr": "c:@M@EasySdk@objc(cs)PalmViewController(im)viewDidLoad",
+            "mangledName": "$s7EasySdk18PalmViewControllerC11viewDidLoadyyF",
             "moduleName": "EasySdk",
             "overriding": true,
-            "implicit": true,
-            "objc_name": "initWithCoder:",
+            "objc_name": "viewDidLoad",
             "declAttributes": [
               "Dynamic",
               "ObjC",
               "Preconcurrency",
               "Custom",
-              "Required"
+              "Override",
+              "AccessControl"
             ],
-            "init_kind": "Designated"
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Class",
