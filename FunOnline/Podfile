@@ -20,8 +20,9 @@ target 'FunOnline' do
 	pod 'SVProgressHUD', '~> 2.2.5'
   #轮播图（Banner）
 	pod 'SDCycleScrollView', '~> 1.75'
-	pod 'DZNEmptyDataSet', '~> 1.8.1'
   #视图，空数据，异常数据，占位图库
+	pod 'DZNEmptyDataSet', '~> 1.8.1'
+  #图片选择器
 	pod 'TZImagePicker', '~> 1.1.6'
   #管理键盘的弹出和收起
 	pod 'IQKeyboardManager', '~> 5.0.7'

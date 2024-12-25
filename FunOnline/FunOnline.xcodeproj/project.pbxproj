@@ -121,7 +121,6 @@
 		046181F42092C834006B8D03 /* UIImage+HTRoundImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+HTRoundImage.m"; sourceTree = "<group>"; };
 		04B58F6D208EFA02001B805E /* CustomeViewLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomeViewLayout.h; sourceTree = "<group>"; };
 		04B58F6E208EFA02001B805E /* CustomeViewLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomeViewLayout.m; sourceTree = "<group>"; };
-		04B6C017209AA3DD00AD1F61 /* FLEnumsHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLEnumsHeader.h; sourceTree = "<group>"; };
 		04B6C019209ADED300AD1F61 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		04B6C01A209ADED300AD1F61 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		04DEDF982090588A006DFF63 /* CacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheManager.h; sourceTree = "<group>"; };
@@ -163,8 +162,6 @@
 		2B00349720747F91003C5213 /* UIView+TJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TJExtension.h"; sourceTree = "<group>"; };
 		2B00349820747F91003C5213 /* UIView+TJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TJExtension.m"; sourceTree = "<group>"; };
 		2B0034A6207499E1003C5213 /* FLPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLPrefixHeader.pch; sourceTree = "<group>"; };
-		2B0034A920749C65003C5213 /* RequestHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestHeaders.h; sourceTree = "<group>"; };
-		2B0034AE2074A1F1003C5213 /* FLMacrosHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLMacrosHeader.h; sourceTree = "<group>"; };
 		2B0034B02074A41B003C5213 /* LKSegmentItemBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKSegmentItemBar.h; sourceTree = "<group>"; };
 		2B0034B12074A41B003C5213 /* LKSegmentItemBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKSegmentItemBar.m; sourceTree = "<group>"; };
 		2B0034C52074BEA9003C5213 /* UIImageView+SDWebImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+SDWebImage.m"; sourceTree = "<group>"; };
@@ -293,6 +290,9 @@
 		2BE8D8E5207A17C900C522EA /* SDWaitingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWaitingView.m; sourceTree = "<group>"; };
 		48AA10B05014F3C2BA23F566 /* libPods-FunOnline.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FunOnline.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E53757E2B428EF5FDA2E72C /* Pods-FunOnline.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunOnline.release.xcconfig"; path = "Pods/Target Support Files/Pods-FunOnline/Pods-FunOnline.release.xcconfig"; sourceTree = "<group>"; };
+		ECC1C9B12D1BC54F00449BD0 /* FLEnumsHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLEnumsHeader.h; sourceTree = "<group>"; };
+		ECC1C9B22D1BC54F00449BD0 /* FLMacrosHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLMacrosHeader.h; sourceTree = "<group>"; };
+		ECC1C9B32D1BC54F00449BD0 /* RequestHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestHeaders.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -393,12 +393,21 @@
 		2B00341520746B41003C5213 /* FunOnline */ = {
 			isa = PBXGroup;
 			children = (
-				2B00344820746C47003C5213 /* Classes */,
+				ECC1C9B42D1BC54F00449BD0 /* Headers */,
+				2B00344A20746C47003C5213 /* AppDelegate.h */,
+				2B00344B20746C47003C5213 /* AppDelegate.m */,
+				2B0BBDB6207B4D0C00CFF2E6 /* AppDelegate+Utils.h */,
+				2B0BBDB7207B4D0C00CFF2E6 /* AppDelegate+Utils.m */,
 				2B00341F20746B41003C5213 /* Assets.xcassets */,
 				2B00342120746B41003C5213 /* LaunchScreen.storyboard */,
 				2B00342420746B41003C5213 /* Info.plist */,
 				2B00342520746B41003C5213 /* main.m */,
 				2B0034A6207499E1003C5213 /* FLPrefixHeader.pch */,
+				2B00345120746CB3003C5213 /* Base */,
+				2B00344C20746C47003C5213 /* Category */,
+				2B00344D20746C47003C5213 /* Libraries */,
+				04DEDF962090588A006DFF63 /* Utils */,
+				2B00344E20746C47003C5213 /* Main */,
 			);
 			path = FunOnline;
 			sourceTree = "<group>";
@@ -419,31 +428,6 @@
 				2B00343C20746B42003C5213 /* Info.plist */,
 			);
 			path = FunOnlineUITests;
-			sourceTree = "<group>";
-		};
-		2B00344820746C47003C5213 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				2B00345120746CB3003C5213 /* Base */,
-				2B0034A720749BB3003C5213 /* Headers */,
-				2B00344920746C47003C5213 /* AppDelegate */,
-				2B00344C20746C47003C5213 /* Category */,
-				2B00344D20746C47003C5213 /* Libraries */,
-				04DEDF962090588A006DFF63 /* Utils */,
-				2B00344E20746C47003C5213 /* Main */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		2B00344920746C47003C5213 /* AppDelegate */ = {
-			isa = PBXGroup;
-			children = (
-				2B00344A20746C47003C5213 /* AppDelegate.h */,
-				2B00344B20746C47003C5213 /* AppDelegate.m */,
-				2B0BBDB6207B4D0C00CFF2E6 /* AppDelegate+Utils.h */,
-				2B0BBDB7207B4D0C00CFF2E6 /* AppDelegate+Utils.m */,
-			);
-			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 		2B00344C20746C47003C5213 /* Category */ = {
@@ -549,16 +533,6 @@
 				2B00347B20746DC5003C5213 /* NewsViewController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		2B0034A720749BB3003C5213 /* Headers */ = {
-			isa = PBXGroup;
-			children = (
-				2B0034A920749C65003C5213 /* RequestHeaders.h */,
-				2B0034AE2074A1F1003C5213 /* FLMacrosHeader.h */,
-				04B6C017209AA3DD00AD1F61 /* FLEnumsHeader.h */,
-			);
-			path = Headers;
 			sourceTree = "<group>";
 		};
 		2B0034AF2074A41B003C5213 /* SegmentBar */ = {
@@ -975,6 +949,16 @@
 				5E53757E2B428EF5FDA2E72C /* Pods-FunOnline.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		ECC1C9B42D1BC54F00449BD0 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				ECC1C9B12D1BC54F00449BD0 /* FLEnumsHeader.h */,
+				ECC1C9B22D1BC54F00449BD0 /* FLMacrosHeader.h */,
+				ECC1C9B32D1BC54F00449BD0 /* RequestHeaders.h */,
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
