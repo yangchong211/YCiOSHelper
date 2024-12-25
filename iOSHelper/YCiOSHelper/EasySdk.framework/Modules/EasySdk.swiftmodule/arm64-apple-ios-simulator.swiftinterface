@@ -30,6 +30,9 @@ import _SwiftConcurrencyShims
   @_Concurrency.MainActor @preconcurrency public func setScrollAction(action: @escaping (_ view: EasySdk.BannerHoverView, _ offset: CoreFoundation.CGFloat) -> Swift.Void)
   @objc deinit
 }
+extension Foundation.Bundle {
+  public class func bundleForClass(_ aclass: Swift.AnyClass, bundleName: Swift.String) -> Foundation.Bundle?
+}
 @_hasMissingDesignatedInitializers public class PalmHelper {
   public static func getResolution() -> CoreFoundation.CGSize
   @objc deinit

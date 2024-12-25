@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B5623B8535F2EBBEFF7611E /* Pods_YCiOSHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E28BACF07D9E05E76AB8E9A /* Pods_YCiOSHelper.framework */; };
+		ECC1C7972D19393D00449BD0 /* EasySdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC1C7962D19393D00449BD0 /* EasySdk.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		EC87120A2CF71444009B89E9 /* YCiOSHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YCiOSHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC8712202CF71446009B89E9 /* YCiOSHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YCiOSHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC87122A2CF71446009B89E9 /* YCiOSHelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YCiOSHelperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECC1C7962D19393D00449BD0 /* EasySdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EasySdk.framework; path = ../../../../yangchong/Downloads/EasySdk.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -72,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECC1C7972D19393D00449BD0 /* EasySdk.framework in Frameworks */,
 				4B5623B8535F2EBBEFF7611E /* Pods_YCiOSHelper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,6 +130,7 @@
 		FC993D3390F6A6C3F51BF24B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ECC1C7962D19393D00449BD0 /* EasySdk.framework */,
 				6E28BACF07D9E05E76AB8E9A /* Pods_YCiOSHelper.framework */,
 			);
 			name = Frameworks;
@@ -359,6 +363,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YCiOSHelper",
+					"$(PROJECT_DIR)",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YCiOSHelper/Info.plist;
@@ -394,6 +399,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YCiOSHelper",
+					"$(PROJECT_DIR)",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YCiOSHelper/Info.plist;

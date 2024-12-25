@@ -9,6 +9,9 @@ import UIKit
 import SnapKit
 import EasySdk
 
+//摄像头权限用途描述说明
+//Camera access is required to allow live detection, recognition and authentication of your palm
+
 //学习文本控件
 class TextDemoController: UIViewController,UITextFieldDelegate ,UIAlertViewDelegate{
     
@@ -230,4 +233,5 @@ class TextDemoController: UIViewController,UITextFieldDelegate ,UIAlertViewDeleg
     func alertViewShouldEnableFirstOtherButton(alertView: UIAlertView) -> Bool {
         return true
     }
+    
 }
