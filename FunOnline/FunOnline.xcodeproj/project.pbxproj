@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -295,6 +295,10 @@
 		ECC1C9B32D1BC54F00449BD0 /* RequestHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestHeaders.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		ECC1CB112D1D332400449BD0 /* TestStudy */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TestStudy; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		2B00341020746B41003C5213 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -393,6 +397,7 @@
 		2B00341520746B41003C5213 /* FunOnline */ = {
 			isa = PBXGroup;
 			children = (
+				ECC1CB112D1D332400449BD0 /* TestStudy */,
 				ECC1C9B42D1BC54F00449BD0 /* Headers */,
 				2B00344A20746C47003C5213 /* AppDelegate.h */,
 				2B00344B20746C47003C5213 /* AppDelegate.m */,
@@ -978,6 +983,9 @@
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				ECC1CB112D1D332400449BD0 /* TestStudy */,
+			);
 			name = FunOnline;
 			productName = MyWallpaper;
 			productReference = 2B00341320746B41003C5213 /* FunOnline.app */;
@@ -1426,7 +1434,10 @@
 				GCC_PREFIX_HEADER = FunOnline/FLPrefixHeader.pch;
 				INFOPLIST_FILE = FunOnline/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.FunOnline.2018;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1449,7 +1460,10 @@
 				GCC_PREFIX_HEADER = FunOnline/FLPrefixHeader.pch;
 				INFOPLIST_FILE = FunOnline/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.FunOnline.2018;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1465,7 +1479,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 37Y2532GZM;
 				INFOPLIST_FILE = FunOnlineTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.myWallpaper.org.MyWallpaperTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1480,7 +1498,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 37Y2532GZM;
 				INFOPLIST_FILE = FunOnlineTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.myWallpaper.org.MyWallpaperTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1494,7 +1516,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 37Y2532GZM;
 				INFOPLIST_FILE = FunOnlineUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.myWallpaper.org.MyWallpaperUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1508,7 +1534,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 37Y2532GZM;
 				INFOPLIST_FILE = FunOnlineUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.myWallpaper.org.MyWallpaperUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

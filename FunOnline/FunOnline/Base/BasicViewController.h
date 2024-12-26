@@ -2,8 +2,7 @@
 //  ViewController.h
 //  BotherSellerOC
 //
-//  Created by CoderTan on 2017/4/6.
-//  Copyright © 2017年 CoderTan. All rights reserved.
+//  Created by 杨充 on 2017/4/6.
 //
 
 #import <UIKit/UIKit.h>
@@ -13,6 +12,7 @@
 static int maxColumn   = 2;  //默认列数
 static CGFloat spacing = 10; //常用间距
 
+//封装的basic控制器
 @interface BasicViewController : UIViewController
 <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource,
 UICollectionViewDelegate, UICollectionViewDataSource,

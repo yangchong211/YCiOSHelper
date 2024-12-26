@@ -16,10 +16,21 @@
 #import "UIImage+Extension.h"
 #import "UIColor+Extension.h"
 
+//测试语法
+#import "MyClass.h"
+#import "Vehicle.h"
+#import "VehicleCar.h"
+#import "MyProtocolClass.h"
+#import "MyProtocol.h"
+#import "NSString+CustomMethods.h"
 
+
+//@interface BasicTabBarController () 是一种类扩展（Class Extension）的语法，用于在类的实现文件（.m）中声明私有属性和方法。
 @interface BasicTabBarController ()
 
 @end
+
+#pragma mark - BasicTabBarController类的实现
 
 @implementation BasicTabBarController
 
@@ -34,7 +45,9 @@
 #pragma mark -
 
 + (void)load {
+    [super load];
     
+    //设置item
     UITabBarItem *item = [UITabBarItem appearance];
     
     NSMutableDictionary *normalAttribute = [NSMutableDictionary dictionary];
@@ -66,18 +79,54 @@
     [self setupOneChildrenController:mine title:@"我的" image:@"item-04-normal" selectedImage:@"item-04-select"];
 }
 
-- (void)setupOneChildrenController:(UIViewController *)vc title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage {
-    
-    BasicNavigationController *nav = [[BasicNavigationController alloc] initWithRootViewController:vc];
-    
+
+//切换控制器
+- (void) setupOneChildrenController: (UIViewController *) vc title:(NSString *)title image:(NSString*)image selectedImage:(NSString*) selectedImage {
+    //创建控制器
+    BasicNavigationController *nav = [BasicNavigationController alloc];
+    //设置容器
+    [nav initWithRootViewController:vc];
     vc.tabBarItem.title = title;
     if (((image.length) && (selectedImage.length)) > 0) { //图片存在
         vc.tabBarItem.image = [UIImage imageWithOriginalRenderingMode:image];
         vc.tabBarItem.selectedImage = [UIImage imageWithOriginalRenderingMode:selectedImage];
     }
-    
     // 添加子控制器
     [self addChildViewController:nav];
+}
+
+- (void) test {
+    MyClass *my = [[MyClass alloc] init];
+    [my doSomething];
+    NSInteger result = [my calculateSumWithNumber: 5 andNumber: 10];
+    NSLog(@"调用带有参数的方法: %d", result);
+    
+    NSString *greeting = [my greetWithName:@"John"];
+    
+    my.name = @"John"; // 使用 set 方法设置属性值
+    NSString *name = my.name; // 使用 get 方法获取属性值
+    
+    //学习属性
+    NSString *originalString = @"Hello, World!";
+    NSString *reversedString = [originalString reversedString];
+    NSLog(@"%@", reversedString); // 输出：!dlroW ,olleH
+    
+    
+    //学习类的继承
+    VehicleCar *myCar = [[VehicleCar alloc] init];
+    myCar.brand = @"Toyota";
+    myCar.year = 2022;
+    myCar.numberOfDoors = 4;
+    [myCar startEngine];
+    [myCar drive];
+    [myCar stopEngine];
+    
+    
+    //学习协议
+    MyProtocolClass *myProtocolClass = [[MyProtocolClass alloc] init];
+    id<MyProtocol> protocolObject = myProtocolClass;
+    [protocolObject doSomething];
+    NSString *getName = [protocolObject getName];
 }
 
 @end
