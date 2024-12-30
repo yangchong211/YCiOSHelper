@@ -297,6 +297,7 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		ECC1CB112D1D332400449BD0 /* TestStudy */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TestStudy; sourceTree = "<group>"; };
+		ECC1CC972D1D839500449BD0 /* OC */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = OC; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -397,6 +398,7 @@
 		2B00341520746B41003C5213 /* FunOnline */ = {
 			isa = PBXGroup;
 			children = (
+				ECC1CC972D1D839500449BD0 /* OC */,
 				ECC1CB112D1D332400449BD0 /* TestStudy */,
 				ECC1C9B42D1BC54F00449BD0 /* Headers */,
 				2B00344A20746C47003C5213 /* AppDelegate.h */,
@@ -985,6 +987,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				ECC1CB112D1D332400449BD0 /* TestStudy */,
+				ECC1CC972D1D839500449BD0 /* OC */,
 			);
 			name = FunOnline;
 			productName = MyWallpaper;
@@ -1430,6 +1433,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 37Y2532GZM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = FunOnline/FLPrefixHeader.pch;
 				INFOPLIST_FILE = FunOnline/Info.plist;
@@ -1456,6 +1463,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 37Y2532GZM;
+				EXCLUDED_ARCHS = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = FunOnline/FLPrefixHeader.pch;
 				INFOPLIST_FILE = FunOnline/Info.plist;

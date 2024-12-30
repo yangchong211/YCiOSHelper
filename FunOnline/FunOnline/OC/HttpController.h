@@ -6,8 +6,7 @@
 //  Copyright © 2018年 iOS. All rights reserved.
 //
 
-#import "BasicViewController.h"
-
-@interface HomeViewController : BasicViewController
+//学习网络请求，json解析
+@interface HttpController : UIViewController
 
 @end

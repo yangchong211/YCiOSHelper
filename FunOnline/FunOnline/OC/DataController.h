@@ -6,8 +6,7 @@
 //  Copyright © 2018年 iOS. All rights reserved.
 //
 
-#import "BasicViewController.h"
-
-@interface HomeViewController : BasicViewController
+//学习数据存储
+@interface DataController : UIViewController
 
 @end

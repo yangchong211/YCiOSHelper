@@ -2,7 +2,7 @@
 //  WallpaperViewController.m
 //  FunOnline
 //
-//  Created by Original_TJ on 2018/4/4.
+//  Created by 杨充 on 2018/4/4.
 //  Copyright © 2018年 iOS. All rights reserved.
 //
 
@@ -28,19 +28,15 @@
 
 #pragma mark - Lazys
 
-- (NSArray *)titleGroup
-{
+- (NSArray *)titleGroup{
     if (!_titleGroup) {
-        
         _titleGroup = @[@"推荐", @"分类", @"最新"];
     }
     return _titleGroup;
 }
 
-- (NSArray *)childenGroup
-{
+- (NSArray *)childenGroup{
     if (!_childenGroup) {
-        
         _childenGroup = @[
                           @"HotGroupViewController",
                           @"ClassifyViewController",
@@ -58,22 +54,25 @@
     // Do any additional setup after loading the view.
     self.title = @"壁纸";
     self.scrollRecord = 0;
-    
+    //初始化nav上的item
     [self initNavitem];
+    //初始化布局
     [self initSubview];
 }
 
-- (void)initNavitem
-{
+- (void)initNavitem {
     self.segmentItem = [[LKSegmentItemBar alloc] initWithFrame:CGRectMake(0, 0, 200, 50)
                                                   segmentItems:self.titleGroup];
+    //设置颜色
+    //[self.segmentItem setBackgroundColor:UIColor.blueColor];
+    [self.segmentItem setTintColor:UIColor.redColor];
+    //设置title
     self.navigationItem.titleView = self.segmentItem;
-    
+    //设置搜索按钮
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:@"icon_search" highlightImg:@"icon_search" target:self action:@selector(jumpSearch)];
 }
 
-- (void)initSubview
-{
+- (void)initSubview {
     CGFloat width = [UIScreen mainScreen].bounds.size.width;
     self.mainScrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     self.mainScrollView.delegate = self;
@@ -82,7 +81,6 @@
     self.mainScrollView.showsHorizontalScrollIndicator = NO;
     self.mainScrollView.contentSize = CGSizeMake(self.childenGroup.count * width, self.view.frame.size.height);
     [self.view addSubview:self.mainScrollView];
-    
     for (NSInteger idx = 0; idx < self.childenGroup.count; idx++) {
         UIViewController *vc = [[NSClassFromString(self.childenGroup[idx]) alloc] init];
         vc.title = self.titleGroup[idx];
@@ -106,8 +104,7 @@
 
 #pragma mark - jumps
 
-- (void)jumpSearch
-{
+- (void)jumpSearch {
     SearchHistoryViewController *searchVC = [[SearchHistoryViewController alloc] init];
     [self.navigationController pushViewController:searchVC animated:YES];
 }
@@ -118,31 +115,23 @@
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
     CGFloat width  = SCREEN_WIDTH;
     CGFloat height = SCREEN_HEIGHT;
-    
     CGFloat offsetX = scrollView.contentOffset.x;
-    
     //获取索引值
     NSInteger index = offsetX / width;
-    
     //索引值联动SegmentView
     [self.segmentItem scrolling:index];
-    
     //根据索引值返回vc的引用
     UIViewController *childVC = self.childViewControllers[index];
-    
     //判断当前vc是否执行过viewDidLoad
     if ([childVC isViewLoaded]) return;
-    
     //设置子控制器view大小
     childVC.view.frame = CGRectMake(offsetX, 0, scrollView.frame.size.width, height);
-    
     //将子控制器的view加到ScrollView
     [scrollView addSubview:childVC.view];
 }
 
 //减速结束时调用加载子控制器view的方法
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    
     [self scrollViewDidEndScrollingAnimation:scrollView];
 }
 

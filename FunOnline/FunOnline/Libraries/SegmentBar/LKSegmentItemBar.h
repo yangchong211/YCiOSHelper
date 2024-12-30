@@ -12,12 +12,14 @@ typedef void(^DidFinishedBlock)(NSInteger index);
 
 @class LKSegmentItemBar;
 
+//定义协议
 @protocol LKSegmentItemBarDelegate<NSObject>
 @optional
 - (void)segment:(LKSegmentItemBar *)segment DidSelectItemAtIndex:(NSInteger)index;
 
 @end
 
+//定义接口
 @interface LKSegmentItemBar : UIView
 
 - (instancetype)initWithFrame:(CGRect)frame segmentItems:(NSArray *)items;

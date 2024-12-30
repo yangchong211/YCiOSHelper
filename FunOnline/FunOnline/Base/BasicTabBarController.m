@@ -40,6 +40,7 @@
     [super viewDidLoad];
     //初始化子控制器
     [self initChildrenController];
+    [self test];
 }
 
 #pragma mark -
@@ -86,10 +87,15 @@
     BasicNavigationController *nav = [BasicNavigationController alloc];
     //设置容器
     [nav initWithRootViewController:vc];
-    vc.tabBarItem.title = title;
+    //获取标题item
+    UITabBarItem *tabBarItem = [vc tabBarItem];
+    //设置标题
+    tabBarItem.title = title;
     if (((image.length) && (selectedImage.length)) > 0) { //图片存在
-        vc.tabBarItem.image = [UIImage imageWithOriginalRenderingMode:image];
-        vc.tabBarItem.selectedImage = [UIImage imageWithOriginalRenderingMode:selectedImage];
+        //设置图片
+        tabBarItem.image = [UIImage imageWithOriginalRenderingMode:image];
+        //设置选中的图片
+        tabBarItem.selectedImage = [UIImage imageWithOriginalRenderingMode:selectedImage];
     }
     // 添加子控制器
     [self addChildViewController:nav];
@@ -98,19 +104,23 @@
 - (void) test {
     MyClass *my = [[MyClass alloc] init];
     [my doSomething];
+    NSInteger age = [my age];
+    NSLog(@"调用age: %d", age);
     NSInteger result = [my calculateSumWithNumber: 5 andNumber: 10];
     NSLog(@"调用带有参数的方法: %d", result);
-    
     NSString *greeting = [my greetWithName:@"John"];
-    
+    NSLog(@"调用greetWithName: %@", greeting);
     my.name = @"John"; // 使用 set 方法设置属性值
     NSString *name = my.name; // 使用 get 方法获取属性值
+    NSLog(@"获取name: %@", greeting);
+    //创建有参数的对象
+    MyClass *person = [[MyClass alloc] initWithName:@"John" age:25];
+
     
     //学习属性
     NSString *originalString = @"Hello, World!";
     NSString *reversedString = [originalString reversedString];
     NSLog(@"%@", reversedString); // 输出：!dlroW ,olleH
-    
     
     //学习类的继承
     VehicleCar *myCar = [[VehicleCar alloc] init];

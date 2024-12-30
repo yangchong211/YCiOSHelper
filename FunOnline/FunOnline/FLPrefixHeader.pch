@@ -30,6 +30,7 @@
 #define iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 
 /** 通知相关 */
+//[NSNotificationCenter defaultCenter] 是一个单例对象，用于在 iOS 应用程序中进行通知的发布和订阅。
 #define NC  [NSNotificationCenter defaultCenter]
 #define NC_Reload_Home      @"NC_Reload_Home"
 #define NC_Reload_Music     @"NC_Reload_Music"

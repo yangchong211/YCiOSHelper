@@ -2,8 +2,7 @@
 //  BasicNavigationController.m
 //  BotherSellerOC
 //
-//  Created by CoderTan on 2017/4/6.
-//  Copyright © 2017年 CoderTan. All rights reserved.
+//  Created by 杨充 on 2017/4/6.
 //
 
 #import "BasicNavigationController.h"
@@ -27,7 +26,6 @@
  统一设置导航栏状态栏为黑色
  */
 - (UIStatusBarStyle)preferredStatusBarStyle {
-    
     return  UIStatusBarStyleDefault;
 }
 
@@ -60,7 +58,6 @@
  设置导航栏样式
  */
 + (void)load {
-    
     NSArray *array = [NSArray arrayWithObjects:[self class], nil]; //iOS9.0后使用
     UINavigationBar *navBar = [UINavigationBar appearanceWhenContainedInInstancesOfClasses:array];
     NSMutableDictionary *attribute = [NSMutableDictionary dictionary];
@@ -75,10 +72,8 @@
 #pragma mark - <UINavigationControllerDelegate>
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
-
     if (self.viewControllers.count > 0) { //非根控制器才能全屏滑动返回
         self.pan.enabled = YES;
-        
         // 设置统一返回的按钮样式
         UIBarButtonItem *backItem = [UIBarButtonItem itemWithImage:@"icon_return" highlightImg:@"icon_return" target:self action:@selector(pop)];
         viewController.navigationItem.leftBarButtonItem = backItem;
@@ -88,10 +83,8 @@
         //手势不可用
         self.pan.enabled = NO;
     }
-    
     //正式跳转
     [super pushViewController:viewController animated:animated];
-    
     if (@available(iOS 11.0, *)){
         // 修改tabBar的frame
         CGRect frame = self.tabBarController.tabBar.frame;
@@ -106,7 +99,7 @@
 - (void)pop {
     [self.view endEditing:YES];
     [[UIApplication sharedApplication].keyWindow endEditing:YES];
-    
+    //弹出vc控制器
     [self popViewControllerAnimated:YES];
 }
 
