@@ -2,8 +2,7 @@
 //  NewsFavoriteViewController.m
 //  FunOnline
 //
-//  Created by Original_TJ on 2018/4/10.
-//  Copyright © 2018年 iOS. All rights reserved.
+//  Created by 杨充 on 2018/4/10.
 //
 
 #import "NewsFavoriteController.h"
@@ -23,10 +22,8 @@ static NSString *const kNewsFavoriteCellIdentifier = @"kNewsFavoriteCellIdentifi
 
 @implementation NewsFavoriteController
 
-- (NSMutableArray *)cacheObjects
-{
+- (NSMutableArray *)cacheObjects {
     if (!_cacheObjects) {
-        
         _cacheObjects = [NSMutableArray array];
     }
     return _cacheObjects;
@@ -35,37 +32,31 @@ static NSString *const kNewsFavoriteCellIdentifier = @"kNewsFavoriteCellIdentifi
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     [self initSubview];
     [NC addObserver:self selector:@selector(reloadTable) name:NC_Reload_News object:nil];
 }
 
-- (void)initSubview
-{
+- (void)initSubview {
     self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-64);
     [self.tableView registerNib:[UINib nibWithNibName:@"NewsTableViewCell" bundle:nil] forCellReuseIdentifier:kNewsFavoriteCellIdentifier];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:self.tableView];
-    
+    //重新刷新
     [self reloadTable];
 }
 
-- (void)reloadTable
-{
+- (void)reloadTable {
     WeakSelf;
     self.tableView.mj_header = [FLRefreshGifHeader headerWithRefreshingBlock:^{
-        
         [weakSelf loadingCaches];
     }];
     
     [self.tableView.mj_header beginRefreshing];
 }
 
-- (void)loadingCaches
-{
+- (void)loadingCaches {
     if ([CacheManager sharedManager].newsStarGroup ||
         [CacheManager sharedManager].newsStarGroup.count) {
-        
         if (self.cacheObjects.count) {
             [self.cacheObjects removeAllObjects];
         }
@@ -79,12 +70,10 @@ static NSString *const kNewsFavoriteCellIdentifier = @"kNewsFavoriteCellIdentifi
 #pragma mark - table for data
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
     return self.cacheObjects.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     NewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kNewsFavoriteCellIdentifier];
     if (self.cacheObjects.count > indexPath.row) {
         cell.model = self.cacheObjects[indexPath.row];
@@ -95,7 +84,6 @@ static NSString *const kNewsFavoriteCellIdentifier = @"kNewsFavoriteCellIdentifi
 #pragma mark - table for delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     if (self.cacheObjects.count > indexPath.row) {
         self.jumpModel = self.cacheObjects[indexPath.row];
         [self performSelector:@selector(afterJump) withObject:nil afterDelay:0.25];
@@ -103,8 +91,7 @@ static NSString *const kNewsFavoriteCellIdentifier = @"kNewsFavoriteCellIdentifi
 }
 
 // 延迟跳转
-- (void)afterJump
-{
+- (void)afterJump {
     WebBrowseViewController *browseVC = [[WebBrowseViewController alloc] init];
     browseVC.model       = self.jumpModel;
     browseVC.urlString   = self.jumpModel.link;
@@ -113,7 +100,6 @@ static NSString *const kNewsFavoriteCellIdentifier = @"kNewsFavoriteCellIdentifi
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     return 141;
 }
 
@@ -133,13 +119,11 @@ static NSString *const kNewsFavoriteCellIdentifier = @"kNewsFavoriteCellIdentifi
 - (void)emptyDataSet:(UIScrollView *)scrollView didTapButton:(UIButton *)button {
     // Do something
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
         [self popToNews];
     });
 }
 
 - (void)popToNews {
-    
     BasicTabBarController *tabBar = (BasicTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
     tabBar.selectedIndex = 1; // 新闻界面
     [self.navigationController popToRootViewControllerAnimated:YES];

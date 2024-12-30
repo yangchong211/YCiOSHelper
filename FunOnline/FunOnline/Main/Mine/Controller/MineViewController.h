@@ -2,8 +2,7 @@
 //  MoreViewController.h
 //  FunOnline
 //
-//  Created by Original_TJ on 2018/4/4.
-//  Copyright © 2018年 iOS. All rights reserved.
+//  Created by 杨充 on 2018/4/4.
 //
 
 #import "BasicViewController.h"

@@ -30,13 +30,46 @@
     //你需要实现 UITableViewDelegate 和 UITableViewDataSource 中的代理方法来提供表格的行数、单元格内容和处理选中事件等。
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    //设置顶部view
+    _tableView.tableHeaderView = [self defaultHeader];
+    //设置底部view
+    _tableView.tableFooterView = [self defaultFooter];
     [self.view addSubview:_tableView];
-    
     //当数据源发生变化时，你可以调用 reloadData 方法来刷新表格的数据。
     [_tableView reloadData];
 }
 
-// 代理
+//设置默认的底部view
+- (UIView *)defaultHeader {
+    //view
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 44*2)];
+    view.backgroundColor = [UIColor colorWhiteColor];
+    //创建按钮
+    UIButton *button = [[UIButton alloc] initWithFrame:view.bounds];
+    //设置title
+    [button setTitle:@"这个是头部View" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    //添加view
+    [view addSubview: button];
+    return view;
+}
+
+
+//设置默认的底部view
+- (UIView *)defaultFooter {
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 44)];
+    view.backgroundColor = [UIColor colorWhiteColor];
+    //创建按钮
+    UIButton *button = [[UIButton alloc] initWithFrame:view.bounds];
+    //设置title
+    [button setTitle:@"这个是底部View" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    //添加view
+    [view addSubview: button];
+    return view;
+}
+
+#pragma mark - 代理
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // 返回表格的行数
@@ -56,8 +89,10 @@
     return cell;
 }
 
+//点击item后会调用这个方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // 处理选中某行的事件
+    NSInteger row = indexPath.row;  //列数
 }
 
 

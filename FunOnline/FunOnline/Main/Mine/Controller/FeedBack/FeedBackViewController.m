@@ -66,15 +66,12 @@ TZImagePickerControllerDelegate, FeedBackDropMenuDelegate>
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     self.title = @"反馈意见";
     self.view.backgroundColor = [UIColor colorWithHexString:@"F8F8F8"];
-    
     [self initSubview];
 }
 
-- (void)initSubview
-{
+- (void)initSubview {
     self.isVisibleAdds = YES; //默认可以添加
     self.isVisibleMore = NO;
     
@@ -96,8 +93,7 @@ TZImagePickerControllerDelegate, FeedBackDropMenuDelegate>
     [self addConstraints];
 }
 
-- (void)addConstraints
-{
+- (void)addConstraints {
     [self.dropMenuView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(self.view);
         make.height.equalTo(@190.5);
@@ -151,10 +147,12 @@ TZImagePickerControllerDelegate, FeedBackDropMenuDelegate>
     if (![NSString isValidateHomePhoneNum:_number]) {
         [XDProgressHUD showHUDWithText:@"请填写正确的手机号码" hideDelay:1.0];
         return;
-    }if (!_comment || _comment.length <= 10) {
+    }
+    if (!_comment || _comment.length <= 10) {
         [XDProgressHUD showHUDWithText:@"请输入至少10个字符的反馈信息" hideDelay:1.0];
         return;
-    }if (self.photoObjects.count <= 1) {
+    }
+    if (self.photoObjects.count <= 1) {
         [XDProgressHUD showHUDWithText:@"请上传至少一张图片" hideDelay:1.0];
         return;
     }

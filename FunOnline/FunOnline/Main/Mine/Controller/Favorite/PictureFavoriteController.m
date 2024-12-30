@@ -2,8 +2,7 @@
 //  PictureFavoriteViewController.m
 //  FunOnline
 //
-//  Created by Original_TJ on 2018/4/10.
-//  Copyright © 2018年 iOS. All rights reserved.
+//  Created by 杨充 on 2018/4/10.
 //
 
 #import "PictureFavoriteController.h"
@@ -25,10 +24,9 @@ static NSString *const kPictureCellReuseIdentifier = @"kPictureCellReuseIdentifi
 
 #pragma mark - Lazys
 
-- (NSMutableArray *)pictureObjects
-{
+- (NSMutableArray *)pictureObjects {
+    //创建图片数组
     if (!_pictureObjects) {
-        
         _pictureObjects = [NSMutableArray array];
     }
     return _pictureObjects;
@@ -39,7 +37,6 @@ static NSString *const kPictureCellReuseIdentifier = @"kPictureCellReuseIdentifi
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     [self initSubview];
     [NC addObserver:self selector:@selector(showRefresh) name:NC_Reload_Picture object:nil];
 }
@@ -54,11 +51,9 @@ static NSString *const kPictureCellReuseIdentifier = @"kPictureCellReuseIdentifi
     [self showRefresh];
 }
 
-- (void)showRefresh
-{
+- (void)showRefresh {
     WeakSelf;
     self.collectionView.mj_header = [FLRefreshGifHeader headerWithRefreshingBlock:^{
-        
         [weakSelf loadingPicture];
     }];
     
@@ -135,13 +130,11 @@ static NSString *const kPictureCellReuseIdentifier = @"kPictureCellReuseIdentifi
 - (void)emptyDataSet:(UIScrollView *)scrollView didTapButton:(UIButton *)button {
     // Do something
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
         [self popToHome];
     });
 }
 
 - (void)popToHome {
-    
     BasicTabBarController *tabBar = (BasicTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
     tabBar.selectedIndex = 0;
     [self.navigationController popToRootViewControllerAnimated:YES];

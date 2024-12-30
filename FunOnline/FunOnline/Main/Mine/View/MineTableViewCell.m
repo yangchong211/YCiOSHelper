@@ -29,20 +29,17 @@
 
 - (void)setModel:(MineModel *)model {
     _model = model;
-    
     self.leftLabel.text    = model.title;
     self.leftImgView.image = [UIImage imageNamed:model.image];
 }
 
 - (void)setHideLine:(BOOL)hideLine {
     _hideLine = hideLine;
-    
     self.lineView.hidden = hideLine;
 }
 
 - (void)setHideArrow:(BOOL)hideArrow {
     _hideArrow = hideArrow;
-    
     self.arrowView.hidden = hideArrow;
 }
 

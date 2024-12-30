@@ -24,15 +24,12 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    
     self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 
 - (void)setModel:(NewsModel *)model {
-    
     _model = model;
-    
     self.timeLabel.text  = model.pubDate;
     self.descLabel.text  = model.desc;
     self.countLabel.text = model.views;

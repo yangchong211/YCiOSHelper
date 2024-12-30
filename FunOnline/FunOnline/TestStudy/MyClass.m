@@ -24,6 +24,14 @@
     return self;
 }
 
++ (instancetype)initWithName:(NSString *)name age:(NSInteger)age {
+    MyClass *model = [[MyClass alloc] init];
+    model.name = name;
+    model.age = age;
+    return model;
+}
+
+
 - (void)doSomething {
     NSLog(@"Doing something...");
 }

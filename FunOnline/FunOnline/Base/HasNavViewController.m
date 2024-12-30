@@ -2,8 +2,7 @@
 //  HasNavViewController.m
 //  BotherSellerOC
 //
-//  Created by CoderTan on 2017/4/8.
-//  Copyright © 2017年 CoderTan. All rights reserved.
+//  Created by 杨充 on 2017/4/8.
 //
 
 #import "HasNavViewController.h"
@@ -12,12 +11,12 @@
 
 @end
 
+//有nav控制器
 @implementation HasNavViewController
 
 #pragma mark - Lazys
 
-- (UICollectionView *)collectionView
-{
+- (UICollectionView *)collectionView {
     if (!_collectionView) {
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         layout.scrollDirection = UICollectionViewScrollDirectionVertical;
@@ -37,13 +36,11 @@
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
-    
     [self.view endEditing:YES];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.view.backgroundColor = [UIColor whiteColor];
 }
 
@@ -70,7 +67,6 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    
     [self.view endEditing:YES];
 }
 

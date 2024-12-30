@@ -14,19 +14,9 @@
 static NSString *const kNewsCellReuseIdentifier = @"kNewsCellReuseIdentifier";
 
 @interface NewsViewController ()<PagingScrollMenuDelegate, UIGestureRecognizerDelegate>
-@property (nonatomic, strong) PagingScrollMenu *scrollMenu;
-@property (nonatomic, strong) NSMutableArray *newsObjects;
-@property (nonatomic, strong) NSArray *titleObjects;
-@property (nonatomic, strong) NSArray *idsObjects;
-
-@property (nonatomic, strong) NewsModel *selectModel;
-@property (nonatomic, strong) UIButton  *reachButton;
-@property (nonatomic, strong) NSString  *categoryId;
-
-@property (nonatomic, assign) NSInteger scrollIndex;
-@property (nonatomic, assign) NSInteger count;
 
 @end
+
 
 @implementation NewsViewController
 

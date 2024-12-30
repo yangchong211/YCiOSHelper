@@ -2,8 +2,7 @@
 //  HasNavViewController.h
 //  BotherSellerOC
 //
-//  Created by CoderTan on 2017/4/8.
-//  Copyright © 2017年 CoderTan. All rights reserved.
+//  Created by 杨充 on 2017/4/8.
 //
 
 #import <UIKit/UIKit.h>

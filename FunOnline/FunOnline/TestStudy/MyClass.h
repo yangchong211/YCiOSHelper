@@ -17,6 +17,7 @@
 
 //可以使用构造方法（Constructor）来创建具有参数的对象。构造方法是一种特殊的方法，用于初始化对象并设置其属性。
 - (instancetype)initWithName:(NSString *)name age:(NSInteger)age;
++ (instancetype)initWithName:(NSString *)name age:(NSInteger)age;
 
 //方法声明：- (返回类型)方法名:(参数类型)参数名;
 - (void)doSomething;

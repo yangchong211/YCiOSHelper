@@ -23,14 +23,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = self.titleString;
-    
     [self initNavItem];
     [self configWkWeb];
     [self loadRequest];
 }
 
-- (void)initNavItem
-{
+- (void)initNavItem {
     UIButton *startButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [startButton setImage:[UIImage imageNamed:@"favorite_normal"] forState:UIControlStateNormal];
     [startButton setImage:[UIImage imageNamed:@"favorite_select"] forState:UIControlStateSelected];
@@ -40,12 +38,10 @@
     [customView addSubview:startButton];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:customView];
     self.startButton = startButton;
-    
     [self starSetup:self.model];
 }
 
-- (void)configWkWeb
-{
+- (void)configWkWeb {
     self.browseView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-64)];
     self.browseView.UIDelegate = self;
     self.browseView.navigationDelegate = self;
@@ -58,12 +54,11 @@
     [self.view addSubview:self.browseView];
 }
 
-- (void)starSetup:(NewsModel *)model
-{
+- (void)starSetup:(NewsModel *)model {
     dispatch_async(dispatch_get_main_queue(), ^{
         if ([[CacheManager sharedManager] isStartNewsWithModel:model]) {
             self.startButton.selected = YES;
-        }else {
+        } else {
             self.startButton.selected = NO;
         }
     });
@@ -77,7 +72,6 @@
         return;
     }
     button.selected = !button.selected;
-    
     if (button.selected) {
         self.model.isStar = YES;
         [[CacheManager sharedManager] startNewsWithModel:self.model];
@@ -87,15 +81,12 @@
         [[CacheManager sharedManager] unStartNewsWithModel:self.model];
         [XDProgressHUD showHUDWithText:@"取消收藏" hideDelay:1.0];
     }
-    
     // 发出收藏列表刷新通知
     [NC postNotificationName:NC_Reload_News object:nil];
 }
 
-- (void)loadRequest
-{
+- (void)loadRequest {
     [XDProgressHUD showHUDWithIndeterminate:@"Loading..."];
-    
     NSURL *aboutString = [NSURL URLWithString:self.urlString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:aboutString cachePolicy:NSURLRequestReloadRevalidatingCacheData timeoutInterval:10];
     [self.browseView loadRequest:request];

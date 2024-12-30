@@ -10,18 +10,16 @@
 
 @implementation MineModel
 
-+ (instancetype)initWithTitle:(NSString *)title image:(NSString *)image
-{
+//构造
++ (instancetype)initWithTitle:(NSString *)title image:(NSString *)image {
     MineModel *model = [[MineModel alloc] init];
     model.title = title;
     model.image = image;
-    
     return model;
 }
 
 
-- (instancetype)initWithTitle:(NSString *)title image:(NSString *)image
-{
+- (instancetype)initWithTitle:(NSString *)title image:(NSString *)image {
     if (self = [super init]) {
         self.title = title;
         self.image = image;

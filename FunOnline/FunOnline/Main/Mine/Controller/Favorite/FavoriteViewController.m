@@ -2,8 +2,7 @@
 //  FavoriteViewController.m
 //  FunOnline
 //
-//  Created by Original_TJ on 2018/4/10.
-//  Copyright © 2018年 iOS. All rights reserved.
+//  Created by 杨充 on 2018/4/10.
 //
 
 #import "FavoriteViewController.h"
@@ -23,10 +22,8 @@
 
 #pragma mark - Lazys
 
-- (NSArray *)childObjects
-{
+- (NSArray *)childObjects {
     if (!_childObjects) {
-        
         _childObjects = @[
                           @"PictureFavoriteController",
                           @"NewsFavoriteController"
@@ -35,10 +32,8 @@
     return _childObjects;
 }
 
-- (NSArray *)titleObjects
-{
+- (NSArray *)titleObjects {
     if (!_titleObjects) {
-        
         _titleObjects = @[@"图片", @"新闻"];
     }
     return _titleObjects;
@@ -49,27 +44,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.view.backgroundColor = [UIColor whiteColor];
     [self initNavItem];
     [self initSubview];
 }
 
-- (void)initNavItem
-{
+- (void)initNavItem {
     self.segmenItemView = [[LKSegmentItemBar alloc] initWithFrame:CGRectMake(0, 0, 120, 50)
                                                      segmentItems:self.titleObjects];
     self.segmenItemView.delegate = self;
     self.navigationItem.titleView = self.segmenItemView;
 }
 
-- (void)initSubview
-{
+- (void)initSubview {
     self.itemScrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     self.itemScrollView.delegate = self;
     self.itemScrollView.pagingEnabled = YES;
     self.itemScrollView.showsVerticalScrollIndicator = YES;
     self.itemScrollView.showsHorizontalScrollIndicator = YES;
-    self.itemScrollView.backgroundColor = [UIColor whiteColor];
+    self.itemScrollView.backgroundColor = [UIColor redColor];
+    self.itemScrollView.tintColor = [UIColor yellowColor];
     self.itemScrollView.contentSize = CGSizeMake(SCREEN_WIDTH * self.childObjects.count, 0);
     [self.view addSubview:self.itemScrollView];
     
@@ -114,14 +108,12 @@
 
 //减速结束时调用加载子控制器view的方法
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    
     [self scrollViewDidEndScrollingAnimation:scrollView];
 }
 
 #pragma mark - LKSegmentItemBarDelegate
 
-- (void)segment:(LKSegmentItemBar *)segment DidSelectItemAtIndex:(NSInteger)index
-{
+- (void)segment:(LKSegmentItemBar *)segment DidSelectItemAtIndex:(NSInteger)index {
     CGPoint point = CGPointMake(index * self.itemScrollView.frame.size.width, self.itemScrollView.contentOffset.y);
     [self.itemScrollView setContentOffset:point animated:YES];
 }
