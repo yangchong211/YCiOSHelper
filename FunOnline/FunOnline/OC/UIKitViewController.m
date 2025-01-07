@@ -18,6 +18,9 @@
 @property (nonatomic, strong) UISwitch *swith;
 @property (nonatomic, strong) UITextField *textField;
 
+
+@property (nonatomic, weak) id<UIKitControllerDelegate> delegate;
+
 @end
 
 @implementation UIKitViewController
@@ -164,6 +167,11 @@
 - (void)switchValueChanged:(UITapGestureRecognizer *)gesture {
     // 处理点击事件的逻辑
     NSLog(@"switch开关被点击了");
+    if (_swith.isOn) {
+        [self.delegate sendPalmBack:0 data:@"成功"];
+    } else {
+        [self.delegate sendPalmBack:-1 data:@"失败"];
+    }
 }
 
 -(void) setTextFieldView {

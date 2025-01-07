@@ -11,6 +11,7 @@
 #import "TableViewController.h"
 #import "CollectionViewController.h"
 #import "WebViewController.h"
+#import "DataManager.h"
 
 @interface DemoViewController ()
 
@@ -27,6 +28,32 @@
 
 @implementation DemoViewController
 
+//viewWillAppear:：视图即将显示时调用，可以在此方法中进行视图相关的准备工作，例如更新数据、注册通知等。
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+
+//viewDidAppear:：视图已经显示时调用，可以在此方法中执行一些需要在视图显示后立即执行的操作，例如开始动画、请求网络数据等。
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+
+//viewWillDisappear:：视图即将消失时调用，可以在此方法中进行一些清理工作，例如取消网络请求、保存数据等。
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+}
+
+//viewDidDisappear:：视图已经消失时调用，可以在此方法中执行一些需要在视图消失后立即执行的操作，例如停止动画、释放资源等。
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+}
+
+//dealloc：释放资源，当 UIViewController 实例被销毁时调用，用于释放持有的对象和资源。
+- (void)dealloc {
+    
+}
+
+//viewDidLoad：视图加载完成后调用，用于进行一次性的初始化操作，例如设置数据源、添加子视图等。
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -122,6 +149,8 @@
     }];
     UITapGestureRecognizer *tapGesture5 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickText5:)];
     [_textView5 addGestureRecognizer: tapGesture5];
+    
+    [self testApi];
 }
 
 - (void)clickText1:(UITapGestureRecognizer *)gesture {
@@ -144,13 +173,23 @@
 
 - (void)clickText4:(UITapGestureRecognizer *)gesture {
     // 处理点击事件的逻辑
-
 }
 
 - (void)clickText5:(UITapGestureRecognizer *)gesture {
     // 处理点击事件的逻辑
     WebViewController *vc = [[WebViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void) testApi {
+    [DataManager.dataInstance clearCache];
+    NSString *version = [DataManager.dataInstance getAppVersion];
+    NSLog(@"app的版本是：%@", version);
+}
+
+- (void) sendPalmBack:(NSInteger)code data: (NSString *)data {
+    NSLog(@"返回的code：%d", code);
+    NSLog(@"返回的data：%@", data);
 }
 
 @end

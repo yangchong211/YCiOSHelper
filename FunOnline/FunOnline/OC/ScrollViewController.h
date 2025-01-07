@@ -6,6 +6,7 @@
 //  Copyright © 2018年 iOS. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 
 @interface ScrollViewController : UIViewController<UIWebViewDelegate>
 

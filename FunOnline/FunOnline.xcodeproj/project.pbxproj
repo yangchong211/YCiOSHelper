@@ -296,6 +296,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		ECA5E96F2D23C0D8003CC52C /* Sdk */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Sdk; sourceTree = "<group>"; };
 		ECC1CB112D1D332400449BD0 /* TestStudy */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TestStudy; sourceTree = "<group>"; };
 		ECC1CC972D1D839500449BD0 /* OC */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = OC; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -398,6 +399,7 @@
 		2B00341520746B41003C5213 /* FunOnline */ = {
 			isa = PBXGroup;
 			children = (
+				ECA5E96F2D23C0D8003CC52C /* Sdk */,
 				ECC1CC972D1D839500449BD0 /* OC */,
 				ECC1CB112D1D332400449BD0 /* TestStudy */,
 				ECC1C9B42D1BC54F00449BD0 /* Headers */,
@@ -986,6 +988,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				ECA5E96F2D23C0D8003CC52C /* Sdk */,
 				ECC1CB112D1D332400449BD0 /* TestStudy */,
 				ECC1CC972D1D839500449BD0 /* OC */,
 			);

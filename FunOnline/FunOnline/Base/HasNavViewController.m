@@ -57,12 +57,15 @@
  设置状态栏颜色
  */
 - (UIStatusBarStyle)preferredStatusBarStyle {
-    
-    return UIStatusBarStyleLightContent;
+    [super preferredStatusBarStyle];
+    //UIStatusBarStyle 是一个枚举类型，用于指定状态栏的样式。
+    //UIStatusBarStyleDefault：默认样式，状态栏文字为黑色。
+    //UIStatusBarStyleLightContent：浅色内容样式，状态栏文字为白色。
+    //UIStatusBarStyleDarkContent：深色内容样式，状态栏文字为黑色（仅适用于 iOS 13 及更高版本）。
+    return UIStatusBarStyleDefault;
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    
     [self.view endEditing:YES];
 }
 

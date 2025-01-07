@@ -1,13 +1,16 @@
 //
 //  HttpRequestManager.h
-//  OnlyBrother_ Seller
 //
-//  Created by 马康旭 on 16/10/26.
-//  Copyright © 2016年 谭捷. All rights reserved.
+//  ObjCApp
 //
+//  Created by 杨充 on 2024/12/23.
+//
+
+
 
 #import <Foundation/Foundation.h>
 
+//AFNetWorking：iOS/macOS JSON网络请求实战指南：https://blog.csdn.net/weixin_32925455/article/details/141683739
 NS_ASSUME_NONNULL_BEGIN
 
 typedef void(^Success)(id _Nullable responseObj);
@@ -17,6 +20,9 @@ typedef void(^Progress)(NSProgress * _Nonnull progress);
 @interface RequestManager : NSObject
 
 + (instancetype)manager;
+
+//设置请求头
+- (void) setHeader: (NSDictionary*) parameters;
 
 - (NSURLSessionDataTask *)GET:(NSString * )URLString
                    parameters:(nullable id)parameters

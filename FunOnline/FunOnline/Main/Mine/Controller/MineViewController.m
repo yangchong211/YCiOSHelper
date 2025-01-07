@@ -15,6 +15,7 @@
 #import "FeedBackViewController.h"
 #import "LoginViewController.h"
 #import "DemoViewController.h"
+#import "PalmRegisterViewController.h"
 
 static NSString *const kMineCellReuseIdentifier = @"kMineCellReuseIdentifier";
 
@@ -37,7 +38,8 @@ static NSString *const kMineCellReuseIdentifier = @"kMineCellReuseIdentifier";
                         [MineModel initWithTitle:@"给我评价" image:@"mine_store"],
                         [MineModel initWithTitle:@"意见反馈" image:@"mine_feedback"],
                         [MineModel initWithTitle:@"清除缓存" image:@"mine_clear"],
-                        [MineModel initWithTitle:@"UI控件演示" image:@"mine_clear"]
+                        [MineModel initWithTitle:@"UI控件演示" image:@"mine_clear"],
+                        [MineModel initWithTitle:@"刷掌演示" image:@"mine_clear"]
                         ];
     }
     return _dataObjets;
@@ -241,8 +243,10 @@ static NSString *const kMineCellReuseIdentifier = @"kMineCellReuseIdentifier";
         [self jumpFeedBack];
     }else if (indexPath.row == 3) {
         [self showClearSheet];
-    }else {
+    }else if (indexPath.row == 4) {
         [self jumpUIKit];
+    }else {
+        [self jumpPalm];
     }
 }
 
@@ -295,6 +299,11 @@ static NSString *const kMineCellReuseIdentifier = @"kMineCellReuseIdentifier";
 - (void)jumpFeedBack{
     FeedBackViewController *feedBackVC = [[FeedBackViewController alloc] init];
     [self.navigationController pushViewController:feedBackVC animated:YES];
+}
+
+- (void)jumpPalm {
+    PalmRegisterViewController *vc = [[PalmRegisterViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)jumpUIKit{

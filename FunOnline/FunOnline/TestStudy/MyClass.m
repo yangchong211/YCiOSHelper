@@ -31,7 +31,6 @@
     return model;
 }
 
-
 - (void)doSomething {
     NSLog(@"Doing something...");
 }
