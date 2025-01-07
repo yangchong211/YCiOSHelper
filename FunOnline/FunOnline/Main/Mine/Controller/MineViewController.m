@@ -16,6 +16,9 @@
 #import "LoginViewController.h"
 #import "DemoViewController.h"
 #import "PalmRegisterViewController.h"
+#import "PalmLangEnum.h"
+#import "WeCardPalmHelper.h"
+
 
 static NSString *const kMineCellReuseIdentifier = @"kMineCellReuseIdentifier";
 
@@ -302,6 +305,7 @@ static NSString *const kMineCellReuseIdentifier = @"kMineCellReuseIdentifier";
 }
 
 - (void)jumpPalm {
+    [WeCardPalmHelper.instance initWithLanguage:LanguageEnumLANGZH license:@"授权信息"];
     PalmRegisterViewController *vc = [[PalmRegisterViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
