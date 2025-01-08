@@ -30,10 +30,31 @@
 - (void) initWithLanguage: (PalmLangEnum) lang license:(nonnull NSString *) lic {
     NSString * palmLang = [self getLangString:lang];
     //打印字符串
-    NSLog(@"Palm,initWithLanguage lang  %@" , palmLang);
-    NSLog(@"Palm,initWithLanguage lic  %@" , lic);
+    NSLog(@"Palm , initWithLanguage lang  %@" , palmLang);
+    NSLog(@"Palm , initWithLanguage lic  %@" , lic);
+    //TODO 添加微信sdk初始化代码
+//    if (_airpalmInitializer == nil) {
+//        _airpalmInitializer = [[AirPalmInitializerImpl alloc] init];
+//        NSString *sdkLicense = lic;
+//        _airPalmInitParams = [[DBAirPalmInitParams alloc] initWithLanguage:DBLanguageEnumLANGES sdkLicense:sdkLicense];
+//        [AirPalmKit initAlogKit:_airpalmInitializer params:_airPalmInitParams];
+//    }
+    
+    
+    //这个是初始化代码
+//    AirPalmStartParams *params = [[AirPalmStartParams alloc] initWithTraceId:@"test-register-session"
+//                                                               palmSideLimit:DBAirPalmSideSIDEUNKNOWN
+//                                                                       token:@"123456789"];
+//    [AirPalmKit start:self
+//               params:params
+//             callback:^(DBPalmKitResult *result) {
+//                 NSLog(@"jumpToFrameWork callback:%d,%@", result.retCode, result.retMsg);
+//             }];
 }
 
+/**
+ * 获取外部设置的语言
+ */
 - (NSString *) getLangString: (PalmLangEnum) lang {
     switch (lang) {
         case LanguageEnumLANGKNOWN:

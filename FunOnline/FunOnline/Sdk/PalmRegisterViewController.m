@@ -52,6 +52,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWhiteColor];
+    RequestAuthParams* params = self.params;
+    
+    
     // 创建 UITextView
     self.myTextView = [[UITextView alloc] initWithFrame:CGRectMake(50, 200, 200, 150)];
     self.myTextView.text = @"点击textView我跳转到列表页面";

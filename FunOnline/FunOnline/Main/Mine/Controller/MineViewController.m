@@ -18,6 +18,7 @@
 #import "PalmRegisterViewController.h"
 #import "PalmLangEnum.h"
 #import "WeCardPalmHelper.h"
+#import "RequestAuthParams.h"
 
 
 static NSString *const kMineCellReuseIdentifier = @"kMineCellReuseIdentifier";
@@ -305,8 +306,21 @@ static NSString *const kMineCellReuseIdentifier = @"kMineCellReuseIdentifier";
 }
 
 - (void)jumpPalm {
+    //第一个参数：语言环境
+    //第二个参数：授权信息
     [WeCardPalmHelper.instance initWithLanguage:LanguageEnumLANGZH license:@"授权信息"];
+    
+    //跳转控制器
+    RequestAuthParams *params = [[RequestAuthParams alloc] initWithParams:@"test-user"
+                                                                 userName:@"Adon"
+                                                                  phoneNo:@"(+86)13242005231"
+                                                             paymentToken:@"sdfadfasdfasdf"
+                                                                timestamp:1703523162
+                                                                    nonce:@"aneuxo3847s4mf7xk"
+                                                                    appID:@"asdevxcbwdgs"
+                                                                signature:@"sign待完善"];
     PalmRegisterViewController *vc = [[PalmRegisterViewController alloc] init];
+    vc.params = params;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
