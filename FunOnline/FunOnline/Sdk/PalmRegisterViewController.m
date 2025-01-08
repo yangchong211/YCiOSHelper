@@ -4,10 +4,16 @@
 
 #import "PalmRegisterViewController.h"
 #import "PalmControllerDelegate.h"
+#import "PalmUIColor+Extension.h"
 
 @interface PalmRegisterViewController ()
 
-@property (nonatomic, strong) UITextView *myTextView;
+@property (nonatomic, strong) UIImageView *ivBack;
+@property (nonatomic, strong) UIImageView *ivResultIcon;
+@property (nonatomic, strong) UITextView *tvResultTitle;
+@property (nonatomic, strong) UITextView *tvResultDescribe;
+@property (nonatomic, strong) UIButton *btnStartPalm;
+@property (nonatomic, strong) UITextView *tvLicense;
 
 @end
 
@@ -53,23 +59,116 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWhiteColor];
     RequestAuthParams* params = self.params;
-    
-    
-    // 创建 UITextView
-    self.myTextView = [[UITextView alloc] initWithFrame:CGRectMake(50, 200, 200, 150)];
-    self.myTextView.text = @"点击textView我跳转到列表页面";
-    self.myTextView.editable = NO; // 禁止编辑
-    self.myTextView.userInteractionEnabled = YES; // 允许用户交互
-    [self.view addSubview:self.myTextView];
-    // 添加点击手势识别器
-    UITapGestureRecognizer *tapGesture2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
-    [self.myTextView addGestureRecognizer:tapGesture2];
+    [self initView];
 }
 
+#pragma mark - view布局
 
-- (void)handleTapGesture:(UITapGestureRecognizer *)gestureRecognizer {
-    // 处理点击事件
-    NSLog(@"TextView 被点击了");
+//绘制布局
+- (void) initView {
+    _ivBack = [[UIImageView alloc] init];
+    _ivBack.image = [UIImage imageNamed:@"icon_back_white"];
+    _ivBack.contentMode = UIViewContentModeScaleAspectFit;
+    //确保用户交互已启用
+    _ivBack.userInteractionEnabled = YES;
+    _ivBack.backgroundColor = [UIColor redColor];
+    //设置成圆形
+    _ivBack.layer.cornerRadius = _ivBack.frame.size.width / 2;
+    _ivBack.clipsToBounds = YES;
+    //添加点击事件
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(backTapped:)];
+    [_ivBack addGestureRecognizer:tapGesture];
+    [self.view addSubview:_ivBack];
+    [_ivBack mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view.mas_top).offset(100);
+        make.left.equalTo(self.view.mas_left).offset(20);
+        make.width.equalTo(@30);
+        make.height.equalTo(@30);
+    }];
+    
+    _ivResultIcon = [[UIImageView alloc] init];
+    _ivResultIcon.image = [UIImage imageNamed:@"icon_result_success"];
+    _ivResultIcon.contentMode = UIViewContentModeScaleAspectFit;
+    [self.view addSubview:_ivResultIcon];
+    [_ivResultIcon mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.ivBack.mas_bottom).offset(80);
+        make.centerX.equalTo(self.view);
+        make.width.equalTo(@65);
+        make.height.equalTo(@65);
+    }];
+    
+    _tvResultTitle = [[UITextView alloc] init];
+    _tvResultTitle.text = @"这个是标题";
+    _tvResultTitle.textAlignment = NSTextAlignmentCenter;
+    //设置字体大小
+    _tvResultTitle.font = [UIFont systemFontOfSize:24];
+    //设置字体颜色
+    _tvResultTitle.textColor = [UIColor colorHexString:@"000000"];
+    [self.view addSubview:_tvResultTitle];
+    [_tvResultTitle mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.ivResultIcon.mas_bottom).offset(45);
+        make.centerX.equalTo(self.view);
+        make.width.equalTo(@200);
+        make.height.equalTo(@40);
+    }];
+    
+    _tvResultDescribe = [[UITextView alloc] init];
+    _tvResultDescribe.text = @"这个是二级内容";
+    _tvResultDescribe.textAlignment = NSTextAlignmentCenter;
+    //设置字体大小
+    _tvResultDescribe.font = [UIFont systemFontOfSize:16];
+    //设置字体颜色
+    _tvResultDescribe.textColor = [UIColor colorHexString:@"a3a3a3"];
+    [self.view addSubview:_tvResultDescribe];
+    [_tvResultDescribe mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.tvResultTitle.mas_bottom).offset(10);
+        make.centerX.equalTo(self.view);
+        make.width.equalTo(@200);
+        make.height.equalTo(@40);
+    }];
+    
+    _tvLicense = [[UITextView alloc] init];
+    _tvLicense.text = @"由腾讯提供技术支持";
+    _tvLicense.font = [UIFont systemFontOfSize:12];
+    _tvLicense.textColor = [UIColor colorHexString:@"a3a3a3"];
+    _tvLicense.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:_tvLicense];
+    [_tvLicense mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.bottom.equalTo(self.view).offset(-20);
+        make.height.equalTo(@40);
+        make.width.equalTo(@200);
+    }];
+    
+    self.btnStartPalm = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.btnStartPalm.backgroundColor = [UIColor colorHexString:@"2cc569"];
+    // 设置按钮标题文本的字体大小为 14
+    self.btnStartPalm.titleLabel.font = [UIFont systemFontOfSize:14];
+    [self.btnStartPalm setTitle:@"去录掌" forState:UIControlStateNormal];
+    [self.btnStartPalm setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.btnStartPalm addTarget:self action:@selector(startPalm:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.btnStartPalm];
+    [self.btnStartPalm mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.tvLicense.mas_top).offset(-60);
+        make.centerX.equalTo(self.view);
+        make.width.equalTo(@180);
+        make.height.equalTo(@50);
+    }];
+    self.btnStartPalm.layer.cornerRadius = 25;
+    self.btnStartPalm.layer.masksToBounds = YES;
+}
+
+#pragma mark - 点击事件处理方法
+
+- (void)backTapped:(UITapGestureRecognizer *)gesture {
+    // 在这里执行你想要的操作
+    NSLog(@"Palm , 关闭页面操作");
+    //关闭控制器
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)startPalm:(UITapGestureRecognizer *)gesture {
+    NSLog(@"Palm , startPalm");
 }
 
 @end

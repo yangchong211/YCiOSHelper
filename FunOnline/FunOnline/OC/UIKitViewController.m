@@ -92,6 +92,11 @@
     //可以通过 UIImage 的类方法 imageNamed: 来加载本地图像
     _imageView.image = [UIImage imageNamed:@"mine_star"];
     _imageView.contentMode = UIViewContentModeScaleAspectFit;
+    //确保用户交互已启用
+    _imageView.userInteractionEnabled = YES;
+    //添加点击事件
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageViewTapped:)];
+    [_imageView addGestureRecognizer:tapGesture];
     [self.view addSubview:_imageView];
     [_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.lable.mas_bottom).offset(10);
@@ -113,6 +118,12 @@
         make.width.equalTo(@40);
         make.height.equalTo(@40);
     }];
+}
+
+// 点击事件处理方法
+- (void)imageViewTapped:(UITapGestureRecognizer *)gesture {
+    // 在这里执行你想要的操作
+    NSLog(@"ImageView tapped!");
 }
 
 - (void) setButtonView {

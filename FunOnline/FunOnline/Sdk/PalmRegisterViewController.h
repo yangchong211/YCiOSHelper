@@ -4,6 +4,7 @@
 
 #import <UIKit/UIKit.h>
 #import "RequestAuthParams.h"
+#import "PalmUIColor+Extension.h"
 
 //空中录掌UI
 @interface PalmRegisterViewController : UIViewController
