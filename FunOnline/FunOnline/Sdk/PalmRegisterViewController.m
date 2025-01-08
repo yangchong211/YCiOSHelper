@@ -101,12 +101,12 @@
     _tvResultTitle.text = @"这个是标题";
     _tvResultTitle.textAlignment = NSTextAlignmentCenter;
     //设置字体大小
-    _tvResultTitle.font = [UIFont systemFontOfSize:24];
+    _tvResultTitle.font = [UIFont boldSystemFontOfSize:24];
     //设置字体颜色
     _tvResultTitle.textColor = [UIColor colorHexString:@"000000"];
     [self.view addSubview:_tvResultTitle];
     [_tvResultTitle mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.ivResultIcon.mas_bottom).offset(45);
+        make.top.equalTo(self.ivResultIcon.mas_bottom).offset(40);
         make.centerX.equalTo(self.view);
         make.width.equalTo(@200);
         make.height.equalTo(@40);
@@ -143,8 +143,8 @@
     self.btnStartPalm = [UIButton buttonWithType:UIButtonTypeCustom];
     self.btnStartPalm.backgroundColor = [UIColor colorHexString:@"2cc569"];
     // 设置按钮标题文本的字体大小为 14
-    self.btnStartPalm.titleLabel.font = [UIFont systemFontOfSize:14];
-    [self.btnStartPalm setTitle:@"去录掌" forState:UIControlStateNormal];
+    self.btnStartPalm.titleLabel.font = [UIFont boldSystemFontOfSize:16];
+    [self.btnStartPalm setTitle:@"开始录掌" forState:UIControlStateNormal];
     [self.btnStartPalm setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.btnStartPalm addTarget:self action:@selector(startPalm:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.btnStartPalm];
