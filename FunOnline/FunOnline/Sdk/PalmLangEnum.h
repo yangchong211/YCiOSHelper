@@ -8,11 +8,11 @@
 //语言枚举
 typedef NS_ENUM(NSInteger, PalmLangEnum) {
     //未知
-    LanguageEnumLANGKNOWN,
+    LANG_KNOWN,
     //中文
-    LanguageEnumLANGZH,
+    LANG_ZH,
     //英文
-    LanguageEnumLANGEN,
+    LANG_EN,
     //日文
-    LanguageEnumLANGJA,
+    LANG_JA,
 };

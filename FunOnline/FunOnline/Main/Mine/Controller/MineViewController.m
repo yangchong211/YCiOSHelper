@@ -306,22 +306,29 @@ static NSString *const kMineCellReuseIdentifier = @"kMineCellReuseIdentifier";
 }
 
 - (void)jumpPalm {
-    //第一个参数：语言环境
-    //第二个参数：授权信息
-    [WeCardPalmHelper.instance initWithLanguage:LanguageEnumLANGZH license:@"授权信息"];
+    //初始化语言
+    [WeCardPalmHelper.instance initWithLanguage:LANG_JA];
     
+    /**
+     * @brief 初始化参数
+     *
+     * @param context      上下文
+     * @param userId       用户唯一标识
+     * @param userName     用户名称
+     * @param phoneNo      用户手机号（带区号）
+     * @param paymentToken 支付凭证
+     * @param appID        应用id（微卡提供）
+     * @param timestamp    时间戳（秒）
+     * @param nonce        随机字符串
+     * @param signature    签名
+     */
+    RequestAuthParams *params = [[RequestAuthParams alloc] initWithParams:@"test-user" userName:@"Adon" phoneNo:@"(+86)13242005231" paymentToken:@"sdfadfasdfasdf" timestamp:1703523162 nonce:@"aneuxo3847s4mf7xk" appID:@"asdevxcbwdgs" signature:@"sign待完善"];
     //跳转控制器
-    RequestAuthParams *params = [[RequestAuthParams alloc] initWithParams:@"test-user"
-                                                                 userName:@"Adon"
-                                                                  phoneNo:@"(+86)13242005231"
-                                                             paymentToken:@"sdfadfasdfasdf"
-                                                                timestamp:1703523162
-                                                                    nonce:@"aneuxo3847s4mf7xk"
-                                                                    appID:@"asdevxcbwdgs"
-                                                                signature:@"sign待完善"];
-    PalmRegisterViewController *vc = [[PalmRegisterViewController alloc] init];
-    vc.params = params;
-    [self.navigationController pushViewController:vc animated:YES];
+    [WeCardPalmHelper.instance startPalmRegister: self
+        params:params
+        callback:^(NSInteger code , NSString * _Nullable msg) {
+        NSLog(@"palm , callback:%ld,%@", (long)code, msg);
+    }];
 }
 
 - (void)jumpUIKit{

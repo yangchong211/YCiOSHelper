@@ -7,7 +7,19 @@
 
 @implementation RequestAuthParams
 
-//初始化参数
+/**
+ * @brief 初始化参数
+ *
+ * @param context      上下文
+ * @param userId       用户唯一标识
+ * @param userName     用户名称
+ * @param phoneNo      用户手机号（带区号）
+ * @param paymentToken 支付凭证
+ * @param appID        应用id（微卡提供）
+ * @param timestamp    时间戳（秒）
+ * @param nonce        随机字符串
+ * @param signature    签名
+ */
 - (nonnull instancetype)initWithParams:(nonnull NSString *)userId
                                userName:(nonnull NSString *)userName
                                 phoneNo:(nonnull NSString *)phoneNo

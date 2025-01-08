@@ -4,6 +4,8 @@
 
 
 #import "WeCardPalmHelper.h"
+#import "RequestAuthParams.h"
+#import "PalmRegisterViewController.h"
 
 @interface WeCardPalmHelper ()
 
@@ -24,14 +26,13 @@
 
 /**
  * 初始化
- * 第一个参数是语言
- * 第二个参数是授权信息
+ * @param lang 第一个参数是语言
+ * @param lic 第二个参数是授权信息
  */
-- (void) initWithLanguage: (PalmLangEnum) lang license:(nonnull NSString *) lic {
+- (void) initWithLanguage: (PalmLangEnum) lang{
     NSString * palmLang = [self getLangString:lang];
     //打印字符串
     NSLog(@"Palm , initWithLanguage lang  %@" , palmLang);
-    NSLog(@"Palm , initWithLanguage lic  %@" , lic);
     //TODO 添加微信sdk初始化代码
 //    if (_airpalmInitializer == nil) {
 //        _airpalmInitializer = [[AirPalmInitializerImpl alloc] init];
@@ -53,17 +54,33 @@
 }
 
 /**
+ * @brief 启动微卡空中录掌页面
+ *
+ * @param controller 启动页面的ViewController
+ * @param params 启动参数
+ * @param callback 线上绑掌结果回调
+ */
+- (void)startPalmRegister:(nonnull UIViewController *)controller params:(nonnull RequestAuthParams *)params callback:(PalmRegisterListener) listener {
+    //创建空中录掌控制器
+    PalmRegisterViewController *vc = [[PalmRegisterViewController alloc] init];
+    //设置参数
+    vc.params = params;
+    //通过路由跳转
+    [controller.navigationController pushViewController:vc animated:YES];
+}
+
+/**
  * 获取外部设置的语言
  */
 - (NSString *) getLangString: (PalmLangEnum) lang {
     switch (lang) {
-        case LanguageEnumLANGKNOWN:
+        case LANG_KNOWN:
             return @"Unknown";
-        case LanguageEnumLANGEN:
+        case LANG_EN:
             return @"英文";
-        case LanguageEnumLANGZH:
+        case LANG_ZH:
             return @"中文";
-        case LanguageEnumLANGJA:
+        case LANG_JA:
             return @"日语";
         default:
             return @"Unknown";
