@@ -1,0 +1,36 @@
+# Uncomment the next line to define a global platform for your project
+  platform :ios, '9.0'
+  inhibit_all_warnings! #消除警告
+
+target 'FunOnline' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+	
+  #简化模型对象（Model）的转换和序列化操作
+	pod 'MJExtension', '~> 3.0.13'
+  #刷新库
+	pod 'MJRefresh', '~> 3.1.15.3'
+  #异步加载和缓存网络图片
+	pod 'SDWebImage', '~> 4.3.2'
+  #网络请求
+	pod 'AFNetworking', '~> 3.2.0'
+  #显示加载指示器和提示信息
+	pod 'MBProgressHUD', '~> 1.1.0'
+  #显示加载指示器和提示信息
+	pod 'SVProgressHUD', '~> 2.2.5'
+  #轮播图（Banner）
+	pod 'SDCycleScrollView', '~> 1.75'
+  #视图，空数据，异常数据，占位图库
+	pod 'DZNEmptyDataSet', '~> 1.8.1'
+  #图片选择器
+	pod 'TZImagePicker', '~> 1.1.6'
+  #管理键盘的弹出和收起
+	pod 'IQKeyboardManager', '~> 5.0.7'
+  #自定义的弹窗
+	pod 'LEEAlert', '~> 1.1.5'
+  #自动布局
+	pod 'Masonry', '~> 1.1.0'
+  #可滚动的视图
+	pod 'iCarousel', '~> 1.8.3'
+
+end
