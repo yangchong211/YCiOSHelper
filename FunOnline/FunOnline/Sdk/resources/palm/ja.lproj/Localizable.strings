@@ -1,7 +1,0 @@
-"string_start_palm" = "手のひらのレコーディングを開始";
-"string_auth_error" = "認証権異常";
-"string_auth_error_hint" = "後で再試行してください";
-"string_auth_success" = "認証に成功した";
-"string_tencent_license" = "Tencent Technology が提供する技術サポート";
-"string_please_wait_a_later" = "お待ちください";
-"string_get_palm_error" = "掌紋状態異常の取得";

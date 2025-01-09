@@ -1,1 +1,0 @@
-../../../TZImagePicker/TZImagePickerController/TZImagePickerController/TZAssetModel.h
