@@ -21,6 +21,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWhiteColor];
+    [self testHttp];
+    [self testJson1];
+    [self testJson2];
 }
 
 - (void) testEasy {
@@ -31,6 +35,8 @@
     //get请求
     [[RequestManager manager] GET:url_article parameters:nil success:^(id  _Nullable responseObj) {
         NSLog(@"GET请求 JSON: %@", responseObj);
+        
+        
     } failure:^(NSError * _Nonnull error) {
         NSLog(@"GET请求 Error: %@", error);
     }];

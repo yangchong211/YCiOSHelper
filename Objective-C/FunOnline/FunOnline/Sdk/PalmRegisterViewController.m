@@ -3,8 +3,6 @@
 //
 
 #import "PalmRegisterViewController.h"
-#import "PalmControllerDelegate.h"
-#import "PalmUIColor+Extension.h"
 
 @interface PalmRegisterViewController ()
 
@@ -52,15 +50,20 @@
 
 //dealloc：释放资源，当 UIViewController 实例被销毁时调用，用于释放持有的对象和资源。
 - (void)dealloc {
-    
+    NSLog(@"Palm , PalmRegisterViewController 释放资源");
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //设置颜色
     self.view.backgroundColor = [UIColor colorWhiteColor];
     RequestAuthParams* params = self.params;
+    //获取参数
     [self printRequestAuthParams:params];
+    //视图创建和加载
     [self initView];
+    //数据加载
+    [self initData:false];
 }
 
 - (void) printRequestAuthParams:(RequestAuthParams*) params {
@@ -70,6 +73,48 @@
                         params.timestamp,params.nonce,
                         params.appID,params.signature];
     NSLog(@"Palm , PalmRegisterViewController params result  %@" , result);
+}
+
+- (void) initData:(BOOL) isLoading {
+    NSString* url = url_auth;
+    //将long转化为字符串
+    NSString *timestamp = [NSString stringWithFormat:@"%ld", self.params.timestamp];
+    NSDictionary *parameters = @{@"AppId": self.params.appID,
+                                 @"UserId": self.params.userId,
+                                 @"UserName": self.params.userName,
+                                 @"PhoneNo": self.params.phoneNo,
+                                 @"PaymentToken": self.params.paymentToken,
+                                 @"Timestamp": timestamp,
+                                 @"Nonce": self.params.nonce,
+                                 @"Signature": self.params.signature
+    };
+    //请求鉴权接口数据
+    [[PalmRequestManager manager] POST:url parameters:parameters success:^(id  _Nullable responseObj) {
+        NSLog(@"POST请求 JSON: %@", responseObj);
+        //将json数据转化为bean对象
+        BeanAuthData *authData = [BeanAuthData mj_objectWithKeyValues:responseObj];
+        if (authData != NULL && authData.code == 0) {
+            //获取鉴权正常情况
+            self.isAuthSuccess = true;
+            self.token = authData.userToken;
+            self.traceId = authData.traceId;
+            [self.tvResultTitle setText:@"授权成功"];
+            [self.ivResultIcon setImage:[UIImage imageNamed:@"icon_result_success"]];
+            [self.tvResultDescribe setText:@""];
+        } else {
+            //获取鉴权数据异常情况
+            self.isAuthSuccess = false;
+            [self.tvResultTitle setText:@"授权数据异常"];
+            [self.tvResultDescribe setText:@"请重新再试"];
+            [self.ivResultIcon setImage:[UIImage imageNamed:@"icon_result_fail"]];
+        }
+    } failure:^(NSError * _Nonnull error) {
+        NSLog(@"POST请求 Error: %@", error);
+        self.isAuthSuccess = false;
+        [self.tvResultTitle setText:@"授权请求异常"];
+        [self.tvResultDescribe setText:@"请检查网络后再试试"];
+        [self.ivResultIcon setImage:[UIImage imageNamed:@"icon_result_fail"]];
+    }];
 }
 
 #pragma mark - view布局
@@ -179,6 +224,11 @@
 
 - (void)startPalm:(UITapGestureRecognizer *)gesture {
     NSLog(@"Palm , startPalm");
+    if (self.isAuthSuccess) {
+        
+    } else {
+        
+    }
 }
 
 @end

@@ -12,6 +12,8 @@
 #import "CollectionViewController.h"
 #import "WebViewController.h"
 #import "DataManager.h"
+#import "HttpController.h"
+
 
 @interface DemoViewController ()
 
@@ -150,6 +152,26 @@
     UITapGestureRecognizer *tapGesture5 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickText5:)];
     [_textView5 addGestureRecognizer: tapGesture5];
     
+    _textView6 = [[UITextView alloc] init];
+    _textView6.text = @"6.网络请求和json解析";
+    _textView6.font = [UIFont systemFontOfSize:12];
+    _textView6.textColor = [UIColor blackColor];
+    _textView6.layer.borderWidth = 1.0;
+    _textView6.layer.borderColor = [UIColor grayColor].CGColor;
+    _textView6.layer.cornerRadius = 5.0;
+    _textView6.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:_textView6];
+    [_textView6 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.textView5.mas_bottom).offset(20);
+        make.width.equalTo(self.textView5.mas_width);
+        make.height.equalTo(self.textView5.mas_height);
+        make.left.equalTo(self.view.mas_left).offset(20);
+        make.right.equalTo(self.view.mas_right).offset(-20);
+    }];
+    UITapGestureRecognizer *tapGesture6 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickText6:)];
+    [_textView6 addGestureRecognizer: tapGesture6];
+    
+    
     [self testApi];
 }
 
@@ -178,6 +200,12 @@
 - (void)clickText5:(UITapGestureRecognizer *)gesture {
     // 处理点击事件的逻辑
     WebViewController *vc = [[WebViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)clickText6:(UITapGestureRecognizer *)gesture {
+    // 处理点击事件的逻辑
+    HttpController *vc = [[HttpController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
