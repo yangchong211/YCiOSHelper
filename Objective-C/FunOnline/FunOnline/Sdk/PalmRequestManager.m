@@ -46,9 +46,9 @@
  */
 + (instancetype)manager {
     static dispatch_once_t onceToken;
-    static RequestManager *httpRequest = nil;
+    static PalmRequestManager *httpRequest = nil;
     dispatch_once(&onceToken, ^{
-        httpRequest = [[RequestManager alloc] init];
+        httpRequest = [[PalmRequestManager alloc] init];
     });
     return httpRequest;
 }

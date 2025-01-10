@@ -225,10 +225,48 @@
 - (void)startPalm:(UITapGestureRecognizer *)gesture {
     NSLog(@"Palm , startPalm");
     if (self.isAuthSuccess) {
-        
+        //鉴权成功后，点击开始获取录掌授权
+        [self startGetPalmStatus];
     } else {
-        
+        //如果没有鉴权，开始重新鉴权拉数据
+        [self initData:true];
     }
+    //[self startGetPalmStatus];
+}
+
+- (void) startGetPalmStatus {
+    NSString* url = url_get_palm_status;
+    //self.token = @"token";
+    //将long转化为字符串
+    NSDictionary *parameters = @{@"UserToken": self.token};
+    //请求获取掌纹状态接口数据
+    [[PalmRequestManager manager] POST:url parameters:parameters success:^(id  _Nullable responseObj) {
+        NSLog(@"POST请求 获取掌纹状态接口 JSON: %@", responseObj);
+        //将json数据转化为bean对象
+        BeanPalmStatus *palmStatus = [BeanPalmStatus mj_objectWithKeyValues:responseObj];
+        if (palmStatus != NULL && palmStatus.code == 0) {
+            //获取掌纹状态正常情况
+            NSString* status = palmStatus.palmStatus;
+            if (Unregistered == status) {
+                // 未录掌
+                NSLog(@"POST请求 获取掌纹状态接口 未录掌");
+            } else if (PreRegistered == status) {
+                // 预录入
+                NSLog(@"POST请求 获取掌纹状态接口 预录入");
+            } else if (Registered == status) {
+                // 已录掌
+                NSLog(@"POST请求 获取掌纹状态接口 已录掌");
+            } else {
+                // 异常情况
+                NSLog(@"POST请求 获取掌纹状态接口 其他情况 %@", status);
+            }
+        } else {
+            //获取掌纹状态异常情况
+            NSLog(@"POST请求 获取掌纹状态接口数据异常");
+        }
+    } failure:^(NSError * _Nonnull error) {
+        NSLog(@"POST请求 获取掌纹状态接口 Error: %@", error);
+    }];
 }
 
 @end

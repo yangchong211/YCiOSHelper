@@ -10,6 +10,7 @@
 #import "PalmControllerDelegate.h"
 #import "PalmUIColor+Extension.h"
 #import "BeanAuthData.h"
+#import "BeanPalmStatus.h"
 
 //空中录掌UI
 @interface PalmRegisterViewController : UIViewController
