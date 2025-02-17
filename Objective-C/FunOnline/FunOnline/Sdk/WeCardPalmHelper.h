@@ -12,6 +12,10 @@
 typedef void (^PalmRegisterListener)(NSInteger code , NSString * _Nullable msg);
 
 
+//在Objective-C中，方法定义中的"+"和"-"符号用于表示类方法和实例方法。
+//"+" 符号表示类方法，也称为静态方法。类方法是属于类本身的方法，而不是类的实例。
+//"-" 符号表示实例方法，也称为对象方法。实例方法是属于类的实例的方法，必须通过类的实例来调用。
+
 @interface WeCardPalmHelper : NSObject
 
 /**
@@ -49,11 +53,6 @@ typedef void (^PalmRegisterListener)(NSInteger code , NSString * _Nullable msg);
  * @param callback 线上绑掌结果回调
  */
 - (void)startPalmRegister:(nonnull UIViewController *)controller params:(nonnull RequestAuthParams *)params callback:(PalmRegisterListener) listener;
-
-/**
- * 获取外部设置的语言
- */
-+ (NSString *_Nullable) getLangString: (PalmLangEnum) lang;
 
 
 @end
