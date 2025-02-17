@@ -13,5 +13,6 @@
 /**16进制色*/
 + (UIColor *)colorHexString:(NSString *)colorStr;
 
++(UIColor *)colorWithRandom;
 
 @end

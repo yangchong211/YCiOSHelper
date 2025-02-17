@@ -95,6 +95,9 @@
     //第四个参数是一个可以选择的块，一般用于大文件的下载中
     //success则是请求成功后回调块，failure则是请求失败后的回调块
     WeakSelf;
+    //设置请求体的 Content-Type 为 application/json
+    _sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
+    //将请求体的 Content-Type 设置为 "application/json"，以确保请求体以 RAW 格式发送。
     return [_sessionManager POST:URLString parameters:parameters progress:uploadProgress success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [weakSelf requestTask:task responseObj:responseObject success:success];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

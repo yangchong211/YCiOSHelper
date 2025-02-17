@@ -8,9 +8,16 @@
 #import "PalmRequestHeaders.h"
 #import "PalmUIColor+Extension.h"
 #import "PalmControllerDelegate.h"
-#import "PalmUIColor+Extension.h"
 #import "BeanAuthData.h"
 #import "BeanPalmStatus.h"
+#import "BeanLicense.h"
+#import "WeCardPalmHelper.h"
+#import "Masonry.h"
+#import "MJExtension.h"
+#import "CircleView.h"
+#import "NSObject+Additions.h"
+#import "PalmRegisterError.h"
+#import "NSBundle+Palm.h"
 
 //空中录掌UI
 @interface PalmRegisterViewController : UIViewController
@@ -26,5 +33,8 @@
 
 //是否鉴权成功
 @property (nonatomic, assign) BOOL isAuthSuccess;
+
+// 声明 block 类型的属性
+@property (nonatomic, copy) PalmRegisterListener plamBlock;
 
 @end

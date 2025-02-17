@@ -8,7 +8,13 @@
 
 #import "UIKitViewController.h"
 
+typedef void (^ParameterBlock)(NSString *name, NSInteger age);
+
+
 @interface UIKitViewController ()
+
+// 声明 block 类型的属性
+@property (nonatomic, copy) ParameterBlock completionBlock;
 
 @property (nonatomic, strong) UITextView *textView;
 @property (nonatomic, strong) UILabel *lable;
@@ -33,6 +39,9 @@
     [self setButtonView];
     [self setSwitchView];
     [self setTextFieldView];
+    ParameterBlock block = ^(NSString *name, NSInteger age) {
+        NSLog(@"Name: %@, Age: %ld", name, (long)age);
+    };
 }
 
 - (void) setTextView{
@@ -124,6 +133,9 @@
 - (void)imageViewTapped:(UITapGestureRecognizer *)gesture {
     // 在这里执行你想要的操作
     NSLog(@"ImageView tapped!");
+    
+
+//    self.completionBlock(@"John", 25); // 调用block
 }
 
 - (void) setButtonView {

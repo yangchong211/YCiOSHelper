@@ -13,8 +13,8 @@
 //返回的msg
 @property (nonatomic, strong) NSString * message;
 //用户token
-@property (nonatomic, strong) NSString * userToken;
+@property (nonatomic, strong) NSString * user_token;
 //traceId
-@property (nonatomic, strong) NSString * traceId;
+@property (nonatomic, strong) NSString * trace_id;
 
 @end

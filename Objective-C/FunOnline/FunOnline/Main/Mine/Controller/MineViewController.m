@@ -306,6 +306,15 @@ static NSString *const kMineCellReuseIdentifier = @"kMineCellReuseIdentifier";
 }
 
 - (void)jumpPalm {
+    NSString *app_id = @"asdevxcbwdgs";
+    NSString *user_id = @"test-user";
+    NSString *user_name = @"hzjR9ylax2KtZNYGGdJMGxP7RoI64ORsXtFgQQzmFQ7+EE1JjjV68NCdcwS/h82+OwcznywbMowErWB3xd0VnpGq9IfiDxtSmYrZsxIusXDV0sC46ecIIfJ1WS4IcIUwgizs5Adyn2BVjjlZpyJ80jXq1yUkzoopGFnwjPi8geT2vzKFbtwbvN19MVUksgdsJdZTmSptsOBwiL8wtt4RyLwWJQkjj0tdIfcAg/kBmGHo26X0gIvR85bLOJ1Ylfr6bs2p3ANrimChMcnDY1cW75kudassMwgV/jNYvdZW6/2Zllzyx79M0QFVfCb1poOfiSJX0JdmHPk7UHJhXZqptg==";
+    NSString *phone_no = @"T2aR5g99OIgUVuoxeHk7xMb/UYtY698MY3Yu7b92whlRQdFRQ0evsu1o8ONaCunNqra7m+hvhxlJ+1OPVfu4LzVh+OsYRrDYUO3zcFoLYPw0GCGSG64Og2Rq0K73pHhLGiBJVQOeAv7yT0BACW2dMvBuFQusPdgwWZ3AS6lKLrdeiaUWv7yw80Q3EykzluGS+tYqElBgyLQ6atwDP6wmMG2ouglx5hSEU9CBOtytbZCbifdLQU9U0l6dwHF5Ldo+sZe2FYIr575UhuirOfpwFEQiskk7e24JV8bcdjiTrOXvjnN6qdKZE9ONclCUAUaFIeIllcBeKa53MVpjct48tg==";
+    NSString *payment_token = @"nct915fN7D8zekbfBjSEg3ZAN31QjpssjWeB/DJKs5Q1x5+uIxGpXWnDeoD4UhBVA1h2gJ17nVJ4+YISJCMLTeOPC5qj3LlVTtq3mH2YpX1/SLMGXXwB6d3akQwTGNoF+IjQ5UvlZkVO0beNYNHgzUTx4l6R3Ptguh15Z8lEcCpz+nqpsv+0rDzt2qP0fALb3Hcs9XpddnhCI/i1k5OV/tTRmtufJiz8oLWCk/oHkr9Pucm1GskhSElU7MskBzMMuxN91vLPTG9HPLLHipMXwdYJT2JOrkinmaES7ZFwpzNV1SrO+Hnsg2pPZT662cNljNZzAUdwwE7KzfHZlLeOvQ==";
+    long timestamp = 1736931456;
+    NSString *nonce = @"aneuxo3847s4mf7xk";
+    NSString *sign = @"ikj+ScyrAoigMK2jKwaqFeit0ilizzelFh+KDG+tOjBYchVrmZz9Ea085+JGamVZjbCGi9VEKXjo8kDIiAqw8sNkBVuCEPB8L6U/+fp97ITNLc6Tqb6Klu6FI1/pHpXXBAaOeKpLV7hZ0zWux246hWV/eKub7pZR2Miwn9vktt5lFTWeQsGNte7peNNKoAG+qZP+s8zM4F4F468sLUZResGF3hXoidleT4peYuMiPti/bcn+V8Q0mpbavbyLocDAfBp+9UZuNNX0LjS0XiiWeoOhv+jBSoH2B8Mh1KCysY/BGfE9FiATuecmd5sQQSbDFahDkOtxyWbsAXuMrpiBJw==";
+    
     //初始化语言
     [WeCardPalmHelper.instance initWithLanguage:LANG_JA];
     
@@ -322,13 +331,18 @@ static NSString *const kMineCellReuseIdentifier = @"kMineCellReuseIdentifier";
      * @param nonce        随机字符串
      * @param signature    签名
      */
-    RequestAuthParams *params = [[RequestAuthParams alloc] initWithParams:@"test-user" userName:@"Adon" phoneNo:@"(+86)13242005231" paymentToken:@"sdfadfasdfasdf" timestamp:1703523162 nonce:@"aneuxo3847s4mf7xk" appID:@"asdevxcbwdgs" signature:@"sign待完善"];
+    RequestAuthParams *params = [[RequestAuthParams alloc] initWithParams:user_id userName:user_name phoneNo:phone_no paymentToken:payment_token timestamp:timestamp nonce:nonce appID:app_id signature:sign];
+    PalmRegisterListener plamBlock = ^(NSInteger code , NSString * _Nullable msg) {
+        NSLog(@"palm , callback1 :%ld,%@", (long)code, msg);
+    };
     //跳转控制器
-    [WeCardPalmHelper.instance startPalmRegister: self
-        params:params
-        callback:^(NSInteger code , NSString * _Nullable msg) {
-        NSLog(@"palm , callback:%ld,%@", (long)code, msg);
-    }];
+    [WeCardPalmHelper.instance startPalmRegister: self params:params callback:plamBlock];
+    //跳转控制器
+//    [[WeCardPalmHelper.instance startPalmRegister: self
+//        params:params
+//        callback:^(NSInteger code , NSString * _Nullable msg) {
+//        NSLog(@"palm , callback2 :%ld,%@", (long)code, msg);
+//    }];
 }
 
 - (void)jumpUIKit{

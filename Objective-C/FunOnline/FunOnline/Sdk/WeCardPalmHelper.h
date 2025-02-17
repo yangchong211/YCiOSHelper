@@ -2,16 +2,24 @@
 //  Created by 杨充 on 2024/12/24.
 //
 
-
+#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "PalmLangEnum.h"
 #import "RequestAuthParams.h"
 
 
+
+//常见的typedef定义，用于定义一个block类型。这个block类型接受两个参数，一个是NSInteger类型的code，另一个是NSString类型的可选msg。
+//https://blog.51cto.com/u_16213440/11391183
 typedef void (^PalmRegisterListener)(NSInteger code , NSString * _Nullable msg);
 
 
 @interface WeCardPalmHelper : NSObject
+
+/**
+ * 设置的语言
+ */
+@property (copy, nonatomic, nullable) NSString *languageCode;
 
 /**
  *  单例
@@ -22,11 +30,18 @@ typedef void (^PalmRegisterListener)(NSInteger code , NSString * _Nullable msg);
 
 
 /**
- * 初始化
+ * 初始化语言
  * @param lang 第一个参数是语言
  * @param lic 第二个参数是授权信息
  */
 - (void) initWithLanguage: (PalmLangEnum) lang;
+
+
+/**
+ * 初始化优图鉴权
+ * @param sdkLicense 优图授权
+ */
+- (void) initAirPalmKit: (NSString *) sdkLicense;
 
 /**
  * @brief 启动微卡空中录掌页面

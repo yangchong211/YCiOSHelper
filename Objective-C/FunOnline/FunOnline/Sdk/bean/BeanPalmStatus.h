@@ -16,6 +16,6 @@
  * "PreRegistered" // 预录入
  * "Registered" // 已录掌
  */
-@property (nonatomic, assign) NSString* palmStatus;
+@property (nonatomic, assign) NSString* palm_status;
 
 @end

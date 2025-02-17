@@ -6,6 +6,7 @@
 #import "WeCardPalmHelper.h"
 #import "RequestAuthParams.h"
 #import "PalmRegisterViewController.h"
+#import "NSObject+Additions.h"
 
 @interface WeCardPalmHelper ()
 
@@ -31,17 +32,13 @@
  */
 - (void) initWithLanguage: (PalmLangEnum) lang{
     NSString * palmLang = [self getLangString:lang];
+    //直接赋值
+    self.languageCode = palmLang;
     //打印字符串
-    NSLog(@"Palm , initWithLanguage lang  %@" , palmLang);
-    //TODO 添加微信sdk初始化代码
-//    if (_airpalmInitializer == nil) {
-//        _airpalmInitializer = [[AirPalmInitializerImpl alloc] init];
-//        NSString *sdkLicense = lic;
-//        _airPalmInitParams = [[DBAirPalmInitParams alloc] initWithLanguage:DBLanguageEnumLANGES sdkLicense:sdkLicense];
-//        [AirPalmKit initAlogKit:_airpalmInitializer params:_airPalmInitParams];
-//    }
+    NSLog(@"Palm , initWithLanguage lang  %@" , self.languageCode);
+    //设置sdk语言环境，todo
     
-    
+
     //这个是初始化代码
 //    AirPalmStartParams *params = [[AirPalmStartParams alloc] initWithTraceId:@"test-register-session"
 //                                                               palmSideLimit:DBAirPalmSideSIDEUNKNOWN
@@ -53,6 +50,24 @@
 //             }];
 }
 
+
+/**
+ * 初始化优图鉴权
+ * @param sdkLicense 优图授权
+ */
+- (void) initAirPalmKit: (NSString *) sdkLicense {
+    NSLog(@"Palm , initAirPalmKit 初始化微信sdk");
+    //TODO 添加微信sdk初始化代码
+    //    if (_airpalmInitializer == nil) {
+    //        _airpalmInitializer = [[AirPalmInitializerImpl alloc] init];
+    //        NSString *sdkLicense = lic;
+    //        _airPalmInitParams = [[DBAirPalmInitParams alloc] initWithLanguage:DBLanguageEnumLANGES sdkLicense:sdkLicense];
+    //        [AirPalmKit initAlogKit:_airpalmInitializer params:_airPalmInitParams];
+    //    }
+    
+}
+
+
 /**
  * @brief 启动微卡空中录掌页面
  *
@@ -61,8 +76,11 @@
  * @param callback 线上绑掌结果回调
  */
 - (void)startPalmRegister:(nonnull UIViewController *)controller params:(nonnull RequestAuthParams *)params callback:(PalmRegisterListener) listener {
+    NSLog(@"Palm , 启动微卡空中录掌页面");
     //创建空中录掌控制器
     PalmRegisterViewController *vc = [[PalmRegisterViewController alloc] init];
+    //设置block。这里必须赋值，否则不回调
+    vc.plamBlock = listener;
     //设置参数
     vc.params = params;
     //通过路由跳转
@@ -77,11 +95,11 @@
         case LANG_KNOWN:
             return @"Unknown";
         case LANG_EN:
-            return @"英文";
+            return @"en";
         case LANG_ZH:
-            return @"中文";
+            return @"zh";
         case LANG_JA:
-            return @"日语";
+            return @"ja";
         default:
             return @"Unknown";
     }
