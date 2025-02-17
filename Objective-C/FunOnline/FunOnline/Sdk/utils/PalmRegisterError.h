@@ -44,12 +44,13 @@ extern int32_t const ERR_PALM_INIT_INPUT;
 /** 初始化资源失败 */
 extern int32_t const ERR_PALM_INIT_ASSERT;
 /** 初始化sdk鉴权失败 */
-extern int32_t const ERR_PALM_INIT_SECURE;
+extern int32_t const ERR_PALM_INIT_SDK_LICENSE;
 /** 初始化包名鉴权失败 */
 extern int32_t const ERR_PALM_INIT_PACKAGE;
 /** 初始化签名鉴权失败 */
 extern int32_t const ERR_PALM_INIT_SIGNATURE;
-
+/** 初始化加密组件失败 */
+extern int32_t const ERR_PALM_INIT_SECURE;
 
 @end
 

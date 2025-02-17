@@ -25,6 +25,7 @@
     self = [super init];
     if (self) {
         _session = [NSURLSession sharedSession];
+        //获取网络请求manager类
         _sessionManager = [AFHTTPSessionManager manager];
         _sessionManager.responseSerializer = [AFHTTPResponseSerializer serializer];
         //设置请求超时
@@ -65,30 +66,35 @@
 }
 
 
--(NSURLSessionDataTask *)GET:(NSString *)URLString parameters:(id)parameters success:(Success)success failure:(Failure)failure{
-    return [self GET:URLString parameters:parameters progress:nil success:success failure:failure];
+-(NSURLSessionDataTask *)GET_REQUEST:(NSString *)URLString parameters:(id)parameters success:(Success)success failure:(Failure)failure{
+    return [self GET_REQUEST:URLString parameters:parameters progress:nil success:success failure:failure];
 }
 
--(NSURLSessionDataTask *)POST:(NSString *)URLString parameters:(id)parameters success:(Success)success failure:(Failure)failure{
-    return [self POST:URLString parameters:parameters progress:nil success:success failure:failure];
+-(NSURLSessionDataTask *)POST_REQUEST:(NSString *)URLString parameters:(id)parameters success:(Success)success failure:(Failure)failure{
+    return [self POST_REQUEST:URLString parameters:parameters progress:nil success:success failure:failure];
 }
 
 
--(NSURLSessionDataTask *)GET:(NSString *)URLString parameters:(id)parameters progress:(Progress)downloadProgress success:(Success)success failure:(Failure)failure{
+-(NSURLSessionDataTask *)GET_REQUEST:(NSString *)URLString parameters:(id)parameters progress:(Progress)downloadProgress success:(Success)success failure:(Failure)failure{
     //第一个参数是存放我们的URL，也就是网络请求的地址。
     //第二个参数则是我们要发送的请求的查询数据，在get请求中我们一般放在URL中间，这里注意下在POST请求，我们需要使用一个字典来进行一个请求。
     //第三个参数则是header，在大部分请求中我们是不需要的，但是在部分要求比较严格的API中，可能就需要运用到这个参数
     //第四个参数是一个可以选择的块，一般用于大文件的下载中
     //success则是请求成功后回调块，failure则是请求失败后的回调块
     WeakSelf;
-    return [_sessionManager GET:URLString parameters:parameters progress:downloadProgress success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//    return [self.sessionManager GET:URLString parameters:parameters headers:nil progress:downloadProgress success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        [weakSelf requestTask:task responseObj:responseObject success:success];
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        failure(error);
+//    }];
+    return [self.sessionManager GET:URLString parameters:parameters progress:downloadProgress success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [weakSelf requestTask:task responseObj:responseObject success:success];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         failure(error);
     }];
 }
 
--(NSURLSessionDataTask *)POST:(NSString *)URLString parameters:(id)parameters progress:(Progress)uploadProgress success:(Success)success failure:(Failure)failure{
+-(NSURLSessionDataTask *)POST_REQUEST:(NSString *)URLString parameters:(id)parameters progress:(Progress)uploadProgress success:(Success)success failure:(Failure)failure{
     //第一个参数是存放我们的URL，也就是网络请求的地址。
     //第二个参数则是我们要发送的请求的查询数据，在get请求中我们一般放在URL中间，这里注意下在POST请求，我们需要使用一个字典来进行一个请求。
     //第三个参数则是header，在大部分请求中我们是不需要的，但是在部分要求比较严格的API中，可能就需要运用到这个参数
@@ -97,6 +103,11 @@
     WeakSelf;
     //设置请求体的 Content-Type 为 application/json
     _sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
+//    return [self.sessionManager POST:URLString parameters:parameters headers:nil progress:uploadProgress success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        [weakSelf requestTask:task responseObj:responseObject success:success];
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        failure(error);
+//    }];
     //将请求体的 Content-Type 设置为 "application/json"，以确保请求体以 RAW 格式发送。
     return [_sessionManager POST:URLString parameters:parameters progress:uploadProgress success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [weakSelf requestTask:task responseObj:responseObject success:success];

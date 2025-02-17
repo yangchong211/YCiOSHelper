@@ -8,8 +8,8 @@
 #import "PalmRegisterViewController.h"
 #import "NSObject+Additions.h"
 
-@interface WeCardPalmHelper ()
 
+@interface WeCardPalmHelper ()
 
 @end
 
@@ -36,18 +36,6 @@
     self.languageCode = palmLang;
     //打印字符串
     NSLog(@"Palm , initWithLanguage lang  %@" , self.languageCode);
-    //设置sdk语言环境，todo
-    
-
-    //这个是初始化代码
-//    AirPalmStartParams *params = [[AirPalmStartParams alloc] initWithTraceId:@"test-register-session"
-//                                                               palmSideLimit:DBAirPalmSideSIDEUNKNOWN
-//                                                                       token:@"123456789"];
-//    [AirPalmKit start:self
-//               params:params
-//             callback:^(DBPalmKitResult *result) {
-//                 NSLog(@"jumpToFrameWork callback:%d,%@", result.retCode, result.retMsg);
-//             }];
 }
 
 
@@ -57,14 +45,23 @@
  */
 - (void) initAirPalmKit: (NSString *) sdkLicense {
     NSLog(@"Palm , initAirPalmKit 初始化微信sdk");
-    //TODO 添加微信sdk初始化代码
-    //    if (_airpalmInitializer == nil) {
-    //        _airpalmInitializer = [[AirPalmInitializerImpl alloc] init];
-    //        NSString *sdkLicense = lic;
-    //        _airPalmInitParams = [[DBAirPalmInitParams alloc] initWithLanguage:DBLanguageEnumLANGES sdkLicense:sdkLicense];
-    //        [AirPalmKit initAlogKit:_airpalmInitializer params:_airPalmInitParams];
-    //    }
-    
+    NSString *securePubKey = @"0411ec4f1fca7026556f2969d7776dab0025e3eb147371367f127db27fd0bf0a1d04de394891d366663e02d7bb42965c5017b11cfb46ab459acef88a9cb32eff5e";
+//    DBLanguageEnum enumLang;
+//    //获取外部设置的语言
+//    NSString *language = WeCardPalmHelper.instance.languageCode;
+//    if ([language isEqualToString:@"en"]) {
+//        enumLang = DBLanguageEnumLANGEN;
+//    } else if ([language isEqualToString:@"zh"]) {
+//        enumLang = DBLanguageEnumLANGZH;
+//    } else if ([language isEqualToString:@"ja"]) {
+//        enumLang = DBLanguageEnumLANGJA;
+//    } else {
+//        enumLang = DBLanguageEnumLANGEN;
+//    }
+//    //添加微信sdk初始化代码
+//    AirPalmInitializerImpl *airpalmInitializer = [[AirPalmInitializerImpl alloc] init];
+//    DBAirPalmInitParams *airPalmInitParams = [[DBAirPalmInitParams alloc] initWithLanguage:enumLang sdkLicense:sdkLicense securePubKey:securePubKey];
+//    [AirPalmKit initAlogKit:airpalmInitializer params:airPalmInitParams];
 }
 
 
@@ -104,5 +101,6 @@
             return @"Unknown";
     }
 }
+
 
 @end

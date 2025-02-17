@@ -36,11 +36,13 @@ int32_t const ERR_PALM_INIT_INPUT = 10014;
 /** 初始化资源失败 */
 int32_t const ERR_PALM_INIT_ASSERT = 10015;
 /** 初始化sdk鉴权失败 */
-int32_t const ERR_PALM_INIT_SECURE = 10016;
+int32_t const ERR_PALM_INIT_SDK_LICENSE = 10016;
 /** 初始化包名鉴权失败 */
 int32_t const ERR_PALM_INIT_PACKAGE = 10017;
 /** 初始化签名鉴权失败 */
 int32_t const ERR_PALM_INIT_SIGNATURE = 10018;
+/** 初始化加密组件失败 */
+int32_t const ERR_PALM_INIT_SECURE = 10018;
 
 @end
 

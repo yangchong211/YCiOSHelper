@@ -331,18 +331,12 @@ static NSString *const kMineCellReuseIdentifier = @"kMineCellReuseIdentifier";
      * @param nonce        随机字符串
      * @param signature    签名
      */
-    RequestAuthParams *params = [[RequestAuthParams alloc] initWithParams:user_id userName:user_name phoneNo:phone_no paymentToken:payment_token timestamp:timestamp nonce:nonce appID:app_id signature:sign];
+    RequestAuthParams *params = [[RequestAuthParams alloc] initWithParams:user_id userName:user_name phoneNo:phone_no paymentToken:payment_token timestamp:timestamp nonce:nonce appID:app_id signature:sign side:SIDE_UNKNOWN];
     PalmRegisterListener plamBlock = ^(NSInteger code , NSString * _Nullable msg) {
         NSLog(@"palm , callback1 :%ld,%@", (long)code, msg);
     };
     //跳转控制器
     [WeCardPalmHelper.instance startPalmRegister: self params:params callback:plamBlock];
-    //跳转控制器
-//    [[WeCardPalmHelper.instance startPalmRegister: self
-//        params:params
-//        callback:^(NSInteger code , NSString * _Nullable msg) {
-//        NSLog(@"palm , callback2 :%ld,%@", (long)code, msg);
-//    }];
 }
 
 - (void)jumpUIKit{

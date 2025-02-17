@@ -298,7 +298,7 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		ECC1CB112D1D332400449BD0 /* TestStudy */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TestStudy; sourceTree = "<group>"; };
 		ECC1CC972D1D839500449BD0 /* OC */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = OC; sourceTree = "<group>"; };
-		ECCE02552D630F1E00B15752 /* Sdk */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Sdk; sourceTree = "<group>"; };
+		ECCE03142D63188400B15752 /* Sdk */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Sdk; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -399,7 +399,7 @@
 		2B00341520746B41003C5213 /* FunOnline */ = {
 			isa = PBXGroup;
 			children = (
-				ECCE02552D630F1E00B15752 /* Sdk */,
+				ECCE03142D63188400B15752 /* Sdk */,
 				ECC1CC972D1D839500449BD0 /* OC */,
 				ECC1CB112D1D332400449BD0 /* TestStudy */,
 				ECC1C9B42D1BC54F00449BD0 /* Headers */,
@@ -990,7 +990,7 @@
 			fileSystemSynchronizedGroups = (
 				ECC1CB112D1D332400449BD0 /* TestStudy */,
 				ECC1CC972D1D839500449BD0 /* OC */,
-				ECCE02552D630F1E00B15752 /* Sdk */,
+				ECCE03142D63188400B15752 /* Sdk */,
 			);
 			name = FunOnline;
 			productName = MyWallpaper;

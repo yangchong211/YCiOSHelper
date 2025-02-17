@@ -4,6 +4,7 @@
 
 #import "PalmRegisterViewController.h"
 
+
 @interface PalmRegisterViewController ()
 
 @property (nonatomic, strong) UIImageView *ivBack;
@@ -58,6 +59,7 @@
     //在重写dealloc方法时，‌必须调用父类的dealloc方法（‌[super dealloc]）‌，‌并且这行代码应放在自定义dealloc方法的最后。‌
     //这是因为父类可能包含了一些清理工作，‌如释放继承自父类的资源或执行一些必要的清理操作。‌
     NSLog(@"Palm , PalmRegisterViewController 释放资源");
+    //移除鉴权监听状态
 }
 
 - (void)viewDidLoad {
@@ -101,7 +103,7 @@
                                  @"signature": self.params.signature
     };
     //请求鉴权接口数据
-    [[PalmRequestManager manager] POST:url parameters:parameters success:^(id  _Nullable responseObj) {
+    [[PalmRequestManager manager] POST_REQUEST:url parameters:parameters success:^(id  _Nullable responseObj) {
         NSLog(@"POST请求 JSON: %@", responseObj);
         //将json数据转化为bean对象
         BeanAuthData *authData = [BeanAuthData mj_objectWithKeyValues:responseObj];
@@ -152,21 +154,6 @@
             [self.btnStartPalm setTitle:start forState:UIControlStateNormal];
         });
     }];
-}
-
-- (void) initWxSdk {
-    //读取授权信息
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    // 从NSUserDefaults获取数据
-    NSString *license = [defaults objectForKey:SP_KEY_LICENSE];
-    if (![license isEmpty] && license.length >0) {
-        NSLog(@"initAirPalmKit 初始化微信sdk %@", license);
-        //todo 添加鉴权监听状态
-        //初始化微信sdk鉴权
-        [WeCardPalmHelper.instance initAirPalmKit:license];
-    } else {
-        NSLog(@"Palm , sdkLicense 初始化授权获取的license鉴权信息是空");
-    }
 }
 
 #pragma mark - view布局
@@ -324,7 +311,7 @@
     //将long转化为字符串
     NSDictionary *parameters = @{@"user_token": self.token};
     //请求获取掌纹状态接口数据
-    [[PalmRequestManager manager] POST:url parameters:parameters success:^(id  _Nullable responseObj) {
+    [[PalmRequestManager manager] POST_REQUEST:url parameters:parameters success:^(id  _Nullable responseObj) {
         NSLog(@"POST请求 获取授权信息 JSON: %@", responseObj);
         //将json数据转化为bean对象
         BeanLicense *beanLicense = [BeanLicense mj_objectWithKeyValues:responseObj];
@@ -369,7 +356,7 @@
     //将long转化为字符串
     NSDictionary *parameters = @{@"user_token": self.token};
     //请求获取掌纹状态接口数据
-    [[PalmRequestManager manager] POST:url parameters:parameters success:^(id  _Nullable responseObj) {
+    [[PalmRequestManager manager] POST_REQUEST:url parameters:parameters success:^(id  _Nullable responseObj) {
         NSLog(@"POST请求 获取掌纹状态接口 JSON: %@", responseObj);
         //将json数据转化为bean对象
         BeanPalmStatus *palmStatus = [BeanPalmStatus mj_objectWithKeyValues:responseObj];
@@ -434,9 +421,26 @@
     }];
 }
 
+//初始化sdk鉴权
+- (void) initWxSdk {
+    //读取授权信息
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    // 从NSUserDefaults获取数据
+    NSString *license = [defaults objectForKey:SP_KEY_LICENSE];
+    if (![license isEmpty] && license.length >0) {
+        NSLog(@"initAirPalmKit 初始化微信sdk %@", license);
+        //添加鉴权监听状态
+        //初始化微信sdk鉴权
+        [WeCardPalmHelper.instance initAirPalmKit:license];
+    } else {
+        NSLog(@"Palm , sdkLicense 初始化授权获取的license鉴权信息是空");
+    }
+}
+
+
+//初始化sdk空中录掌跳转
 - (void) toWxPalm {
-    //指定录入手掌，任意，左手，右手
-    //todo 调用微信
+
 }
 
 @end

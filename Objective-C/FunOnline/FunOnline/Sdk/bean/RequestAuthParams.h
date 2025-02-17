@@ -10,6 +10,7 @@
 #define RequestAuthParams_h
 
 #import <Foundation/Foundation.h>
+#import "AirPalmSideEnum.h"
 
 //参数实体类
 @interface RequestAuthParams : NSObject
@@ -24,8 +25,7 @@
 @property (nonatomic, strong, nonnull) NSString *nonce;
 @property (nonatomic, strong, nonnull) NSString *appID;
 @property (nonatomic, strong, nonnull) NSString *signature;
-
-
+@property (nonatomic, assign) AirPalmSideEnum side;
 
 //初始化参数
 - (nonnull instancetype)initWithParams:(nonnull NSString *)userId
@@ -35,7 +35,8 @@
                              timestamp:(NSInteger)timestamp
                                   nonce:(nonnull NSString *)nonce
                                   appID:(nonnull NSString *)appID
-                              signature:(nonnull NSString *)signature;
+                              signature:(nonnull NSString *)signature
+                                  side:(AirPalmSideEnum)side;
 
 - (void) printParams: (RequestAuthParams *) params;
 

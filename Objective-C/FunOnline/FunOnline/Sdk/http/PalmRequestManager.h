@@ -24,25 +24,25 @@ typedef void(^Progress)(NSProgress * _Nonnull progress);
 
 
 //GET请求
-- (NSURLSessionDataTask *)GET:(NSString * )URLString
+- (NSURLSessionDataTask *)GET_REQUEST:(NSString * )URLString
                    parameters:(nullable id)parameters
                       success:(Success)success
                       failure:(Failure)failure;
 
 //POST请求
-- (nullable NSURLSessionDataTask *)POST:(NSString *)URLString
+- (nullable NSURLSessionDataTask *)POST_REQUEST:(NSString *)URLString
                              parameters:(nullable id)parameters
                                 success:(Success)success
                                 failure:(Failure)failure;
 
 //GET请求
-- (NSURLSessionDataTask *)GET:(NSString *)URLString
+- (NSURLSessionDataTask *)GET_REQUEST:(NSString *)URLString
                    parameters:(nullable id)parameters
                      progress:(nullable Progress)downloadProgress
                       success:(Success)success
                       failure:(Failure)failure;
 //POST请求
-- (nullable NSURLSessionDataTask *)POST:(NSString *)URLString
+- (nullable NSURLSessionDataTask *)POST_REQUEST:(NSString *)URLString
                              parameters:(nullable id)parameters
                                progress:(nullable Progress)uploadProgress
                                 success:(Success)success

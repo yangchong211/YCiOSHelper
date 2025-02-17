@@ -27,7 +27,8 @@
                              timestamp:(NSInteger)timestamp
                                   nonce:(nonnull NSString *)nonce
                                   appID:(nonnull NSString *)appID
-                             signature:(nonnull NSString *)signature {
+                             signature:(nonnull NSString *)signature
+                                  side:(AirPalmSideEnum )side{
     RequestAuthParams *params = [[RequestAuthParams alloc] init];
     //todo 看看这里是否需要添加参数校验
     params.userId = userId;
@@ -38,6 +39,7 @@
     params.nonce = nonce;
     params.appID = appID;
     params.signature = signature;
+    params.side = side;
     //打印传递的参数
     [self printParams:params];
     return params;
@@ -48,7 +50,7 @@
                         params.userId, params.userName,
                         params.phoneNo,params.paymentToken,
                         params.timestamp,params.nonce,
-                        params.appID,params.signature];
+                        params.appID,params.signature,params.side];
     NSLog(@"Palm , printParams result  %@" , result);
 }
 

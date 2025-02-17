@@ -18,6 +18,7 @@
 #import "NSObject+Additions.h"
 #import "PalmRegisterError.h"
 #import "NSBundle+Palm.h"
+#import "NSObject+Additions.h"
 
 //空中录掌UI
 @interface PalmRegisterViewController : UIViewController
